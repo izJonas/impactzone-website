@@ -1,0 +1,57 @@
+{
+    "sites": {
+        "premiumFullService": {
+            "label": "Premium Full-Service",
+            "href": "/"
+        },
+        "agenturleistungen": {
+            "label": "Agenturleistungen",
+            "subsites": {
+                "strategieMarkenbildung": {
+                    "label": "Strategie &amp; Markenbildung",
+                    "href": "/strategisches-marketing"
+                },
+                "corporateDesignAndId": {
+                    "label": "Corporate Design &amp; Corporate Identity",
+                    "href": "/cicd"
+                },
+                "praesentationen": {
+                    "label": "Präsentationen",
+                    "href": "/praesentationen"
+                },
+                "filmVideo3D": {
+                    "label": "Film, Video &amp; 3D",
+                    "href": "/film-video-3d"
+                },
+                "websitesWebshop": {
+                    "label": "Webseiten &amp; Webshops",
+                    "href": "/e-commerce"
+                },
+                "uiuxDesign": {
+                    "label": "UI- &amp; UX-Design",
+                    "href": "/ux-design"
+                },
+                "onlineMarketing": {
+                    "label": "Online-Marketing",
+                    "href": "/online-marketing"
+                }
+            }
+        },
+        "referenzen": {
+            "label": "Referenzen",
+            "href": "/referenzen"
+        },
+        "beispiele": {
+            "label": "Beispiele &amp; M&ouml;glichkeiten",
+            "href": "/beispiele"
+        },
+        "informationen": {
+            "label": "Wissenswertes &amp; Informationen",
+            "href": "/information"
+        },
+        "kontakt": {
+            "label": "Kontakt",
+            "href": "/kontakt"
+        }
+    }
+}
