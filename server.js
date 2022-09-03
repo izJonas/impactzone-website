@@ -9,16 +9,17 @@ const MongoClient = require('mongodb').MongoClient
 const app = express();
 
 let db
-let usersCollection8
+let siteCollection
 
 //const connectionString = 'mongodb+srv://icrate-admin:test@cluster0.sjlt1ts.mongodb.net/?retryWrites=true&w=majority'
-const  connectionString = 'mongodb+srv://iz-admin:g837upv5LPUpkmA@impactzonecluster.z5yncht.mongodb.net/?retryWrites=true&w=majority';
+const connectionString = 'mongodb+srv://iz-admin:g837upv5LPUpkmA@impactzonecluster.z5yncht.mongodb.net/?retryWrites=true&w=majority';
 
-const SetViewEngine = function () {
+const SetViewEngine = function() {
     // Set the pug view engine
     //app.set('views', './views')
     app.set('views', [path.join(__dirname, '/views'),
-        path.join(__dirname, '/views/sites')])
+        path.join(__dirname, '/views/sites')
+    ])
 
     app.set('view engine', 'pug')
 
@@ -38,21 +39,21 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     })
     .catch(error => console.error(error))
 
-const AfterMongoConnect = function (collectionToUse) {
+const AfterMongoConnect = function(collectionToUse) {
     // Make sure you place body-parser before your CRUD handlers!
     app.use(bodyParser.urlencoded({ extended: true }))
 
-    app.listen(3000, function () {
+    app.listen(3000, function() {
         console.log('listening on 3000')
     })
 
     app.get('/', (req, res) => {
 
         // Load json collectionb
-        const cursor = db.collection('users').find().toArray()
+        const cursor = db.collection('sites').find().toArray()
             .then(results => {
                 console.log(results)
-                res.render('login', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', sitesContent: results })
+                res.render('index', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', sitesContent: results })
             })
             .catch(error => console.error(error))
 

@@ -1,6 +1,14 @@
 {
     "sites": {
+        "logo": {
+            "src": "https://www.impact-z.one/wp-content/uploads/2022/04/Logo-GIF-02_2.gif",
+            "ordering": 0,
+            "width": 60,
+            "height": 60,
+            "class": "iz-logo-header"
+        },
         "premiumFullService": {
+            "ordering": 0,
             "label": "Premium Full-Service",
             "href": "/"
         },
@@ -52,6 +60,15 @@
         "kontakt": {
             "label": "Kontakt",
             "href": "/kontakt"
+        },
+        "search": {
+            "class": "iz-search-form",
+            "method": "GET",
+            "location": "/",
+            "type": "search",
+            "name": "search-value",
+            "id": "search-value",
+            "placeholder": "placeholder"
         }
     }
 }

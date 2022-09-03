@@ -1,0 +1,33 @@
+// Main Wrapper
+#iz-wrapper {
+    display: flex;
+    width: 100vw;
+    // Banner
+    #iz-nav-list {
+        display: flex;
+        height: 77px;
+        max-height: 77px;
+        min-height: 77px;
+        width: inherit;
+        // Header Logo
+        .iz-logo-header {}
+        // Navigation Entries
+        #iz-nav-ul {
+            display: flex;
+            // Navigation Entry
+            .nav-entry {
+                opacity: 0;
+                // Navigation Sublist
+                .iz-subnav-ul {
+                    opacity: 0;
+                    // Navigation Sublist Entry
+                    .nav-sub-entry {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+        // Search Field
+        #search-value {}
+    }
+}

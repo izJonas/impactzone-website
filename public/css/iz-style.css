@@ -1,0 +1,28 @@
+#iz-wrapper {
+  display: flex;
+  width: 100vw;
+}
+
+#iz-wrapper #iz-nav-list {
+  display: flex;
+  height: 77px;
+  max-height: 77px;
+  min-height: 77px;
+  width: inherit;
+}
+
+#iz-wrapper #iz-nav-list #iz-nav-ul {
+  display: flex;
+}
+
+#iz-wrapper #iz-nav-list #iz-nav-ul .nav-entry {
+  opacity: 0;
+}
+
+#iz-wrapper #iz-nav-list #iz-nav-ul .nav-entry .iz-subnav-ul {
+  opacity: 0;
+}
+
+#iz-wrapper #iz-nav-list #iz-nav-ul .nav-entry .iz-subnav-ul .nav-sub-entry {
+  opacity: 0;
+}

@@ -1,25 +1,29 @@
 let navigationAppenixNode = document.getElementById("iz-nav-ul");
 
 const CreateNavigationNode = function() {
+    navigationAppenixNode = document.getElementById("iz-nav-ul");
     var siteList = window.impactzone.sites;
-
-    for(var siteNavInfo of siteList) {
+    if (!navigationAppenixNode) {
+        setTimeout(CreateNavigationNode, 100);
+    }
+    debugger;
+    for (var siteNavInfo in siteList) {
         var listElementNode = document.createElement("li");
         listElementNode.classList.add("nav-entry");
-        listElementNode.innerHTML = siteNavInfo.label;
-        listElementNode.setAttribute("href", siteNavInfo.href);
+        listElementNode.innerHTML = siteList.siteNavInfo.label;
+        listElementNode.setAttribute("href", siteList.siteNavInfo.href);
         navigationAppenixNode.append(listElementNode);
 
-        if(siteNavInfo.subsites) {
+        if (siteList[siteNavInfo].subsites) {
             var unorderedListNode = document.createElement("ul");
             unorderedListNode.classList.add("iz-subnav-ul");
             listElementNode.append(unorderedListNode);
 
-            for(var subsiteNavInfo of siteNavInfo.subsites) {
+            for (var subsiteNavInfo in siteList[siteNavInfo].subsites) {
                 var sublistElementNode = document.createElement("li");
                 sublistElementNode.classList.add("nav-sub-entry");
-                sublistElementNode.innerHTML = subsiteNavInfo.label;
-                sublistElementNode.setAttribute("href", subsiteNavInfo.href);
+                sublistElementNode.innerHTML = siteList.siteNavInfo.subsites.subsiteNavInfo.label;
+                sublistElementNode.setAttribute("href", siteList.siteNavInfo.subsites.subsiteNavInfo.href);
                 unorderedListNode.append(sublistElementNode);
             }
         }
