@@ -1,0 +1,25 @@
+doctype html
+html(lang='de')
+    head
+        title= title
+
+        //- Meta Tags
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(charset="UTF-8")
+
+        //- CSS Files
+        link(rel="stylesheet" href="/css/iz-style.css")
+
+        //- Scripts
+        script(src="https://kit.fontawesome.com/56d793c70e.js" crossorigin="anonymous")
+        script(type="module" src="/js/iz-module-load.js")
+        script(src="/js/iz-run.js")
+    body
+        #iz-wrapper
+            nav#iz-nav-list
+                ul#iz-nav-ul
+            main#iz-content(
+                class=sitesContent.name
+                )
+                block content
+            include footer.pug

@@ -4,5 +4,9 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"compile-hero.disable-compile-files-on-did-save-code": true,
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true
+	}
 }

@@ -18,7 +18,9 @@ const SetViewEngine = function() {
     // Set the pug view engine
     //app.set('views', './views')
     app.set('views', [path.join(__dirname, '/views'),
-        path.join(__dirname, '/views/sites')
+        path.join(__dirname, '/views/sites'),
+        path.join(__dirname, '/views/components'),
+        path.join(__dirname, '/views/generators')
     ])
 
     app.set('view engine', 'pug')
@@ -53,7 +55,7 @@ const AfterMongoConnect = function(collectionToUse) {
         const cursor = db.collection('sites').find().toArray()
             .then(results => {
                 console.log(results)
-                res.render('index', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', sitesContent: results })
+                res.render('premiumFullService', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', sitesContent: results })
             })
             .catch(error => console.error(error))
 

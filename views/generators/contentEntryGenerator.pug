@@ -1,0 +1,10 @@
+//- Generates usual Content section
+if mainSection.izType == "text-simple"
+    include ../components/text-simple.pug
+else if mainSection.izType == "text-multi"
+    - var text = mainSection.text
+    include ../components/text-multi.pug
+else if mainSection.izType == "text-entry"
+    include ../components/text-entry.pug
+else
+    p No content found...

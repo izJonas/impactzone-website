@@ -1,0 +1,14 @@
+//- Generates the vertically ordered, height: 100vh html sections for a content site
+- var izTypes = mainSection.izTypes
+- var backgroundVideo = mainSection.backgroundVideo
+section.iz-content-entry(id=izContentId)
+    if backgroundVideo
+        unless backgroundVideo.id.startsWith("kombinieren-background")
+            video(id=backgroundVideo.id autoplay=backgroundVideo.autoplay loop=backgroundVideo.loop muted=backgroundVideo.muted)
+                source(src=backgroundVideo.src type="video/mp4")
+    if izTypes
+        each izType in izTypes
+            include izTypeGenerator.pug
+        p= JSON.stringify(mainSection.backgroundVideo)
+    else
+        p= JSON.stringify(mainSection)

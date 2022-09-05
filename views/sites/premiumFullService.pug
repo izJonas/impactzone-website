@@ -1,1 +1,14 @@
-extends ../index.pug
+extends ../layout.pug
+
+block content
+    - var banner = sitesContent.banner
+    if banner
+        header.iz-content-banner
+            include ../components/banner.pug
+
+    - var mainSectionEntries = sitesContent[0].sections
+    - var izIndex = 0
+    each mainSection in mainSectionEntries
+        - var izIndexCurrent = izIndex++
+        - var izContentId = mainSection.id ? mainSection.id : "iz-content-entry-" + izIndexCurrent
+        include ../generators/mainSectionGenerator.pug

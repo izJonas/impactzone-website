@@ -1,33 +1,374 @@
-// Main Wrapper
-#iz-wrapper {
+// Variables
+@use "sass:map";
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Shippori+Antique+B1&display=swap");
+
+$scroll-bar-width: 25px;
+$nav-height: 77px;
+$content-entry-max-width: 1200px;
+$color-link-facebook: #3b5998;
+$background-color-links: (
+    "facebook": #3b5998,
+    "instagram": #262626,
+    "youtube": #cd201f,
+);
+
+$bg-gradients: (
+    "footer": linear-gradient(130deg, #040404 0%, #1d1d1d 100%),
+);
+
+$button-gradients: (
+    "footer": linear-gradient(130deg, #f4dc8c 0%, #cab272 100%),
+    "footer-hover": linear-gradient(180deg, #cab272 0%, #f4dc8c 100%),
+    "main-content": linear-gradient(290deg, #dfc393 0%, #f1dda0 100%),
+    "main-content-hover": linear-gradient(90deg, #f1dda0 0%, #dfc393 100%),
+);
+
+$button-transitions: (
+    "footer": all 0.2s ease,
+    "footer-hover": all 0.2s ease,
+    "main-content": all 0.3s ease,
+    "main-content-hover": all 0.3s ease,
+);
+
+$fill-color-links: #fff;
+$footer-button-row-icon-width: 15px;
+
+$card-image-width: 66px;
+$card-image-filter: brightness(200%) contrast(134%) saturate(0%) blur(0px) hue-rotate(0deg);
+$card-image-transition: all 0.5s ease;
+
+$base-font-family: "Assistant", Sans-serif;
+
+// Body of HTML
+body {
     display: flex;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
     width: 100vw;
-    // Banner
-    #iz-nav-list {
+    overflow: hidden;
+    font-family: $base-font-family;
+    font-weight: 400;
+    font-size: 15px;
+
+    // Main Wrapper
+    #iz-wrapper {
         display: flex;
-        height: 77px;
-        max-height: 77px;
-        min-height: 77px;
         width: inherit;
-        // Header Logo
-        .iz-logo-header {}
-        // Navigation Entries
-        #iz-nav-ul {
+        overflow: auto;
+        flex-direction: column;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-weight: 800;
+        }
+
+        // Banner
+        #iz-nav-list {
             display: flex;
-            // Navigation Entry
-            .nav-entry {
-                opacity: 0;
-                // Navigation Sublist
-                .iz-subnav-ul {
-                    opacity: 0;
-                    // Navigation Sublist Entry
-                    .nav-sub-entry {
+            position: fixed;
+            height: $nav-height;
+            max-height: $nav-height;
+            min-height: $nav-height;
+            width: inherit;
+            // Header Logo
+            #iz-nav-logo {
+                display: flex;
+                margin-left: auto;
+                height: 60px;
+                width: 60px;
+            }
+            // Navigation Entries
+            #iz-nav-ul {
+                display: flex;
+                // Navigation Entry
+                .nav-entry {
+                    opacity: 1;
+                    // Navigation Sublist
+                    .iz-subnav-ul {
                         opacity: 0;
+                        // Navigation Sublist Entry
+                        .nav-sub-entry {
+                            opacity: 1;
+                        }
+                    }
+                }
+                // Hover of entry with sublist
+                .nav-entry-sublist {
+                    &:hover {
+                        .iz-subnav-ul {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            // Search Field
+            form.iz-search-form {
+                display: flex;
+                margin-right: auto;
+                input#search-value {
+                }
+            }
+        }
+        // Site Main Content Section
+        main#iz-content {
+            display: flex;
+            padding-top: $nav-height;
+            flex-direction: column;
+
+            section.iz-content-entry {
+                display: flex;
+                margin: auto;
+                flex-direction: column;
+                max-width: $content-entry-max-width;
+                $entry-height: calc(100vh - 77px);
+                height: $entry-height;
+                min-height: $entry-height;
+                max-height: $entry-height;
+                background: transparent;
+
+                h1, h2, h3, h4, h5, h6, p {
+                    background-color: transparent;
+                }
+
+                &#pfs-unsere-agenturleistungen {
+                    video#pfs-unsere-agenturleistungen-background {
+                        //background: url("/media/02_Planetpagebackground_v01_1.mp4");
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                    }
+                }
+
+                & > *:first-child {
+                    display: flex;
+                    margin-top: auto;
+                }
+
+                & > *:last-child {
+                    display: flex;
+                    margin-bottom: auto;
+                }
+
+                button.iz-button-href {
+                    text-decoration: none;
+                    border-radius: 50px;
+                    background: transparent;
+                    background-image: #{map.get($button-gradients, "main-content")};
+                    transition: #{map.get($button-transitions, "main-content")};
+                    color: white;
+                    border: none;
+                    padding: 10px 2em;
+                    font-weight: 700;
+                    display: flex;
+                    margin: auto;
+                    font-family: "Shippori Antique B1", Sans-serif;
+
+                    &:hover {
+                        background-image: #{map.get($button-gradients, "main-content-hover")};
+                        transition: #{map.get($button-transitions, "main-content-hover")};
+                        color: black;
+                    }
+
+                    &::before {
+                        margin-right: 1em;
+                        content: ">";
+                    }
+                }
+
+                .iz-card-list {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    gap: 50px;
+
+                    .iz-card {
+                        display: flex;
+                        flex-direction: column;
+
+                        figure {
+                            display: flex;
+                            margin: 0 auto;
+
+                            img.iz-card-image {
+                                display: flex;
+                                min-width: $card-image-width;
+                                max-width: $card-image-width;
+                                width: $card-image-width;
+                                filter: $card-image-filter;
+                                transition: $card-image-transition;
+                                transform: translateY(0px);
+
+                                &:hover {
+                                    animation-duration: 0.5s;
+                                    animation-name: iz-animation-boing;
+                                    animation-iteration-count: infinite;
+                                    animation-direction: alternate;
+                                }
+                            }
+                        }
+                        .iz-card-text {
+                            display: flex;
+                            flex-direction: column;
+
+                            * {
+                                display: flex;
+                            }
+                        }
                     }
                 }
             }
         }
-        // Search Field
-        #search-value {}
+        // Footer Section
+        footer#iz-footer {
+            display: flex;
+            background-color: transparent;
+            background-image: linear-gradient(130deg, #040404 0%, #1d1d1d 100%);
+            padding-bottom: 10px;
+            padding-top: 5px;
+            // Logo of the footer
+            img#iz-footer-logo {
+                display: flex;
+                margin: auto 2em auto auto;
+                width: 75px;
+                height: auto;
+            }
+            // Company Information
+            #iz-footer-company {
+                display: flex;
+                flex-direction: column;
+                margin: auto 1em;
+                padding: 5px;
+                min-width: 333px;
+
+                #iz-footer-company-headline {
+                    display: flex;
+                    width: inherit;
+                }
+                #iz-footer-company-content {
+                    display: flex;
+                    width: inherit;
+                }
+                #iz-footer-company-button-row {
+                    display: flex;
+                    gap: 0.5em;
+                    align-content: center;
+                    align-items: center;
+                    align-self: center;
+
+                    justify-content: center;
+                    justify-items: center;
+                    justify-self: center;
+
+                    text-align: center;
+                    vertical-align: middle;
+                    a {
+                        text-decoration: none;
+                        display: flex;
+                        border-radius: 50px;
+                        font-size: 12px;
+                        line-height: 15px;
+                        padding: 8px 12px;
+                        background-color: transparent;
+                        background-image: #{map.get($button-gradients, "footer")};
+                        transition: #{map.get($button-transitions, "footer")};
+                        transform: scale(1);
+                        color: white;
+
+                        align-content: center;
+                        align-items: center;
+                        align-self: center;
+
+                        justify-content: center;
+                        justify-items: center;
+                        justify-self: center;
+
+                        text-align: center;
+                        vertical-align: middle;
+
+                        &:hover {
+                            background-image: #{map.get($button-gradients, "footer-hover")};
+                            transition: #{map.get($button-transitions, "footer-hover")};
+                            transform: scale(0.9);
+                            color: black;
+                        }
+
+                        &#iz-footer-company-button-tel {
+                            margin-left: auto;
+                        }
+                        &#iz-footer-company-button-mail {
+                            margin-right: auto;
+                        }
+
+                        svg {
+                            display: flex;
+                            margin: auto 0.5em auto auto;
+                            width: $footer-button-row-icon-width;
+                            max-width: $footer-button-row-icon-width;
+                            min-width: $footer-button-row-icon-width;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+            // External Links
+            div#iz-footer-links-external {
+                display: flex;
+                margin: auto auto auto 2em;
+                gap: 5px;
+
+                a.iz-animation-pulse {
+                    transition: all 0.2s ease;
+                    transform: scale(1);
+                    display: flex;
+                    padding: 5px;
+                    border-radius: 100%;
+
+                    &:hover {
+                        animation-duration: 0.5s;
+                        animation-name: iz-animation-pulse;
+                        animation-iteration-count: infinite;
+                        animation-direction: alternate;
+                    }
+                }
+                a {
+                    @each $name, $bg-color in $background-color-links {
+                        &#iz-footer-link-#{$name} {
+                            background-color: $bg-color;
+                            svg {
+                                display: flex;
+                                margin: auto;
+                                & > path {
+                                    fill: white;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @keyframes iz-animation-pulse {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes iz-animation-boing {
+        from {
+            transform: translateY(0px);
+        }
+
+        to {
+            transform: translateY(-8px);
+        }
     }
 }
