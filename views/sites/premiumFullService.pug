@@ -1,6 +1,7 @@
 extends ../layout.pug
 
 block content
+    - var navEntrySelected = sitesContent[0].name
     - var banner = sitesContent.banner
     if banner
         header.iz-content-banner
@@ -8,6 +9,7 @@ block content
 
     - var mainSectionEntries = sitesContent[0].sections
     - var izIndex = 0
+    - var isParallax = sitesContent[0].parallax
     each mainSection in mainSectionEntries
         - var izIndexCurrent = izIndex++
         - var izContentId = mainSection.id ? mainSection.id : "iz-content-entry-" + izIndexCurrent

@@ -3,6 +3,7 @@
         "$oid": "63111abce9d62a13447ab37b"
     },
     "name": "premiumFullService",
+    "parallax": true,
     "banner": {
         "izType": "banner",
         "image": "/wp-content/uploads/2022/05/2022-05-IZ-Signet-Gold-01@4x.png",

@@ -1,6 +1,14 @@
 // Variable Declaration
 let headerAppenixNode = document.getElementById("iz-nav-list");
 let navigationAppenixNode = document.getElementById("iz-nav-ul");
+let parallaxContentNodes = document.getElementsByClassName("iz-parallax-content");
+let parallaxVideoNodes = document.getElementsByClassName("iz-parallax-video");
+let parallaxContentNodesInView = [];
+let parallaxVideoNodesInView = [];
+let parallaxVideoNodesOutOfView = [];
+let parallaxVideoNodeInViewRemainingHeight = [];
+const parallaxVideoVisibleClass = "iz-parallax-video-visible";
+const parallaxVideoOnTopZIndex = "iz-parallax-video-z-top";
 
 // Function Definition
 const CreateNavigationNode = function () {
@@ -46,6 +54,7 @@ const CreateNavigationNode = function () {
             CreateNavigationWithSubnavList(value);
         }
     });
+    MarkSelectedNavPoint();
 }
 
 const CreateNavigationWithSubnavList = function (navigationValue) {
@@ -82,5 +91,141 @@ const CreateNavigationWithSubnavList = function (navigationValue) {
     }
 };
 
+const OnLoadParallaxScrollFunction = function () {
+    var izDocumentBody = document.body;
+    if (izDocumentBody && izDocumentBody.onload === null) {
+        izDocumentBody.onload = AddParallaxScrollFunction;
+    } else {
+        setTimeout(OnLoadParallaxScrollFunction, 50);
+    }
+};
+
+
+const AddParallaxScrollFunction = function () {
+    var izWrapperNode = document.getElementById("iz-wrapper");
+    if (izWrapperNode) {
+        if (izWrapperNode.getAttribute("onscroll") !== "SetPrallaxVideoVisible()") {
+            izWrapperNode.setAttribute("onscroll", "SetPrallaxVideoVisible()");
+        }
+    } else {
+        setTimeout(AddParallaxScrollFunction, 100);
+    }
+};
+
+const SetPrallaxVideoVisible = function () {
+    parallaxVideoNodes = document.getElementsByClassName("iz-parallax-video");
+    parallaxContentNodes = document.getElementsByClassName("iz-parallax-content");
+    if (parallaxVideoNodes && parallaxVideoNodes.length == 1) {
+        parallaxVideoNodes[0].classList.add(parallaxVideoVisibleClass);
+    } else {
+        var parallaxContentCount = 0;
+        parallaxContentNodesInView = [];
+        parallaxVideoNodesInView = [];
+        parallaxVideoNodesOutOfView = [];
+        for (var parallaxContentNode of parallaxContentNodes) {
+            if (CheckVisible(parallaxContentNode)) {
+                //parallaxVideoNodeInViewRemainingHeight.push(CheckRemainingParallaxHeight(parallaxContentNode));
+                parallaxContentNodesInView.push(parallaxContentNode);
+                parallaxContentCount++;
+                var parallaxIndex = parallaxContentNode.getAttribute("izparallaxindex");
+                var matchingVideoNode;
+                if (parallaxIndex) {
+                    matchingVideoNode = document.getElementsByClassName("iz-parallax-video-index-" + parallaxIndex)[0];
+                    if (matchingVideoNode) {
+                        parallaxVideoNodesInView.push(matchingVideoNode);
+                    }
+                }
+            }
+        }
+        for (var parallaxVideoNode of parallaxVideoNodes) {
+            if (!parallaxVideoNodesInView.includes(parallaxVideoNode)) {
+                parallaxVideoNodesOutOfView.push(parallaxVideoNode);
+            }
+        }
+        if (parallaxContentCount > 0) {
+            SetParallaxClassesForAll();
+            if (parallaxVideoNodesInView.length > 0) {
+                var parallaxContentNode = parallaxContentNodesInView[0];
+                parallaxVideoNodesInView[0].children[0].style.maxHeight = CheckRemainingParallaxHeight(parallaxContentNodes[0]) + "px";
+            }
+        }
+    }
+};
+
+const SetParallaxClassesForAll = function () {
+    var parallaxIndexInView = 0;
+    for (var visibleParallaxNode of parallaxContentNodesInView) {
+        var parallaxIndexCurrent = visibleParallaxNode.getAttribute("izparallaxindex");
+        var matchingParallaxVideoFound = document.getElementsByClassName("iz-parallax-video-index-" + parallaxIndexCurrent)[0];
+        if (parallaxIndexCurrent && parallaxIndexInView == 0) {
+            if (matchingParallaxVideoFound && !matchingParallaxVideoFound.classList.contains(parallaxVideoOnTopZIndex)) {
+                matchingParallaxVideoFound.classList.add(parallaxVideoOnTopZIndex);
+            }
+        } else if (parallaxVideoNodesInView.length > 0) {
+            if (matchingParallaxVideoFound && matchingParallaxVideoFound.classList.contains(parallaxVideoOnTopZIndex)) {
+                matchingParallaxVideoFound.classList.remove(parallaxVideoOnTopZIndex);
+            }
+        }
+        parallaxIndexInView++;
+    }
+
+    for (var parallaxVideoNode of parallaxVideoNodes) {
+        if (!parallaxVideoNodesInView.includes(parallaxVideoNode)) {
+            if (parallaxVideoNode && parallaxVideoNode.classList.contains(parallaxVideoVisibleClass)) {
+                parallaxVideoNode.classList.remove(parallaxVideoVisibleClass);
+            }
+            if (parallaxVideoNode.children[0].style.maxHeight != '') {
+                parallaxVideoNode.children[0].style.maxHeigh = '';
+            }
+        } else {
+            if (parallaxVideoNode && !parallaxVideoNode.classList.contains(parallaxVideoVisibleClass)) {
+                parallaxVideoNode.classList.add(parallaxVideoVisibleClass);
+            }
+            if (parallaxVideoNodesInView.length > 0) {
+                var parallaxContentNode = parallaxContentNodesInView[0];
+                parallaxVideoNodesInView[0].children[0].style.maxHeight = CheckRemainingParallaxHeight(parallaxContentNode) + "px";
+                if (parallaxVideoNodesInView.length > 1) {
+                    parallaxVideoNodesInView[1].children[0].style.maxHeight = '';
+                }
+            }
+        }
+    }
+
+};
+
+const CheckVisible = function (element) {
+    var rect = element.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+};
+
+const CheckRemainingParallaxHeight = function (element) {
+    var rect = element.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    var remainingHeight = viewHeight * 2 + rect.top;
+    return remainingHeight;
+};
+
+const MarkSelectedNavPoint = function () {
+    var navListNode = document.getElementById("iz-nav-ul");
+    var pathnameToLookFor = "";
+    if (!navListNode) {
+        setTimeout(MarkSelectedNavPoint, 50);
+        return;
+    }
+    if ((window.location.href.endsWith("/") && window.location.pathname == "/") || window.location.href.endsWith("premiumFullService")) {
+        pathnameToLookFor = "/";
+        for (var navListEntryNode of navListNode.children) {
+            if (navListEntryNode.children && navListEntryNode.children[0] && navListEntryNode.children[0].getAttribute("href")) {
+                var pathNameFound = navListEntryNode.children[0].getAttribute("href");
+                if (pathNameFound && pathNameFound == pathnameToLookFor) {
+                    navListEntryNode.classList.add("iz-nav-item-selected");
+                }
+            }
+        }
+    }
+};
+
 // Code Execution
 CreateNavigationNode();
+OnLoadParallaxScrollFunction();

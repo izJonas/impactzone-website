@@ -39,6 +39,25 @@ $card-image-transition: all 0.5s ease;
 
 $base-font-family: "Assistant", Sans-serif;
 
+$background-color-navigation: #040404;
+
+$default-transition-fast: all 0.5s ease;
+$default-transition-medium: all 0.75s ease;
+$default-transition-slow: all 1s ease;
+
+$navigation-text: (
+    "color": #7a7c7f,
+    "hover": #f1dda0,
+    "transition": $default-transition-fast,
+);
+
+$navigation-sublist: (
+    "background-color": #fff,
+    "color": #d2d2d2,
+    "hover": #f1dda0,
+    "transition": $default-transition-slow,
+);
+
 // Body of HTML
 body {
     display: flex;
@@ -50,6 +69,18 @@ body {
     font-family: $base-font-family;
     font-weight: 400;
     font-size: 15px;
+
+    * {
+        box-sizing: content-box;
+    }
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 
     // Main Wrapper
     #iz-wrapper {
@@ -74,6 +105,13 @@ body {
             max-height: $nav-height;
             min-height: $nav-height;
             width: inherit;
+            background-color: $background-color-navigation;
+            z-index: 1;
+
+            * {
+                text-align: center;
+            }
+
             // Header Logo
             #iz-nav-logo {
                 display: flex;
@@ -86,21 +124,153 @@ body {
                 display: flex;
                 // Navigation Entry
                 .nav-entry {
+                    display: flex;
                     opacity: 1;
+                    list-style: none;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    max-width: min-content;
+                    font-size: 16px;
+                    font-weight: 400;
+                    white-space: nowrap;
+                    transition: map-get($navigation-text, "transition");
+
+                    &.iz-nav-item-selected {
+
+                        a {
+                            color: white;
+                            text-shadow: -1px 2px 5px map-get($navigation-text, "hover");
+                        }
+                    }
+
+                    &.nav-entry-sublist {
+                        > a::after {
+                            display: inline-block;
+                            transform: rotate(90deg);
+                            padding-left: 8px;
+                            content: ">";
+                            font-weight: 500;
+                            line-height: 0px;
+                            font-size: medium;
+                            width: 15px;
+                            transition: map-get($navigation-text, "transition");
+                        }
+                        &:hover {
+                            > a::after {
+                                transform: rotate(0deg);
+                                font-weight: 900;
+                                font-size: large;
+                                transition: map-get($navigation-text, "transition");
+                            }
+                        }
+                    }
+
+                    > a {
+                        color: map-get($navigation-text, "color");
+                        transition: map-get($navigation-text, "transition");
+                        padding: 8px 12px;
+                        font-size: 10px;
+                        font-weight: 700;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                    }
+
+                    &:hover > a {
+                        transition: map-get($navigation-text, "transition");
+                        color: map-get($navigation-text, "hover");
+                    }
+
                     // Navigation Sublist
-                    .iz-subnav-ul {
+                    ul.iz-subnav-ul {
+                        padding: 0;
+                        margin: 0;
+                        background-color: map-get($navigation-sublist, "background-color");
+                        transition: map-get($navigation-sublist, "transition");
+                        color: map-get($navigation-sublist, "color");
+
+                        box-shadow: unset;
+
                         opacity: 0;
+                        display: flex;
+                        flex-direction: column;
+                        top: 60px;
+                        position: absolute;
+                        visibility: hidden;
+
                         // Navigation Sublist Entry
-                        .nav-sub-entry {
+                        li.nav-sub-entry {
+                            display: flex;
+                            transition: map-get($navigation-sublist, "transition");
                             opacity: 1;
+                            list-style: none;
+                            height: 45px;
+                            box-sizing: content-box;
+                            border: none;
+                            min-width: 400px;
+                            font-size: 10px;
+                            font-weight: 700;
+                            border-left: none;
+                            border-top: none;
+                            border-right: none;
+                            border-bottom: 1px solid transparent;
+                            align-items: center;
+
+                            &:not(:last-child) {
+                                border-bottom: 1px solid black;
+                                border-left: none;
+                                border-top: none;
+                                border-right: none;
+                            }
+
+                            a {
+                                color: map-get($navigation-sublist, "color");
+                                transition: map-get($navigation-sublist, "transition");
+                                text-decoration: none;
+                                margin: 0;
+                                border: none;
+                                text-transform: uppercase;
+                                text-shadow: none;
+                                width: 100%;
+                                line-height: 0px;
+                                font-size: 10px;
+                                text-align: left;
+                                display: flex;
+                                height: 45px;
+                                padding-left: 32px;
+                                align-items: center;
+                                justify-content: left;
+
+                                &:hover {
+                                    transition: map-get($navigation-sublist, "transition");
+                                    color: map-get($navigation-sublist, "hover");
+                                    font-size: 15px;
+                                }
+                            }
+
+                            &:hover {
+                                transition: map-get($navigation-sublist, "transition");
+                                font-size: 15px;
+
+                                a {
+                                    transition: map-get($navigation-sublist, "transition");
+                                    text-shadow: 2px 2px 4px black;
+                                    font-size: 15px;
+                                }
+                            }
                         }
                     }
                 }
                 // Hover of entry with sublist
                 .nav-entry-sublist {
+                    * {
+                        text-align: left;
+                    }
+
                     &:hover {
-                        .iz-subnav-ul {
+                        ul.iz-subnav-ul {
+                            transition: map-get($navigation-sublist, "transition");
                             opacity: 1;
+                            visibility: visible;
                         }
                     }
                 }
@@ -121,16 +291,23 @@ body {
 
             section.iz-content-entry {
                 display: flex;
-                margin: auto;
                 flex-direction: column;
-                max-width: $content-entry-max-width;
                 $entry-height: calc(100vh - 77px);
                 height: $entry-height;
                 min-height: $entry-height;
-                max-height: $entry-height;
-                background: transparent;
 
-                h1, h2, h3, h4, h5, h6, p {
+                & > * {
+                    max-width: $content-entry-max-width;
+                    margin: auto;
+                }
+
+                h1,
+                h2,
+                h3,
+                h4,
+                h5,
+                h6,
+                p {
                     background-color: transparent;
                 }
 
@@ -140,7 +317,7 @@ body {
                         position: absolute;
                         top: 50%;
                         left: 50%;
-                        transform: translate(-50%,-50%);
+                        transform: translate(-50%, -50%);
                     }
                 }
 
@@ -352,6 +529,95 @@ body {
         }
     }
 
+    // Parallax Classes
+    .iz-parallax-image {
+        background-attachment: fixed;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-bottom: 50px;
+        padding-top: 50px;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: 700;
+            font-size: 76px;
+            text-align: center;
+            text-transform: uppercase;
+            color: #fff;
+        }
+    }
+
+    .iz-parallax-content {
+        background: none repeat scroll 0 0 black;
+        color: #fff;
+
+        &.iz-parallax-content-transparent {
+            background: transparent;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #fff;
+        }
+    }
+
+    .iz-parallax-content-after {
+        height: 200px;
+        min-height: 200px;
+        background: black;
+        color: transparent;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+    .iz-parallax-video {
+        height: 0px;
+        padding: 0;
+        margin: 0;
+        display: none;
+
+        &.iz-parallax-video-visible {
+            display: unset;
+        }
+
+        &.iz-parallax-video-z-top {
+            video {
+                z-index: -899;
+            }
+        }
+
+        video {
+            object-fit: cover;
+            min-width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: -999;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #fff;
+            font-size: 76px;
+            font-weight: 700;
+            text-align: center;
+            text-transform: uppercase;
+        }
+    }
+
+    // Animation Definition
     @keyframes iz-animation-pulse {
         from {
             transform: scale(1);
