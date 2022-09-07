@@ -1,17 +1,16 @@
-@import 'iz-variables';
-
 // Banner
-#iz-nav-list {
+nav#iz-nav-list {
     display: flex;
     position: fixed;
     height: $nav-height;
     max-height: $nav-height;
     min-height: $nav-height;
+    transition: $default-transition-slow;
     top: 0;
     width: inherit;
     background-color: $background-color-navigation;
     z-index: 999;
-    border-bottom: 1px solid #e1e1e182;
+    border-bottom: $nav-border-width solid #e1e1e182;
 
     * {
         text-align: center;
@@ -24,20 +23,24 @@
         height: 60px;
         width: 60px;
     }
-    // Navigation Entries
-    #iz-nav-ul {
-        display: flex;
-        transform: translateY(-50px);
-        transition: $default-transition-slow;
-        opacity: 0;
-        visibility: hidden;
 
-        &.iz-nav-fade-in {
+    &.iz-nav-fade-in {
+        #iz-nav-ul {
             transform: translateY(0px);
             transition: $default-transition-slow;
             opacity: 1;
             visibility: visible;
         }
+    }
+
+    // Navigation Entries
+    #iz-nav-ul {
+        display: flex;
+        transform: translateY(50px);
+        transition: $default-transition-slow;
+        opacity: 0;
+        visibility: hidden;
+
 
         // Navigation Entry
         .nav-entry {

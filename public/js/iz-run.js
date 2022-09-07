@@ -2,3 +2,4 @@
 CreateNavigationNode();
 SetInitialNavigationClass();
 OnLoadParallaxScrollFunction();
+InitScrollCustomMade();
