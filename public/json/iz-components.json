@@ -1,0 +1,519 @@
+{
+    "components": {
+        "description": [
+            "Components gererally react to attributes given to the siteContent json main object, for example parallax: true, backgrounds will then - for example given - be attached to the background as parallax video/image that content is scrolling over",
+            "making content nodes themselves beeing transparent only to its section's backgroundVideo"
+        ],
+        "banner": {
+            "description": [
+                "A Banner",
+                "There are different type of Banner constellations, all beeing listed in izTypes",
+                "For banner-<width-left>-<width-right> (e.g.: banner-30-60) it is expected to named objects of name: ['banner30', 'banner60']"
+            ],
+            "izType": [
+                "banner",
+                "banner-image-only",
+                "banner-video-only",
+                "banner-30-60"
+            ],
+            "fields": {
+                "required": [
+                    {
+                        "banner": [
+                            "image",
+                            "headline",
+                            "content",
+                            "video"
+                        ]
+                    },
+                    {
+                        "banner-video-only": [
+                            "video"
+                        ]
+                    },
+                    {
+                        "banner-image-only": [
+                            "image"
+                        ]
+                    },
+                    {
+                        "banner-width1-width2": [
+                            "bannerWidth1",
+                            "bannerWidth2",
+                            {
+                                "banner-10-90": [
+                                    "banner10",
+                                    "banner90"
+                                ]
+                            },
+                            {
+                                "banner-20-80": [
+                                    "banner20",
+                                    "banner80"
+                                ]
+                            },
+                            {
+                                "banner-30-70": [
+                                    "banner30",
+                                    "banner70"
+                                ]
+                            },
+                            {
+                                "banner-40-60": [
+                                    "banner40",
+                                    "banner60"
+                                ]
+                            },
+                            {
+                                "banner-50-50": [
+                                    "banner50",
+                                    "banner50"
+                                ]
+                            },
+                            {
+                                "banner-40-60": [
+                                    "banner40",
+                                    "banner60"
+                                ]
+                            },
+                            {
+                                "banner-60-40": [
+                                    "banner60",
+                                    "banner40"
+                                ]
+                            },
+                            {
+                                "banner-70-30": [
+                                    "banner70",
+                                    "banner30"
+                                ]
+                            },
+                            {
+                                "banner-80-20": [
+                                    "banner80",
+                                    "banner20"
+                                ]
+                            },
+                            {
+                                "banner-90-10": [
+                                    "banner90",
+                                    "banner10"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "example-json-default": {
+                "izType": "banner",
+                "id": "my-own-banner-wrapper-div-id",
+                "image": "/img/icon_logo.svg",
+                "headline": "Banner Headline Text",
+                "content": "Banner Content Multiline Text Paragrah",
+                "video": "/media/impactzone-Intro-Premium-Title.mp4"
+            },
+            "example-json-width": {
+                "izType": "banner-30-60",
+                "id": "my-own-30-60-wrapper-div-id",
+                "banner30": {
+                    "izType": "header-2",
+                    "headline": "I am a 30% width Headline with <h2> backing me up",
+                    "content": "I am a Example Content Multiline-Text"
+                },
+                "banner60": {
+                    "izType": "video",
+                    "video": {
+                        "src": "/media/60-Width-Banner-Background-Video.mp4",
+                        "type": "video/mp4"
+                    }
+                }
+            }
+        },
+        "headline": {
+            "description": "A component for a <h1> to <h6> Headline Node standing for itself... Default is <h1>",
+            "izType": "headline-<headerDepth>",
+            "default": "headline-1",
+            "examples": [
+                "headline-1",
+                "headline-5",
+                "headline"
+            ],
+            "fields": {
+                "required": [
+                    "headline"
+                ],
+                "optional": [
+                    "id",
+                    "class",
+                    "title"
+                ]
+            },
+            "example-json": {
+                "description": "An example for a <h1> Headline Node standing for itself...",
+                "izTypes": [
+                    "headline-1"
+                ],
+                "headline": "I am a H1 Headline Text",
+                "id": "id-for-unique-headline",
+                "class": "class-for-grouped-headline-styling",
+                "title": "Title is shown on mouseover"
+            }
+        },
+        "header": {
+            "izType": "header-<headerDepth>",
+            "default": "header-3",
+            "examples": [
+                "header-3",
+                "headder-5",
+                "header"
+            ],
+            "fields": {
+                "required": [
+                    "headline",
+                    "content"
+                ],
+                "optional": [
+                    "id",
+                    "class",
+                    "title"
+                ]
+            },
+            "example-json": {
+                "izTypes": [
+                    "header-2"
+                ],
+                "healdine": "I am a H2 Headline Text",
+                "content": "I am a Example Content Multiline-Text",
+                "id": "id-for-unique-headline-given-to-div-containing-all-nodes",
+                "class": "class-for-grouped-styling-given-to-div-containing-all-nodes",
+                "title": "Title is shown on mouseover"
+            }
+        },
+        "text-multi": {
+            "description": "A Component for multiple <p> Text Nodes following each other semantically. One after the other...",
+            "izType": "text-multi-<paragraphCount>",
+            "default": "text-multi",
+            "examples": [
+                "text-multi-3",
+                "text-multi-2",
+                "text-multi"
+            ],
+            "fields": {
+                "required": "text",
+                "optional": [
+                    "id",
+                    "class"
+                ]
+            },
+            "lists": {
+                "required": "text"
+            },
+            "example-json": {
+                "description": "A Example for multiple <p> Text Nodes. One after the other...",
+                "izTypes": [
+                    "text-multi"
+                ],
+                "text": [
+                    "I am a Multi Line Text Paragraph One",
+                    "I am a Multi Line Text Paragraph Two",
+                    "I am a Multi Line Text Paragraph Three"
+                ],
+                "id": "id-for-unique-text-multi-paragraph-given-to-div-containing-all-nodes",
+                "class": "class-for-grouped-styling-given-to-div-containing-all-nodes"
+            }
+        },
+        "text-entry": {
+            "description": "A Component for a Headline with a Content <p> Text Node following each other semantically. One after the other...",
+            "izType": "text-entry",
+            "default": "text-entry",
+            "examples": [
+                "text-entry"
+            ],
+            "fields": {
+                "required": [
+                    "headline",
+                    "content"
+                ],
+                "optional": [
+                    "id",
+                    "class"
+                ]
+            },
+            "example-json": {
+                "description": "A Component for a Headline with a Content <p> Text Node following each other semantically. One after the other...",
+                "izType": "text-entry",
+                "headline": "This is a Headline for Text Entry",
+                "content": "This is a simple Text Paragraph of a Text Entry",
+                "class": "class-for-text-entry"
+            }
+        },
+        "text-simple": {
+            "description": "A Component for single <p> Text Node",
+            "izType": "text-simple",
+            "default": "text-simple",
+            "examples": [
+                "text-simple"
+            ],
+            "fields": {
+                "required": [
+                    "content"
+                ],
+                "optional": [
+                    "id",
+                    "class"
+                ]
+            },
+            "example-json": {
+                "description": "A Example for multiple <p> Text Nodes. One after the other...",
+                "izType": "text-simple",
+                "content": "I am a Simple Stupid Multiline Text <p> Paragraph,",
+                "class": "class-for-paragraph-styling"
+            }
+        },
+        "list-of-cards": {
+            "izType": "list-of-cards",
+            "required": [
+                "cards"
+            ],
+            "lists": [
+                "cards"
+            ],
+            "list-type": "card"
+        },
+        "card": {
+            "izType": "card",
+            "required": [
+                "image",
+                "headline",
+                "content"
+            ],
+            "optional": [
+                "id",
+                "class",
+                {
+                    "iz-animation": [
+                        "iz-animation-boing",
+                        "iz-animation-pulse"
+                    ]
+                }
+            ]
+        },
+        "list-of-squares": {
+            "izType": "list-of-squares",
+            "required": [
+                "squares"
+            ],
+            "lists": [
+                "squares"
+            ],
+            "list-type": "square"
+        },
+        "square": {
+            "izType": "square",
+            "required": [
+                "svg",
+                "headline",
+                "content",
+                "arrow"
+            ],
+            "optional": [
+                "id",
+                "class",
+                {
+                    "iz-animation": [
+                        "iz-animation-boing",
+                        "iz-animation-pulse"
+                    ]
+                }
+            ]
+        },
+        "list-of-refs": {
+            "izType": "list-of-refs",
+            "required": [
+                "references"
+            ],
+            "lists": [
+                "references"
+            ],
+            "list-type": "uri-to-reference-image-svg-or-png",
+            "example-json": {
+                "izTypes": [
+                    "list-of-refs"
+                ],
+                "references": [
+                    "/img/ref-01.svg",
+                    "/img/ref-02.svg",
+                    "/img/ref-03.svg",
+                    "/img/ref-04.svg",
+                    "/img/ref-05.svg",
+                    "/img/ref-06.svg",
+                    "/img/ref-07.svg",
+                    "/img/ref-08.svg",
+                    "/img/ref-09.svg"
+                ]
+            }
+        },
+        "button-href": {
+            "description": "A Component for a simple <button> Node leading to another subsite via href attribute",
+            "izType": "button-href",
+            "default": "button-href",
+            "examples": [
+                "button-href"
+            ],
+            "fields": {
+                "required": [
+                    {
+                        "button": [
+                            "href",
+                            "label"
+                        ]
+                    }
+                ],
+                "optional": [
+                    "id",
+                    "class",
+                    {
+                        "button": [
+                            "title"
+                        ]
+                    }
+                ]
+            },
+            "lists": {
+                "required": "text"
+            },
+            "example-json": {
+                "description": "A Example for multiple <p> Text Nodes. One after the other...",
+                "izTypes": [
+                    "text-multi"
+                ],
+                "text": [
+                    "I am a Headline Text",
+                    ""
+                ],
+                "id": "id-for-unique-text-multi-paragraph-given-to-div-containing-all-nodes",
+                "class": "class-for-grouped-styling-given-to-div-containing-all-nodes"
+            }
+        },
+        "button-js": {
+            "description": "A Component for a simple <button> Node containing JavaScript Code on interaction",
+            "izType": "button-js",
+            "default": "button-js",
+            "examples": [
+                "button-js"
+            ],
+            "fields": {
+                "required": [
+                    "label",
+                    "javascript"
+                ],
+                "optional": [
+                    "id",
+                    "class",
+                    "onclick",
+                    "onmouseover",
+                    "onmouseout",
+                    "onmouseenter",
+                    "onmousedown",
+                    "onmouseup"
+                ],
+                "default": "onclick='$javascript'"
+            },
+            "example-json-default": {
+                "description": [
+                    "A Component for a simple <button> Node containing JavaScript Code on interaction. Result for default type for this example:",
+                    "<button id='id-for-unique-this-button-node' class='class-for-styling-given-button-node' onclick='ClickMyButtonFunction();'>Click me!</button>"
+                ],
+                "izTypes": [
+                    "button-js"
+                ],
+                "label": "Click me!",
+                "javascript": "ClickMyButtonFunction();",
+                "id": "id-for-unique-this-button-node",
+                "class": "class-for-styling-given-button-node"
+            },
+            "example-json-mouseover": {
+                "description": [
+                    "A Component for a simple <button> Node containing JavaScript Code on interaction. Result for this example:",
+                    "<button id='id-fo-this' class='class-for-that' onclick='ClickMyButtonFunction();' onmouseover='DoMyHoverFunction();'>Click or hover me!</button>"
+                ],
+                "izTypes": [
+                    "button-js"
+                ],
+                "label": "Click or hover me!",
+                "javascript": "ClickMyButtonFunction();",
+                "onmouseover": "DoMyHoverFunction();",
+                "id": "id-for-this",
+                "class": "class-for-that"
+            },
+            "example-json-overwrite": {
+                "description": [
+                    "A Component for a simple <button> Node containing JavaScript Code on interaction. When using javascript with onclick, all functions will be set to javascript, except for onclick. Result for this example:",
+                    "<button id='id-fo-this' class='class-for-that' onclick='ClickMyButtonFunction();' onmouseover='DoMyMouseReactFunction();'onmouseout='DoMyMouseReactFunction();' onmouseenter='DoMyMouseReactFunction();' onmousedown='DoMyMouseReactFunction();' onmouseup='DoMyMouseReactFunction();'>Click or get mad at me!</button>"
+                ],
+                "izTypes": [
+                    "button-js"
+                ],
+                "label": "Click or get mad at me!",
+                "javascript": "DoMyMouseReactFunction();",
+                "onclick": "ClickMyButtonFunction();",
+                "id": "id-for-this",
+                "class": "class-for-that"
+            }
+        },
+        "cascade-horizontal": {
+            "description": [
+                "Cascade of whatever is put in there - put in row horizontally"
+            ],
+            "izType": "cascade-horizontal",
+            "default": "button-js",
+            "examples": [
+                "button-js"
+            ],
+            "fields": {
+                "required": [
+                    "cascades"
+                ],
+                "lists": [
+                    "cascades"
+                ],
+                "list-type": "any-izType",
+                "optional": [
+                    "id",
+                    "class"
+                ]
+            },
+            "example-json": {
+                "description": [
+                    "A Component for a horizontally put in Line amount of iz-type entries"
+                ],
+                "izTypes": [
+                    "cascade-horizontal"
+                ],
+                "cascades": [
+                    {
+                        "izType": "card",
+                        "headline": "I am a Card Headline",
+                        "content": "I am a Card content",
+                        "image": "/img/icon_logo.svg"
+                    },
+                    {
+                        "izType": "text-entry",
+                        "headline": "I am a Text Entry Headline",
+                        "content": "Ia am Text Entry Content Multiline Text Paragraph"
+                    },
+                    {
+                        "izType": "text-multi",
+                        "text": [
+                            "I am a Multi Line Text Paragraph One",
+                            "I am a Multi Line Text Paragraph Two",
+                            "I am a Multi Line Text Paragraph Three"
+                        ]
+                    }
+                ],
+                "id": "id-for-this",
+                "class": "class-for-that"
+            }
+        }
+    }
+}
