@@ -1,0 +1,22 @@
+@import 'iz-variables';
+
+// Animation Definition
+@keyframes iz-animation-pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes iz-animation-boing {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}

@@ -1,0 +1,156 @@
+@import 'iz-variables';
+
+// Site Main Content Section
+main#iz-content {
+    display: flex;
+    flex-direction: column;
+
+    header.iz-content-banner {
+        display: flex;
+        flex-direction: column;
+        min-height: calc(100vh - $nav-height-total);
+
+        section.iz-banner-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: auto auto 50px auto;
+            padding: 33px;
+            max-width: 45%;
+
+            img.iz-banner-image {
+                display: flex;
+                margin: auto auto 15px auto;
+                width: 75px;
+                max-width: 75px;
+                height: auto;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                &.iz-banner-headline {
+                    margin: 15px auto;
+                }
+            }
+
+            p.iz-banner-content {
+                margin: 15px auto;
+            }
+        }
+    }
+
+    section.iz-content-entry {
+        display: flex;
+        flex-direction: column;
+        $entry-height: calc(100vh - 77px);
+        height: $entry-height;
+        min-height: $entry-height;
+        box-shadow: 0px 0px 10px 9px rgb(0 0 0 / 50%);
+        transition: $default-transition-fast;
+
+        & > * {
+            max-width: $content-entry-max-width;
+            margin: auto;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            background-color: transparent;
+        }
+
+        &#pfs-unsere-agenturleistungen {
+            video#pfs-unsere-agenturleistungen-background {
+                //background: url("/media/02_Planetpagebackground_v01_1.mp4");
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        & > *:first-child {
+            display: flex;
+            margin-top: auto;
+        }
+
+        & > *:last-child {
+            display: flex;
+            margin-bottom: auto;
+        }
+
+        button.iz-button-href {
+            text-decoration: none;
+            border-radius: 50px;
+            background: transparent;
+            background-image: #{map.get($button-gradients, "main-content")};
+            transition: #{map.get($button-transitions, "main-content")};
+            color: white;
+            border: none;
+            padding: 10px 2em;
+            font-weight: 700;
+            display: flex;
+            margin: auto;
+            font-family: "Shippori Antique B1", Sans-serif;
+
+            &:hover {
+                background-image: #{map.get($button-gradients, "main-content-hover")};
+                transition: #{map.get($button-transitions, "main-content-hover")};
+                color: black;
+            }
+
+            &::before {
+                margin-right: 1em;
+                content: ">";
+            }
+        }
+
+        .iz-card-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 50px;
+
+            .iz-card {
+                display: flex;
+                flex-direction: column;
+
+                figure {
+                    display: flex;
+                    margin: 0 auto;
+
+                    img.iz-card-image {
+                        display: flex;
+                        min-width: $card-image-width;
+                        max-width: $card-image-width;
+                        width: $card-image-width;
+                        filter: $card-image-filter;
+                        transition: $card-image-transition;
+                        transform: translateY(0px);
+
+                        &:hover {
+                            animation-duration: 0.5s;
+                            animation-name: iz-animation-boing;
+                            animation-iteration-count: infinite;
+                            animation-direction: alternate;
+                        }
+                    }
+                }
+                .iz-card-text {
+                    display: flex;
+                    flex-direction: column;
+
+                    * {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
