@@ -1,0 +1,9 @@
+{
+    "izType": "banner",
+    "image": "/img/icon_logo.svg",
+    "headline": "Banner Headline Text",
+    "content": "Banner Content Multiline Text Paragrah",
+    "video": "/media/impactzone-Intro-Premium-Title.mp4",
+    "id": "id-banner-1",
+    "class": "iz-banner"
+}

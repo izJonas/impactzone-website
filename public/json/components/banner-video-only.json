@@ -1,0 +1,9 @@
+{
+    "izType": "banner-video-only",
+    "video": {
+        "src": "/media/video.mp4",
+        "type": "video/mp4"
+    },
+    "id": "id-banner-video-1",
+    "class": "iz-banner"
+}

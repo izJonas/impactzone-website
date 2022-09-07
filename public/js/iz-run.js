@@ -18,7 +18,7 @@ const CreateNavigationNode = function () {
         setTimeout(CreateNavigationNode, 100);
         return;
     }
-    var siteList = window.impactzone.sites;
+    var siteList = window.impactzone.navSites;
 
     Object.entries(siteList).forEach(siteNavInfo => {
         const [key, value] = siteNavInfo;

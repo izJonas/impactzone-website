@@ -7,6 +7,21 @@ const path = require('path');
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const app = express();
+const fs = require('fs');
+
+function readJSONFile(filename, callback) {
+    fs.readFile(filename, function (err, data) {
+        if (err) {
+            callback(err);
+            return;
+        }
+        try {
+            callback(null, JSON.parse(data));
+        } catch (exception) {
+            callback(exception);
+        }
+    });
+}
 
 let db
 let siteCollection
@@ -14,7 +29,7 @@ let siteCollection
 //const connectionString = 'mongodb+srv://icrate-admin:test@cluster0.sjlt1ts.mongodb.net/?retryWrites=true&w=majority'
 const connectionString = 'mongodb+srv://iz-admin:g837upv5LPUpkmA@impactzonecluster.z5yncht.mongodb.net/?retryWrites=true&w=majority';
 
-const SetViewEngine = function() {
+const SetViewEngine = function () {
     // Set the pug view engine
     //app.set('views', './views')
     app.set('views', [path.join(__dirname, '/views'),
@@ -41,21 +56,27 @@ MongoClient.connect(connectionString, { useUnifiedTopology: true })
     })
     .catch(error => console.error(error))
 
-const AfterMongoConnect = function(collectionToUse) {
+const AfterMongoConnect = function (collectionToUse) {
     // Make sure you place body-parser before your CRUD handlers!
     app.use(bodyParser.urlencoded({ extended: true }))
 
-    app.listen(3000, function() {
+    app.listen(3000, function () {
         console.log('listening on 3000')
     })
 
     app.get('/', (req, res) => {
 
         // Load json collectionb
+        let premiumFullServiceData;
+        readJSONFile('./public/json/sites/premiumFullService.json', function (err, json) {
+            if (err) { throw err; }
+            premiumFullServiceData = json
+        });
+
         const cursor = db.collection('sites').find().toArray()
             .then(results => {
                 console.log(results)
-                res.render('premiumFullService', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', sitesContent: results })
+                res.render('premiumFullService', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', site: premiumFullServiceData, sitesContent: results })
             })
             .catch(error => console.error(error))
 
