@@ -101,6 +101,7 @@ body #iz-wrapper #iz-nav-list #iz-nav-ul .nav-entry > a {
 body #iz-wrapper #iz-nav-list #iz-nav-ul .nav-entry:hover > a {
   transition: all 0.5s ease;
   color: #f1dda0;
+  text-decoration: underline;
 }
 body #iz-wrapper #iz-nav-list #iz-nav-ul .nav-entry ul.iz-subnav-ul {
   padding: 0;
@@ -182,6 +183,43 @@ body #iz-wrapper #iz-nav-list #iz-nav-ul .nav-entry-sublist:hover ul.iz-subnav-u
 body #iz-wrapper #iz-nav-list form.iz-search-form {
   display: flex;
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 25px;
+  width: 125px;
+}
+body #iz-wrapper #iz-nav-list form.iz-search-form input#search-value {
+  outline: none;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  display: flex;
+  background-color: transparent;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  text-align: left;
+  padding-left: 8px;
+  transition: all 0.5s ease;
+}
+body #iz-wrapper #iz-nav-list form.iz-search-form input#search-value + svg {
+  transition: all 0.5s ease;
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: -25px;
+  color: white;
+}
+body #iz-wrapper #iz-nav-list form.iz-search-form input#search-value:focus {
+  background-color: white;
+  transition: all 0.5s ease;
+  border-radius: 5px;
+  border: 1px solid #040404;
+}
+body #iz-wrapper #iz-nav-list form.iz-search-form input#search-value:focus + svg {
+  transition: all 0.5s ease;
+  color: black;
 }
 body #iz-wrapper main#iz-content {
   display: flex;

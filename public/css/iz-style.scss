@@ -136,7 +136,6 @@ body {
                     transition: map-get($navigation-text, "transition");
 
                     &.iz-nav-item-selected {
-
                         a {
                             color: white;
                             text-shadow: -1px 2px 5px map-get($navigation-text, "hover");
@@ -178,6 +177,7 @@ body {
                     &:hover > a {
                         transition: map-get($navigation-text, "transition");
                         color: map-get($navigation-text, "hover");
+                        text-decoration: underline;
                     }
 
                     // Navigation Sublist
@@ -279,7 +279,46 @@ body {
             form.iz-search-form {
                 display: flex;
                 margin-right: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-left: 25px;
+                width: 125px;
+
                 input#search-value {
+                    outline: none;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    margin-left: auto;
+                    display: flex;
+                    background-color: transparent;
+                    width: 100px;
+                    height: 30px;
+                    border-radius: 10px;
+                    border: none;
+                    text-align: left;
+                    padding-left: 8px;
+                    transition: $default-transition-fast;
+
+                    + svg {
+                        transition: $default-transition-fast;
+                        display: flex;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        margin-left: -25px;
+                        color: white;
+                    }
+
+                    &:focus {
+                        background-color: white;
+                        transition: $default-transition-fast;
+                        border-radius: 5px;
+                        border: 1px solid $background-color-navigation;
+
+                        + svg {
+                            transition: $default-transition-fast;
+                            color: black;
+                        }
+                    }
                 }
             }
         }
