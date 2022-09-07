@@ -9,9 +9,9 @@
         "image": "/img/png//IZ-Signet-Gold-01.png",
         "headline": "IMPACTZONE – DIE ALLES-AGENTUR",
         "content": "INDIVIDUELLE GESAMTLÖSUNGEN & CROSS-MEDIALE UNTERNEHMENSBETREUUNG.",
-        "video": "/media/impactzone-Intro-Premium-Title-New.mp4",
+        "video": "/media/impactzone-Premium-Full-Service-Intro.mp4",
         "id": "iz-banner-background-video",
-        "class": "iz-banner-video"
+        "class": "iz-banner-video iz-parallax-video"
     },
     "sections": [
         {

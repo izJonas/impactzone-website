@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Shippori+Antique+B1&display=swap");
+html {
+  background-color: #040404;
+}
+
 body {
   display: flex;
   padding: 0;
@@ -24,6 +28,7 @@ body #iz-wrapper {
   width: inherit;
   overflow: auto;
   flex-direction: column;
+  margin-top: 77px;
 }
 body #iz-wrapper h1,
 body #iz-wrapper h2,
@@ -38,6 +43,7 @@ body #iz-wrapper #iz-nav-list {
   height: 77px;
   max-height: 77px;
   min-height: 77px;
+  top: 0;
   width: inherit;
   background-color: #040404;
   z-index: 999;
@@ -223,14 +229,45 @@ body #iz-wrapper #iz-nav-list form.iz-search-form input#search-value:focus + svg
 }
 body #iz-wrapper main#iz-content {
   display: flex;
-  padding-top: 77px;
   flex-direction: column;
+}
+body #iz-wrapper main#iz-content header.iz-content-banner {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 77px);
+}
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto auto 50px auto;
+  padding: 33px;
+  max-width: 45%;
+}
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper img.iz-banner-image {
+  display: flex;
+  margin: auto auto 15px auto;
+  width: 75px;
+  max-width: 75px;
+  height: auto;
+}
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h1.iz-banner-headline,
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h2.iz-banner-headline,
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h3.iz-banner-headline,
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h4.iz-banner-headline,
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h5.iz-banner-headline,
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h6.iz-banner-headline {
+  margin: 15px auto;
+}
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper p.iz-banner-content {
+  margin: 15px auto;
 }
 body #iz-wrapper main#iz-content section.iz-content-entry {
   display: flex;
   flex-direction: column;
   height: calc(100vh - 77px);
   min-height: calc(100vh - 77px);
+  box-shadow: 0px 0px 10px 9px rgba(0, 0, 0, 0.5);
+  transition: all 0.5s ease;
 }
 body #iz-wrapper main#iz-content section.iz-content-entry > * {
   max-width: 1200px;
@@ -504,20 +541,40 @@ body .iz-parallax-video {
   padding: 0;
   margin: 0;
   display: none;
+  transition: all 0.5s ease;
+}
+body .iz-parallax-video.iz-banner-video {
+  height: 0px;
+  padding: 0;
+  margin: 0;
+  display: unset;
+  transition: all 0.5s ease;
+}
+body .iz-parallax-video.iz-banner-video video {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 100%;
+  position: fixed;
+  top: 77px;
+  z-index: -999;
+  transition: all 0.5s ease;
 }
 body .iz-parallax-video.iz-parallax-video-visible {
   display: unset;
+  transition: all 0.5s ease;
 }
 body .iz-parallax-video.iz-parallax-video-z-top video {
   z-index: -899;
+  transition: all 0.5s ease;
 }
 body .iz-parallax-video video {
   -o-object-fit: cover;
      object-fit: cover;
   min-width: 100%;
   position: fixed;
-  top: 0;
+  top: 77px;
   z-index: -999;
+  transition: all 0.5s ease;
 }
 body .iz-parallax-video h1,
 body .iz-parallax-video h2,

@@ -58,6 +58,10 @@ $navigation-sublist: (
     "transition": $default-transition-slow,
 );
 
+html {
+    background-color: #040404;
+}
+
 // Body of HTML
 body {
     display: flex;
@@ -88,6 +92,7 @@ body {
         width: inherit;
         overflow: auto;
         flex-direction: column;
+        margin-top: $nav-height;
 
         h1,
         h2,
@@ -104,6 +109,7 @@ body {
             height: $nav-height;
             max-height: $nav-height;
             min-height: $nav-height;
+            top: 0;
             width: inherit;
             background-color: $background-color-navigation;
             z-index: 999;
@@ -325,8 +331,44 @@ body {
         // Site Main Content Section
         main#iz-content {
             display: flex;
-            padding-top: $nav-height;
             flex-direction: column;
+
+            header.iz-content-banner {
+                display: flex;
+                flex-direction: column;
+                min-height: calc(100vh - $nav-height);
+
+                section.iz-banner-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    margin: auto auto 50px auto;
+                    padding: 33px;
+                    max-width: 45%;
+
+                    img.iz-banner-image {
+                        display: flex;
+                        margin: auto auto 15px auto;
+                        width: 75px;
+                        max-width: 75px;
+                        height: auto;
+                    }
+
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6 {
+                        &.iz-banner-headline {
+                            margin: 15px auto;
+                        }
+                    }
+
+                    p.iz-banner-content {
+                        margin: 15px auto;
+                    }
+                }
+            }
 
             section.iz-content-entry {
                 display: flex;
@@ -334,6 +376,8 @@ body {
                 $entry-height: calc(100vh - 77px);
                 height: $entry-height;
                 min-height: $entry-height;
+                box-shadow: 0px 0px 10px 9px rgb(0 0 0 / 50%);
+                transition: $default-transition-fast;
 
                 & > * {
                     max-width: $content-entry-max-width;
@@ -623,14 +667,34 @@ body {
         padding: 0;
         margin: 0;
         display: none;
+        transition: $default-transition-fast;
+
+        &.iz-banner-video {
+            height: 0px;
+            padding: 0;
+            margin: 0;
+            display: unset;
+            transition: $default-transition-fast;
+
+            video {
+                object-fit: cover;
+                min-width: 100%;
+                position: fixed;
+                top: $nav-height;
+                z-index: -999;
+                transition: $default-transition-fast;
+            }
+        }
 
         &.iz-parallax-video-visible {
             display: unset;
+            transition: $default-transition-fast;
         }
 
         &.iz-parallax-video-z-top {
             video {
                 z-index: -899;
+                transition: $default-transition-fast;
             }
         }
 
@@ -638,8 +702,9 @@ body {
             object-fit: cover;
             min-width: 100%;
             position: fixed;
-            top: 0;
+            top: $nav-height;
             z-index: -999;
+            transition: $default-transition-fast;
         }
 
         h1,

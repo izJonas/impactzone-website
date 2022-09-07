@@ -1,8 +1,10 @@
 // Variable Declaration
+let mainContentWrapperNode = document.getElementById("iz-wrapper");
 let headerAppenixNode = document.getElementById("iz-nav-list");
 let navigationAppenixNode = document.getElementById("iz-nav-ul");
 let parallaxContentNodes = document.getElementsByClassName("iz-parallax-content");
 let parallaxVideoNodes = document.getElementsByClassName("iz-parallax-video");
+let parallaxBannerVideoNode = document.getElementById("iz-banner-background-video");
 let parallaxContentNodesInView = [];
 let parallaxVideoNodesInView = [];
 let parallaxVideoNodesOutOfView = [];
@@ -112,7 +114,20 @@ const AddParallaxScrollFunction = function () {
     }
 };
 
+const ScrollBannerParallaxHeight = function () {
+    parallaxBannerVideoNode = document.getElementById("iz-banner-background-video");
+    mainContentWrapperNode = document.getElementById("iz-wrapper");
+    if (!parallaxBannerVideoNode || !mainContentWrapperNode) {
+        return;
+    }
+    console.log(mainContentWrapperNode.scrollTop);
+    if (mainContentWrapperNode.scrollTop < 377) {
+        parallaxBannerVideoNode.children[0].style.top = (77 - mainContentWrapperNode.scrollTop) + "px";
+    }
+};
+
 const SetPrallaxVideoVisible = function () {
+    ScrollBannerParallaxHeight();
     parallaxVideoNodes = document.getElementsByClassName("iz-parallax-video");
     parallaxContentNodes = document.getElementsByClassName("iz-parallax-content");
     if (parallaxVideoNodes && parallaxVideoNodes.length == 1) {
