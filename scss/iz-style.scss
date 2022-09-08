@@ -67,6 +67,7 @@ body {
         @import "./iz-components";
 
         @include gradient-classes("mirage" "mirage-transparent" "black2transparent" "sand2blue" "coal");
+
     }
 
     @import "./iz-parallax";

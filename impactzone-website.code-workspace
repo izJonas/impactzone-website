@@ -5,8 +5,31 @@
 		}
 	],
 	"settings": {
-		"compile-hero.disable-compile-files-on-did-save-code": true,
+		"compile-hero.disable-compile-files-on-did-save-code": false,
 		"editor.formatOnSave": true,
-		"editor.formatOnPaste": true
+		"editor.formatOnPaste": true,
+		"terminal.integrated.shellArgs.windows": [
+			"./scripts/create-scss-file-from-components.ps1"
+		],
+		"compile-hero.ignore": [
+			"./scss",
+			"scss",
+			"/scss"
+		],
+		"compile-hero.less-output-directory": "/public/css",
+		"compile-hero.javascript-output-directory": "/public/js",
+		"compile-hero.scss-output-directory": "/public/css",
+		"compile-hero.sass-output-directory": "/public/css",
+		"compile-hero.less-output-toggle": true,
+		"compile-hero.javascript-output-toggle": true,
+		"compile-hero.sass-output-toggle": true,
+		"compile-hero.scss-output-toggle": true,
+		"compile-hero.watch": true,
+		"liveSassCompile.settings.excludeList": [
+			"/**/node_modules/**",
+			"/.vscode/**",
+			"/scss/**"
+		],
+		"liveSassCompile.settings.generateMap": false,
 	}
 }

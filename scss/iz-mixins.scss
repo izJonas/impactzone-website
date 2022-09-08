@@ -1,6 +1,3 @@
-@use "sass:map";
-@use "sass:list";
-
 @mixin gradient-classes($gradient-names) {
     @each $gradient in $gradient-names {
         .iz-gradient-#{$gradient} {
