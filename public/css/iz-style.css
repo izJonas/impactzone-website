@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Shippori+Antique+B1&display=swap");
 html {
   background-color: #040404;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  shape-rendering: crispedges;
+  text-rendering: geometricPrecision;
 }
 
 body {
@@ -11,17 +15,17 @@ body {
   width: 100vw;
   overflow: hidden;
   font-family: "Assistant", Sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 15px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
        text-size-adjust: 100%;
   /*
-   * Animation module with all animation code
-   */
+  * Animation module with all animation code
+  */
+  /*
+  * Animation module with all animation code
+  */
 }
 body * {
   box-sizing: content-box;
@@ -38,7 +42,20 @@ body #iz-wrapper h2,
 body #iz-wrapper h3,
 body #iz-wrapper h4,
 body #iz-wrapper h5 {
-  font-weight: 800;
+  font-weight: 500;
+  shape-rendering: crispedges;
+  text-rendering: geometricPrecision;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+body #iz-wrapper h1:hover,
+body #iz-wrapper h2:hover,
+body #iz-wrapper h3:hover,
+body #iz-wrapper h4:hover,
+body #iz-wrapper h5:hover {
+  cursor: url("/img/svg/meteor-comet-svgrepo-com.svg");
 }
 body #iz-wrapper nav#iz-nav-list {
   display: flex;
@@ -132,6 +149,10 @@ body #iz-wrapper nav#iz-nav-list #iz-nav-ul .nav-entry:hover > a {
   color: #f1dda0;
   text-decoration: underline;
 }
+body #iz-wrapper nav#iz-nav-list #iz-nav-ul .nav-entry:hover ul.iz-subnav-ul {
+  transition: all 1s ease;
+  display: flex;
+}
 body #iz-wrapper nav#iz-nav-list #iz-nav-ul .nav-entry ul.iz-subnav-ul {
   padding: 0;
   margin: 0;
@@ -140,7 +161,7 @@ body #iz-wrapper nav#iz-nav-list #iz-nav-ul .nav-entry ul.iz-subnav-ul {
   color: #d2d2d2;
   box-shadow: unset;
   opacity: 0;
-  display: flex;
+  display: none;
   flex-direction: column;
   top: 60px;
   position: absolute;
@@ -263,8 +284,10 @@ body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrap
   display: flex;
   flex-direction: column;
   margin: auto auto 50px auto;
-  padding: 33px;
+  padding: 4em;
   max-width: 45%;
+  border-radius: 13px;
+  box-shadow: 0px -5px 12px rgba(255, 215, 0, 0.4666666667);
 }
 body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper img.iz-banner-image {
   display: flex;
@@ -272,6 +295,20 @@ body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrap
   width: 75px;
   max-width: 75px;
   height: auto;
+  border-radius: 150px;
+  background: darkslategray;
+  padding: 3em;
+  filter: drop-shadow(0px -3px 4px gold);
+}
+body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper img.iz-banner-image:hover {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-name: iz-animation-wavering-shadow;
+          animation-name: iz-animation-wavering-shadow;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h1.iz-banner-headline,
 body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h2.iz-banner-headline,
@@ -279,7 +316,10 @@ body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrap
 body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h4.iz-banner-headline,
 body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h5.iz-banner-headline,
 body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper h6.iz-banner-headline {
+  transition: all 0.2s ease-out;
   margin: 15px auto;
+  -webkit-text-stroke: 0.25px deepskyblue;
+  text-stroke: 0.25px deepskyblue;
 }
 body #iz-wrapper main#iz-content header.iz-content-banner section.iz-banner-wrapper p.iz-banner-content {
   margin: 15px auto;
@@ -311,13 +351,13 @@ body #iz-wrapper main#iz-content section.iz-content-entry .iz-content-headline {
   background-color: rgba(0, 0, 0, 0.4666666667);
   box-shadow: 3px 1px 6px rgba(228, 228, 228, 0.6666666667);
 }
-body #iz-wrapper main#iz-content section.iz-content-entry .iz-content-headline span.iz-text {
+body #iz-wrapper main#iz-content section.iz-content-entry .iz-content-headline > span.iz-text {
   text-transform: uppercase;
-  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
   letter-spacing: 0.25em;
   font-size: 2em;
   line-height: 2;
-  font-weight: 200;
+  font-weight: 500;
   white-space: nowrap;
 }
 body #iz-wrapper main#iz-content section.iz-content-entry#pfs-unsere-agenturleistungen video#pfs-unsere-agenturleistungen-background {
@@ -375,7 +415,7 @@ body #iz-wrapper main#iz-content section.iz-content-entry .iz-card-list .iz-card
   min-width: 66px;
   max-width: 66px;
   width: 66px;
-  filter: brightness(200%) contrast(134%) saturate(0%) blur(0px) hue-rotate(0deg);
+  filter: blur(0.5px);
   transition: all 0.5s ease;
   transform: translateY(0px);
 }
@@ -414,7 +454,7 @@ body #iz-wrapper main#iz-content section.iz-content-entry .iz-square-list .iz-sq
   min-width: 66px;
   max-width: 66px;
   width: 66px;
-  filter: brightness(200%) contrast(134%) saturate(0%) blur(0px) hue-rotate(0deg);
+  filter: blur(0.5px);
   transition: all 0.5s ease;
   transform: translateY(0px);
 }
@@ -718,6 +758,82 @@ body .iz-parallax-video h6 {
     transform: scale(1.2);
   }
 }
+@-webkit-keyframes iz-animation-wavering-shadow {
+  0% {
+    filter: drop-shadow(-5px -4px 6px gold);
+    background: darkslategrey;
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    filter: drop-shadow(-1px -9px 12px rgb(255, 180, 18));
+    background: #278181;
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  40% {
+    filter: drop-shadow(2px -6px 9px rgb(231, 72, 9));
+    background: #0c3f3f;
+    opacity: 0.85;
+    transform: scale(0.95);
+  }
+  60% {
+    filter: drop-shadow(4px -2px 4px rgb(238, 100, 21));
+    background: #117c61;
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+  80% {
+    filter: drop-shadow(0px -5px 5px rgb(255, 0, 13));
+    background: #104a64;
+    opacity: 0.75;
+    transform: scale(0.9);
+  }
+  100% {
+    filter: drop-shadow(-5px -4px 6px gold);
+    background: darkslategrey;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes iz-animation-wavering-shadow {
+  0% {
+    filter: drop-shadow(-5px -4px 6px gold);
+    background: darkslategrey;
+    opacity: 1;
+    transform: scale(1);
+  }
+  20% {
+    filter: drop-shadow(-1px -9px 12px rgb(255, 180, 18));
+    background: #278181;
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  40% {
+    filter: drop-shadow(2px -6px 9px rgb(231, 72, 9));
+    background: #0c3f3f;
+    opacity: 0.85;
+    transform: scale(0.95);
+  }
+  60% {
+    filter: drop-shadow(4px -2px 4px rgb(238, 100, 21));
+    background: #117c61;
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+  80% {
+    filter: drop-shadow(0px -5px 5px rgb(255, 0, 13));
+    background: #104a64;
+    opacity: 0.75;
+    transform: scale(0.9);
+  }
+  100% {
+    filter: drop-shadow(-5px -4px 6px gold);
+    background: darkslategrey;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 @-webkit-keyframes iz-animation-boing {
   from {
     transform: translateY(0px);
@@ -737,17 +853,17 @@ body .iz-parallax-video h6 {
 body .iz-animation-text-flow,
 body .iz-animation-text-flow:hover {
   /*
-   * Animation variables
-   */
+  * Animation variables
+  */
   /*
-   * Elements settings
-   */
+  * Elements settings
+  */
   /*
-   * Keyframe loop
-   */
+  * Keyframe loop
+  */
   /*
-   * Element animation delay loop
-   */
+  * Element animation delay loop
+  */
 }
 body .iz-animation-text-flow span,
 body .iz-animation-text-flow:hover span {
@@ -761,177 +877,189 @@ body .iz-animation-text-flow:hover span {
           animation-direction: alternate;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  transition: all 0.2s ease;
+  text-shadow: 2px 2px 0.5px white !important;
+  -webkit-text-stroke: 1.25px black;
+  text-stroke: 1.25px black;
+  font-weight: 550 !important;
+}
+body .iz-animation-text-flow span:hover,
+body .iz-animation-text-flow:hover span:hover {
+  text-shadow: 3px 3px 1px gold !important;
+  transition: all 0.2s ease;
+  -webkit-text-stroke: 1px white;
+  text-stroke: 1px white;
 }
 @-webkit-keyframes iz-animation-text-flow-keys {
   0% {
-    color: hsl(359deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(151deg, 60%, 60%);
+    color: hsl(224deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   5% {
-    color: hsl(62deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(38deg, 60%, 60%);
+    color: hsl(212deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   10% {
-    color: hsl(203deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(315deg, 60%, 60%);
+    color: hsl(286deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   15% {
-    color: hsl(89deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(25deg, 60%, 60%);
+    color: hsl(74deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   20% {
-    color: hsl(93deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(152deg, 60%, 60%);
+    color: hsl(298deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   25% {
-    color: hsl(236deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(140deg, 60%, 60%);
+    color: hsl(341deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   30% {
-    color: hsl(250deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(207deg, 60%, 60%);
+    color: hsl(274deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   35% {
-    color: hsl(149deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(92deg, 60%, 60%);
+    color: hsl(248deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   40% {
-    color: hsl(22deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(321deg, 60%, 60%);
+    color: hsl(8deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   45% {
-    color: hsl(241deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(151deg, 60%, 60%);
+    color: hsl(307deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   50% {
-    color: hsl(100deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(286deg, 60%, 60%);
+    color: hsl(125deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   55% {
-    color: hsl(276deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(352deg, 60%, 60%);
+    color: hsl(56deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   60% {
-    color: hsl(48deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(44deg, 60%, 60%);
+    color: hsl(198deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   65% {
-    color: hsl(202deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(297deg, 60%, 60%);
+    color: hsl(66deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   70% {
-    color: hsl(29deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(190deg, 60%, 60%);
+    color: hsl(79deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   75% {
-    color: hsl(147deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(136deg, 60%, 60%);
+    color: hsl(200deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   80% {
-    color: hsl(279deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(74deg, 60%, 60%);
+    color: hsl(76deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   85% {
-    color: hsl(318deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(120deg, 60%, 60%);
+    color: hsl(176deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   90% {
-    color: hsl(276deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(263deg, 60%, 60%);
+    color: hsl(14deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   95% {
-    color: hsl(286deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(298deg, 60%, 60%);
+    color: hsl(263deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   100% {
-    color: hsl(67deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(28deg, 60%, 60%);
+    color: hsl(298deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
 }
 @keyframes iz-animation-text-flow-keys {
   0% {
-    color: hsl(359deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(151deg, 60%, 60%);
+    color: hsl(224deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   5% {
-    color: hsl(62deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(38deg, 60%, 60%);
+    color: hsl(212deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   10% {
-    color: hsl(203deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(315deg, 60%, 60%);
+    color: hsl(286deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   15% {
-    color: hsl(89deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(25deg, 60%, 60%);
+    color: hsl(74deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   20% {
-    color: hsl(93deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(152deg, 60%, 60%);
+    color: hsl(298deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   25% {
-    color: hsl(236deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(140deg, 60%, 60%);
+    color: hsl(341deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   30% {
-    color: hsl(250deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(207deg, 60%, 60%);
+    color: hsl(274deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   35% {
-    color: hsl(149deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(92deg, 60%, 60%);
+    color: hsl(248deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   40% {
-    color: hsl(22deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(321deg, 60%, 60%);
+    color: hsl(8deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   45% {
-    color: hsl(241deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(151deg, 60%, 60%);
+    color: hsl(307deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   50% {
-    color: hsl(100deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(286deg, 60%, 60%);
+    color: hsl(125deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   55% {
-    color: hsl(276deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(352deg, 60%, 60%);
+    color: hsl(56deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   60% {
-    color: hsl(48deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(44deg, 60%, 60%);
+    color: hsl(198deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   65% {
-    color: hsl(202deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(297deg, 60%, 60%);
+    color: hsl(66deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   70% {
-    color: hsl(29deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(190deg, 60%, 60%);
+    color: hsl(79deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   75% {
-    color: hsl(147deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(136deg, 60%, 60%);
+    color: hsl(200deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   80% {
-    color: hsl(279deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(74deg, 60%, 60%);
+    color: hsl(76deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   85% {
-    color: hsl(318deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(120deg, 60%, 60%);
+    color: hsl(176deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   90% {
-    color: hsl(276deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(263deg, 60%, 60%);
+    color: hsl(14deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   95% {
-    color: hsl(286deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(298deg, 60%, 60%);
+    color: hsl(263deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
   100% {
-    color: hsl(67deg, 60%, 60%);
-    text-shadow: 1px 1px 3px hsl(28deg, 60%, 60%);
+    color: hsl(298deg, 60%, 60%);
+    transition: all 0.5s ease;
   }
 }
 body .iz-animation-text-flow span:nth-of-type(1),
@@ -1433,4 +1561,405 @@ body .iz-animation-text-flow span:nth-of-type(100),
 body .iz-animation-text-flow:hover span:nth-of-type(100) {
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
+}
+body img.iz-animation-img-flow,
+body img.iz-animation-img-flow:hover {
+  /*
+  * Animation variables
+  */
+  /*
+  * Elements settings
+  */
+  -webkit-animation-name: iz-animation-img-flow-keys;
+          animation-name: iz-animation-img-flow-keys;
+  -webkit-animation-duration: 50s;
+          animation-duration: 50s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  /*
+  * Keyframe loop
+  */
+  /*
+  * Element animation delay loop
+  */
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+@-webkit-keyframes iz-animation-img-flow-keys {
+  0% {
+    fill: hsl(0deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+  }
+  2.7777777778% {
+    fill: hsl(10deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(10deg, 60%, 60%), hsl(20deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(10deg, 60%, 60%), hsl(20deg, 60%, 60%));
+  }
+  5.5555555556% {
+    fill: hsl(20deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(20deg, 60%, 60%), hsl(30deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(20deg, 60%, 60%), hsl(30deg, 60%, 60%));
+  }
+  8.3333333333% {
+    fill: hsl(30deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(30deg, 60%, 60%), hsl(40deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(30deg, 60%, 60%), hsl(40deg, 60%, 60%));
+  }
+  11.1111111111% {
+    fill: hsl(40deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(40deg, 60%, 60%), hsl(50deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(40deg, 60%, 60%), hsl(50deg, 60%, 60%));
+  }
+  13.8888888889% {
+    fill: hsl(50deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(50deg, 60%, 60%), hsl(60deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(50deg, 60%, 60%), hsl(60deg, 60%, 60%));
+  }
+  16.6666666667% {
+    fill: hsl(60deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(60deg, 60%, 60%), hsl(70deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(60deg, 60%, 60%), hsl(70deg, 60%, 60%));
+  }
+  19.4444444444% {
+    fill: hsl(70deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(70deg, 60%, 60%), hsl(80deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(70deg, 60%, 60%), hsl(80deg, 60%, 60%));
+  }
+  22.2222222222% {
+    fill: hsl(80deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(80deg, 60%, 60%), hsl(90deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(80deg, 60%, 60%), hsl(90deg, 60%, 60%));
+  }
+  25% {
+    fill: hsl(90deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(90deg, 60%, 60%), hsl(100deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(90deg, 60%, 60%), hsl(100deg, 60%, 60%));
+  }
+  27.7777777778% {
+    fill: hsl(100deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(100deg, 60%, 60%), hsl(110deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(100deg, 60%, 60%), hsl(110deg, 60%, 60%));
+  }
+  30.5555555556% {
+    fill: hsl(110deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(110deg, 60%, 60%), hsl(120deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(110deg, 60%, 60%), hsl(120deg, 60%, 60%));
+  }
+  33.3333333333% {
+    fill: hsl(120deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(120deg, 60%, 60%), hsl(130deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(120deg, 60%, 60%), hsl(130deg, 60%, 60%));
+  }
+  36.1111111111% {
+    fill: hsl(130deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(130deg, 60%, 60%), hsl(140deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(130deg, 60%, 60%), hsl(140deg, 60%, 60%));
+  }
+  38.8888888889% {
+    fill: hsl(140deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(140deg, 60%, 60%), hsl(150deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(140deg, 60%, 60%), hsl(150deg, 60%, 60%));
+  }
+  41.6666666667% {
+    fill: hsl(150deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(150deg, 60%, 60%), hsl(160deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(150deg, 60%, 60%), hsl(160deg, 60%, 60%));
+  }
+  44.4444444444% {
+    fill: hsl(160deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(160deg, 60%, 60%), hsl(170deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(160deg, 60%, 60%), hsl(170deg, 60%, 60%));
+  }
+  47.2222222222% {
+    fill: hsl(170deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(170deg, 60%, 60%), hsl(180deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(170deg, 60%, 60%), hsl(180deg, 60%, 60%));
+  }
+  50% {
+    fill: hsl(180deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(180deg, 60%, 60%), hsl(190deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(180deg, 60%, 60%), hsl(190deg, 60%, 60%));
+  }
+  52.7777777778% {
+    fill: hsl(190deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(190deg, 60%, 60%), hsl(200deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(190deg, 60%, 60%), hsl(200deg, 60%, 60%));
+  }
+  55.5555555556% {
+    fill: hsl(200deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(200deg, 60%, 60%), hsl(210deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(200deg, 60%, 60%), hsl(210deg, 60%, 60%));
+  }
+  58.3333333333% {
+    fill: hsl(210deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(210deg, 60%, 60%), hsl(220deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(210deg, 60%, 60%), hsl(220deg, 60%, 60%));
+  }
+  61.1111111111% {
+    fill: hsl(220deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(220deg, 60%, 60%), hsl(230deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(220deg, 60%, 60%), hsl(230deg, 60%, 60%));
+  }
+  63.8888888889% {
+    fill: hsl(230deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(230deg, 60%, 60%), hsl(240deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(230deg, 60%, 60%), hsl(240deg, 60%, 60%));
+  }
+  66.6666666667% {
+    fill: hsl(240deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(240deg, 60%, 60%), hsl(250deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(240deg, 60%, 60%), hsl(250deg, 60%, 60%));
+  }
+  69.4444444444% {
+    fill: hsl(250deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(250deg, 60%, 60%), hsl(260deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(250deg, 60%, 60%), hsl(260deg, 60%, 60%));
+  }
+  72.2222222222% {
+    fill: hsl(260deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(260deg, 60%, 60%), hsl(270deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(260deg, 60%, 60%), hsl(270deg, 60%, 60%));
+  }
+  75% {
+    fill: hsl(270deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(270deg, 60%, 60%), hsl(280deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(270deg, 60%, 60%), hsl(280deg, 60%, 60%));
+  }
+  77.7777777778% {
+    fill: hsl(280deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(280deg, 60%, 60%), hsl(290deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(280deg, 60%, 60%), hsl(290deg, 60%, 60%));
+  }
+  80.5555555556% {
+    fill: hsl(290deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(290deg, 60%, 60%), hsl(300deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(290deg, 60%, 60%), hsl(300deg, 60%, 60%));
+  }
+  83.3333333333% {
+    fill: hsl(300deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(300deg, 60%, 60%), hsl(310deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(300deg, 60%, 60%), hsl(310deg, 60%, 60%));
+  }
+  86.1111111111% {
+    fill: hsl(310deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(310deg, 60%, 60%), hsl(320deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(310deg, 60%, 60%), hsl(320deg, 60%, 60%));
+  }
+  88.8888888889% {
+    fill: hsl(320deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(320deg, 60%, 60%), hsl(330deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(320deg, 60%, 60%), hsl(330deg, 60%, 60%));
+  }
+  91.6666666667% {
+    fill: hsl(330deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(330deg, 60%, 60%), hsl(340deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(330deg, 60%, 60%), hsl(340deg, 60%, 60%));
+  }
+  94.4444444444% {
+    fill: hsl(340deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(340deg, 60%, 60%), hsl(350deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(340deg, 60%, 60%), hsl(350deg, 60%, 60%));
+  }
+  97.2222222222% {
+    fill: hsl(350deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(350deg, 60%, 60%), hsl(0deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(350deg, 60%, 60%), hsl(0deg, 60%, 60%));
+  }
+  100% {
+    fill: hsl(0deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+  }
+}
+@keyframes iz-animation-img-flow-keys {
+  0% {
+    fill: hsl(0deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+  }
+  2.7777777778% {
+    fill: hsl(10deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(10deg, 60%, 60%), hsl(20deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(10deg, 60%, 60%), hsl(20deg, 60%, 60%));
+  }
+  5.5555555556% {
+    fill: hsl(20deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(20deg, 60%, 60%), hsl(30deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(20deg, 60%, 60%), hsl(30deg, 60%, 60%));
+  }
+  8.3333333333% {
+    fill: hsl(30deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(30deg, 60%, 60%), hsl(40deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(30deg, 60%, 60%), hsl(40deg, 60%, 60%));
+  }
+  11.1111111111% {
+    fill: hsl(40deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(40deg, 60%, 60%), hsl(50deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(40deg, 60%, 60%), hsl(50deg, 60%, 60%));
+  }
+  13.8888888889% {
+    fill: hsl(50deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(50deg, 60%, 60%), hsl(60deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(50deg, 60%, 60%), hsl(60deg, 60%, 60%));
+  }
+  16.6666666667% {
+    fill: hsl(60deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(60deg, 60%, 60%), hsl(70deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(60deg, 60%, 60%), hsl(70deg, 60%, 60%));
+  }
+  19.4444444444% {
+    fill: hsl(70deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(70deg, 60%, 60%), hsl(80deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(70deg, 60%, 60%), hsl(80deg, 60%, 60%));
+  }
+  22.2222222222% {
+    fill: hsl(80deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(80deg, 60%, 60%), hsl(90deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(80deg, 60%, 60%), hsl(90deg, 60%, 60%));
+  }
+  25% {
+    fill: hsl(90deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(90deg, 60%, 60%), hsl(100deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(90deg, 60%, 60%), hsl(100deg, 60%, 60%));
+  }
+  27.7777777778% {
+    fill: hsl(100deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(100deg, 60%, 60%), hsl(110deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(100deg, 60%, 60%), hsl(110deg, 60%, 60%));
+  }
+  30.5555555556% {
+    fill: hsl(110deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(110deg, 60%, 60%), hsl(120deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(110deg, 60%, 60%), hsl(120deg, 60%, 60%));
+  }
+  33.3333333333% {
+    fill: hsl(120deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(120deg, 60%, 60%), hsl(130deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(120deg, 60%, 60%), hsl(130deg, 60%, 60%));
+  }
+  36.1111111111% {
+    fill: hsl(130deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(130deg, 60%, 60%), hsl(140deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(130deg, 60%, 60%), hsl(140deg, 60%, 60%));
+  }
+  38.8888888889% {
+    fill: hsl(140deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(140deg, 60%, 60%), hsl(150deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(140deg, 60%, 60%), hsl(150deg, 60%, 60%));
+  }
+  41.6666666667% {
+    fill: hsl(150deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(150deg, 60%, 60%), hsl(160deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(150deg, 60%, 60%), hsl(160deg, 60%, 60%));
+  }
+  44.4444444444% {
+    fill: hsl(160deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(160deg, 60%, 60%), hsl(170deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(160deg, 60%, 60%), hsl(170deg, 60%, 60%));
+  }
+  47.2222222222% {
+    fill: hsl(170deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(170deg, 60%, 60%), hsl(180deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(170deg, 60%, 60%), hsl(180deg, 60%, 60%));
+  }
+  50% {
+    fill: hsl(180deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(180deg, 60%, 60%), hsl(190deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(180deg, 60%, 60%), hsl(190deg, 60%, 60%));
+  }
+  52.7777777778% {
+    fill: hsl(190deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(190deg, 60%, 60%), hsl(200deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(190deg, 60%, 60%), hsl(200deg, 60%, 60%));
+  }
+  55.5555555556% {
+    fill: hsl(200deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(200deg, 60%, 60%), hsl(210deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(200deg, 60%, 60%), hsl(210deg, 60%, 60%));
+  }
+  58.3333333333% {
+    fill: hsl(210deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(210deg, 60%, 60%), hsl(220deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(210deg, 60%, 60%), hsl(220deg, 60%, 60%));
+  }
+  61.1111111111% {
+    fill: hsl(220deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(220deg, 60%, 60%), hsl(230deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(220deg, 60%, 60%), hsl(230deg, 60%, 60%));
+  }
+  63.8888888889% {
+    fill: hsl(230deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(230deg, 60%, 60%), hsl(240deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(230deg, 60%, 60%), hsl(240deg, 60%, 60%));
+  }
+  66.6666666667% {
+    fill: hsl(240deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(240deg, 60%, 60%), hsl(250deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(240deg, 60%, 60%), hsl(250deg, 60%, 60%));
+  }
+  69.4444444444% {
+    fill: hsl(250deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(250deg, 60%, 60%), hsl(260deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(250deg, 60%, 60%), hsl(260deg, 60%, 60%));
+  }
+  72.2222222222% {
+    fill: hsl(260deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(260deg, 60%, 60%), hsl(270deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(260deg, 60%, 60%), hsl(270deg, 60%, 60%));
+  }
+  75% {
+    fill: hsl(270deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(270deg, 60%, 60%), hsl(280deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(270deg, 60%, 60%), hsl(280deg, 60%, 60%));
+  }
+  77.7777777778% {
+    fill: hsl(280deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(280deg, 60%, 60%), hsl(290deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(280deg, 60%, 60%), hsl(290deg, 60%, 60%));
+  }
+  80.5555555556% {
+    fill: hsl(290deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(290deg, 60%, 60%), hsl(300deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(290deg, 60%, 60%), hsl(300deg, 60%, 60%));
+  }
+  83.3333333333% {
+    fill: hsl(300deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(300deg, 60%, 60%), hsl(310deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(300deg, 60%, 60%), hsl(310deg, 60%, 60%));
+  }
+  86.1111111111% {
+    fill: hsl(310deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(310deg, 60%, 60%), hsl(320deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(310deg, 60%, 60%), hsl(320deg, 60%, 60%));
+  }
+  88.8888888889% {
+    fill: hsl(320deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(320deg, 60%, 60%), hsl(330deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(320deg, 60%, 60%), hsl(330deg, 60%, 60%));
+  }
+  91.6666666667% {
+    fill: hsl(330deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(330deg, 60%, 60%), hsl(340deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(330deg, 60%, 60%), hsl(340deg, 60%, 60%));
+  }
+  94.4444444444% {
+    fill: hsl(340deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(340deg, 60%, 60%), hsl(350deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(340deg, 60%, 60%), hsl(350deg, 60%, 60%));
+  }
+  97.2222222222% {
+    fill: hsl(350deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(350deg, 60%, 60%), hsl(0deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(350deg, 60%, 60%), hsl(0deg, 60%, 60%));
+  }
+  100% {
+    fill: hsl(0deg, 60%, 60%);
+    fill: -webkit-linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+    fill: linear-gradient(to right, hsl(0deg, 60%, 60%), hsl(10deg, 60%, 60%));
+  }
 }/*# sourceMappingURL=iz-style.css.map */

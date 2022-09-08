@@ -11,12 +11,13 @@
         "content": "INDIVIDUELLE GESAMTLÖSUNGEN & CROSS-MEDIALE UNTERNEHMENSBETREUUNG.",
         "video": "/media/impactzone-Premium-Full-Service-Intro.mp4",
         "id": "iz-banner-background-video",
-        "class": "iz-banner-video iz-parallax-video"
+        "class": "iz-banner-video iz-parallax-video",
+        "mainClass": "iz-gradient-sand2blue"
     },
     "sections": [
         {
             "id": "idee-zu-erfolg",
-            "class": "iz-gradient-mirage-transparent iz-animation-text-flow ",
+            "class": "iz-gradient-mirage iz-animation-text-flow ",
             "izTypes": [
                 "headline-1",
                 "text-multi"

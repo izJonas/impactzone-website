@@ -26,9 +26,9 @@ $named-gradients: (
         linear-gradient(to right, #000000ff, #00000000),
     ),
     "mirage": (
-        #16222a,
-        -webkit-linear-gradient(to right, #3a6073, #16222a),
-        linear-gradient(to right, #3a6073, #16222a),
+        #16222aff,
+        -webkit-linear-gradient(to right, #3a6073ff, #16222aff),
+        linear-gradient(to right, #3a6073ff, #16222aff),
     ),
     "mirage-transparent": (
         #16222a,
@@ -65,6 +65,7 @@ $footer-button-row-icon-width: 15px;
 
 $card-image-width: 66px;
 $card-image-filter: brightness(200%) contrast(134%) saturate(0%) blur(0px) hue-rotate(0deg);
+$card-image-filter: blur(0.5px);
 $card-image-transition: all 0.5s ease;
 
 $base-font-family: "Assistant", Sans-serif;

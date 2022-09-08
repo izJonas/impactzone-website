@@ -1,9 +1,13 @@
-@use 'sass:map';
-@import './scss/iz-variables';
-@import './scss/iz-mixins';
+@use "sass:map";
+@import "./scss/iz-variables";
+@import "./scss/iz-mixins";
 
 html {
     background-color: #040404;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    shape-rendering: crispedges;
+    text-rendering: geometricPrecision;
 }
 
 // Body of HTML
@@ -15,16 +19,12 @@ body {
     width: 100vw;
     overflow: hidden;
     font-family: $base-font-family;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 15px;
 
     * {
         box-sizing: content-box;
     }
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -43,22 +43,29 @@ body {
         h3,
         h4,
         h5 {
-            font-weight: 800;
+            font-weight: 500;
+            shape-rendering: crispedges;
+            text-rendering: geometricPrecision;
+            -webkit-user-select: none;
+            user-select: none;
+
+            &:hover {
+                cursor: url("/img/svg/meteor-comet-svgrepo-com.svg");
+            }
         }
 
-        @import './scss/iz-navigation';
+        @import "./scss/iz-navigation";
 
-        @import './scss/iz-main-content';
+        @import "./scss/iz-main-content";
 
-        @import './scss/iz-footer';
+        @import "./scss/iz-footer";
 
-        @import './scss/iz-components';
+        @import "./scss/iz-components";
 
         @include gradient-classes("mirage" "mirage-transparent" "black2transparent" "sand2blue" "coal");
     }
 
+    @import "./scss/iz-parallax";
 
-    @import './scss/iz-parallax';
-
-    @import './scss/iz-animations';
+    @import "./scss/iz-animations";
 }
