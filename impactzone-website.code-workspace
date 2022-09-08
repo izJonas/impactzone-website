@@ -24,7 +24,10 @@
 		"compile-hero.javascript-output-toggle": true,
 		"compile-hero.sass-output-toggle": true,
 		"compile-hero.scss-output-toggle": true,
-		"compile-hero.watch": true,
+		"compile-hero.watch": [
+			"/public/**",
+			"/**/public/**"
+		],
 		"liveSassCompile.settings.excludeList": [
 			"/**/node_modules/**",
 			"/.vscode/**",
