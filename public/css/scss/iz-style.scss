@@ -1,6 +1,6 @@
 @use "sass:map";
-@import "./scss/iz-variables";
-@import "./scss/iz-mixins";
+@import "./iz-variables";
+@import "./iz-mixins";
 
 html {
     background-color: #040404;
@@ -43,29 +43,33 @@ body {
         h3,
         h4,
         h5 {
-            font-weight: 500;
-            shape-rendering: crispedges;
-            text-rendering: geometricPrecision;
-            -webkit-user-select: none;
-            user-select: none;
 
-            &:hover {
-                cursor: url("/img/svg/meteor-comet-svgrepo-com.svg");
+            &:not(nav#iz-nav-list *) {
+                font-weight: 500;
+                shape-rendering: crispedges;
+                text-rendering: geometricPrecision;
+                -webkit-user-select: none;
+                user-select: none;
+
+                &:hover {
+                    cursor: url("/img/svg/meteor-comet-svgrepo-com.svg");
+                }
             }
+
         }
 
-        @import "./scss/iz-navigation";
+        @import "./iz-navigation";
 
-        @import "./scss/iz-main-content";
+        @import "./iz-main-content";
 
-        @import "./scss/iz-footer";
+        @import "./iz-footer";
 
-        @import "./scss/iz-components";
+        @import "./iz-components";
 
         @include gradient-classes("mirage" "mirage-transparent" "black2transparent" "sand2blue" "coal");
     }
 
-    @import "./scss/iz-parallax";
+    @import "./iz-parallax";
 
-    @import "./scss/iz-animations";
+    @import "./iz-animations";
 }
