@@ -1,3 +1,4 @@
+
 let spanNodeFound;
 let cssToAppend = '.iz-animation-text-flow:hover > span > span.iz-animation-hover { text-shadow: ';
 let styleCssNode = document.createElement('style');
@@ -83,4 +84,4 @@ const IsRectInMousePosition = function (rect) {
         console.log(isInRect);
     }
     return isInRect;
-}
+};

@@ -1,3 +1,100 @@
+﻿let isDebug = false;
+let isDebugDeltaTime = true;
+$(document).ready(function () {
+    console.log("ready!");
+    $('.iz-animation-active .iz-text').html(function (i, html) {
+        var chars = $.trim(html).split("");
+
+        return '<span>' + chars.join('</span><span>') + '</span>';
+    });
+});
+
+let spanNodeFound;
+let cssToAppend = '.iz-animation-text-flow:hover > span > span.iz-animation-hover { text-shadow: ';
+let styleCssNode = document.createElement('style');
+let appendedStyleNodes = [];
+let mousePositionX;
+let mousePositionY;
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+}
+
+const ChangeShadowAnimationColor = function (element) {
+    return;
+    var randomSeed = getRandomInt(1, 365);
+    var randomCss = cssToAppend;
+    var wasSpanNodeFound = false;
+    var removeChildNodes = false;
+    for (var spanNode of element.children) {
+        if (IsRectInMousePosition(spanNode.getBoundingClientRect())) {
+            if (spanNodeFound && spanNodeFound.classList.contains("iz-animation-hover") && spanNode !== spanNodeFound) {
+                removeChildNodes = true;
+                spanNodeFound.classList.remove("iz-animation-hover");
+            }
+        }
+        spanNode.classList.add("iz-animation-hover");
+        wasSpanNodeFound = true;
+        spanNodeFound = spanNode;
+        break;
+    }
+
+    if (wasSpanNodeFound) {
+        if (removeChildNodes) {
+            for (var nodeStyle of appendedStyleNodes) {
+                document.getElementsByTagName('head')[0].removeChild(nodeStyle);
+            }
+            appendedStyleNodes = [];
+        }
+        if (isDebug) {
+            console.log(spanIndex);
+        }
+        randomCss += "" + getRandomInt(-4, 2) + "px " + getRandomInt(-4, 2) + "px " + getRandomInt(0, 10) + "px hsla(" + randomSeed + ", 60%, 60%, 1) !important;transition: all 0.3s ease};";
+        if (styleCssNode.styleSheet) {
+            styleCssNode.styleSheet.cssText = randomCss;
+        } else {
+            styleCssNode.appendChild(document.createTextNode(randomCss));
+        }
+        document.getElementsByTagName('head')[0].appendChild(styleCssNode);
+        appendedStyleNodes.push(styleCssNode);
+    }
+};
+
+const UpdateMousePosition = function (event) {
+    mousePositionX = event.clientX;
+    mousePositionY = event.clientY;
+    if (isDebug) {
+        console.log("X is --> " + mousePositionX);
+        console.log("Y is --> " + mousePositionY);
+    }
+};
+
+const IsRectInMousePosition = function (rect) {
+    var isInRect = false;
+    var isInXAxis = false;
+    var isInYAxis = false;
+    if (mousePositionX > rect.x && mousePositionX < rect.x + rect.width) {
+        if (isDebug) {
+            console.log("Is in X....");
+        }
+        isInXAxis = true;
+    }
+    if (mousePositionY > rect.y && mousePositionY < rect.y + rect.height) {
+        if (isDebug) {
+            console.log("Is in Y....");
+        }
+        isInYAxis = true;
+    }
+    if (isInXAxis && isInYAxis) {
+        isInRect = true;
+    }
+    if (isDebug) {
+        console.log(isInRect);
+    }
+    return isInRect;
+};
 // Variable Declaration
 let mainContentWrapperNode = document.getElementById("iz-wrapper");
 let headerAppenixNode = document.getElementById("iz-nav-list");
@@ -10,6 +107,7 @@ let parallaxVideoNodesInView = [];
 let parallaxVideoNodesOutOfView = [];
 let parallaxVideoNodeInViewRemainingHeight = [];
 const parallaxVideoVisibleClass = "iz-parallax-video-visible";
+const parallaxVideoInvisibleClass = "iz-parallax-video-invisible";
 const parallaxVideoOnTopZIndex = "iz-parallax-video-z-top";
 
 // Function Definition
@@ -127,8 +225,20 @@ const ScrollBannerParallaxHeight = function () {
     if (isDebug) {
         console.log(mainContentWrapperNode.scrollTop);
     }
+    debugger;
     if (mainContentWrapperNode.scrollTop < 377) {
-        parallaxBannerVideoNode.children[0].style.top = (77 - mainContentWrapperNode.scrollTop) + "px";
+        parallaxBannerVideoNode.children[0].style.top = (78 - mainContentWrapperNode.scrollTop) + "px";
+        if (parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
+            parallaxBannerVideoNode.classList.remove(parallaxVideoInvisibleClass);
+        }
+    } else if (mainContentWrapperNode.scrollTop > parallaxBannerVideoNode.parentNode.clientHeight - 78) {
+        if (!parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
+            parallaxBannerVideoNode.classList.add(parallaxVideoInvisibleClass);
+        }
+    } else if (mainContentWrapperNode.scrollTop < parallaxBannerVideoNode.parentNode.clientHeight - 78) {
+        if (parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
+            parallaxBannerVideoNode.classList.remove(parallaxVideoInvisibleClass);
+        }
     }
 };
 
@@ -194,6 +304,9 @@ const SetParallaxClassesForAll = function () {
         if (!parallaxVideoNodesInView.includes(parallaxVideoNode)) {
             if (parallaxVideoNode && parallaxVideoNode.classList.contains(parallaxVideoVisibleClass)) {
                 parallaxVideoNode.classList.remove(parallaxVideoVisibleClass);
+                if (!parallaxVideoNode && parallaxVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
+                    parallaxVideoNode.classList.add(parallaxVideoInvisibleClass);
+                }
             }
             if (parallaxVideoNode.children[0].style.maxHeight != '') {
                 parallaxVideoNode.children[0].style.maxHeigh = '';
@@ -201,12 +314,19 @@ const SetParallaxClassesForAll = function () {
         } else {
             if (parallaxVideoNode && !parallaxVideoNode.classList.contains(parallaxVideoVisibleClass)) {
                 parallaxVideoNode.classList.add(parallaxVideoVisibleClass);
+                if (parallaxVideoNode && parallaxVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
+                    parallaxVideoNode.classList.remove(parallaxVideoInvisibleClass);
+                }
             }
             if (parallaxVideoNodesInView.length > 0) {
                 var parallaxContentNode = parallaxContentNodesInView[0];
                 parallaxVideoNodesInView[0].children[0].style.maxHeight = CheckRemainingParallaxHeight(parallaxContentNode) + "px";
                 if (parallaxVideoNodesInView.length > 1) {
                     parallaxVideoNodesInView[1].children[0].style.maxHeight = '';
+                }
+            } else {
+                if (!parallaxVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
+                    parallaxVideoNode.classList.add(parallaxVideoInvisibleClass);
                 }
             }
         }
@@ -257,3 +377,68 @@ const SetInitialNavigationClass = function () {
         navNode.classList.add("iz-nav-fade-in");
     }
 };
+// Create a global variable which will keep track of userInteraction
+let scrollWrapperNode = document.getElementById("iz-wrapper");
+let izContentEntryMainNodes = document.getElementsByClassName("iz-content-entry");
+let izBannerContentNodeList = document.getElementsByClassName("iz-content-banner");
+
+let isAnimationTimerRunning = false;
+
+let izNodeListArray = [];
+let izNodeListIndexCurrent = 0;
+let izNodeListIndexMaximum = 0;
+
+const ScrollCustomMade = function (event) {
+    event.preventDefault();
+    event.cancelBubble = true;
+    if (!isAnimationTimerRunning) {
+        if (event.wheelDelta > 0 && izNodeListIndexCurrent > 0) {
+            izNodeListIndexCurrent--;
+        } else if (event.wheelDelta < 0 && izNodeListIndexCurrent < izNodeListIndexMaximum) {
+            izNodeListIndexCurrent++;
+        } else {
+            console.log("index didnt change");
+        }
+
+        izNodeListArray[izNodeListIndexCurrent].scrollIntoView({ behavior: "smooth" });
+
+        RunAnimationTimer();
+    } else {
+        console.log("Animation Timer running.... cancelling!");
+    }
+};
+
+const InitScrollCustomMade = function () {
+    scrollWrapperNode = document.getElementById("iz-wrapper");
+    izBannerContentNodeList = document.getElementsByClassName("iz-content-banner");
+    izContentEntryMainNodes = document.getElementsByClassName("iz-content-entry");
+    izNodeListArray = [];
+
+    if (!scrollWrapperNode || izContentEntryMainNodes < 1 || !izBannerContentNodeList || !izBannerContentNodeList[0]) {
+        setTimeout(InitScrollCustomMade, 50);
+    } else {
+        for (var izBannerNode of izBannerContentNodeList) {
+            izNodeListArray.push(izBannerNode);
+        }
+        for (var izContentNode of izContentEntryMainNodes) {
+            izNodeListArray.push(izContentNode);
+        }
+        izNodeListIndexMaximum = izNodeListArray.length - 1;
+        scrollWrapperNode.setAttribute("onwheel", "ScrollCustomMade(event);");
+    }
+};
+
+const RunAnimationTimer = function () {
+    if (!isAnimationTimerRunning) {
+        isAnimationTimerRunning = true;
+
+        setTimeout(function () {
+            isAnimationTimerRunning = false;
+        }, 500);
+    }
+};
+// Code Execution
+CreateNavigationNode();
+SetInitialNavigationClass();
+OnLoadParallaxScrollFunction();
+InitScrollCustomMade();

@@ -35,12 +35,9 @@ body {
         margin-top: $nav-height-total;
 
         h1,
-        h2,
-        h3,
-        h4,
-        h5 {
+        h2 {
 
-            &:not(nav#iz-nav-list *) {
+            &.iz-animation-active {
                 font-weight: 500;
                 shape-rendering: crispedges;
                 text-rendering: geometricPrecision;

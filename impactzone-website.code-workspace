@@ -8,9 +8,6 @@
 		"compile-hero.disable-compile-files-on-did-save-code": false,
 		"editor.formatOnSave": true,
 		"editor.formatOnPaste": true,
-		"terminal.integrated.shellArgs.windows": [
-			"./scripts/create-scss-file-from-components.ps1"
-		],
 		"compile-hero.ignore": [
 			"./scss",
 			"scss",

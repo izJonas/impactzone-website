@@ -100,7 +100,6 @@
         }
 
         span {
-
         }
     }
     /*
@@ -141,8 +140,8 @@ img.iz-animation-img-flow:hover {
     $animationElementsCountImage: 1;
 
     /*
-  * Elements settings
-  */
+    * Elements settings
+    */
     animation-name: iz-animation-img-flow-keys;
     animation-duration: #{$animationDurationImage}s;
     animation-iteration-count: infinite;
@@ -150,8 +149,8 @@ img.iz-animation-img-flow:hover {
     animation-fill-mode: forwards;
 
     /*
-  * Keyframe loop
-  */
+    * Keyframe loop
+    */
     $sum-hsla: 0;
     @keyframes iz-animation-img-flow-keys {
         @for $i from 0 through $animationStepsImage {
@@ -169,8 +168,8 @@ img.iz-animation-img-flow:hover {
     }
 
     /*
-  * Element animation delay loop
-  */
+    * Element animation delay loop
+    */
     $totalDelayTimeImage: $animationElementsCountImage;
 
     animation-delay: #{$totalDelayTimeImage}s;

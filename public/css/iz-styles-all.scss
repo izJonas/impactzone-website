@@ -136,11 +136,9 @@ body {
         margin-top: $nav-height-total;
 
         h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            &:not(nav#iz-nav-list *) {
+        h2 {
+
+            &.iz-animation-active {
                 font-weight: 500;
                 shape-rendering: crispedges;
                 text-rendering: geometricPrecision;
@@ -199,6 +197,7 @@ nav#iz-nav-list {
         opacity: 0;
         visibility: hidden;
 
+
         // Navigation Entry
         .nav-entry {
             display: flex;
@@ -234,6 +233,7 @@ nav#iz-nav-list {
             }
 
             &.nav-entry-sublist {
+
                 > a::after {
                     display: inline-block;
                     transform: rotate(90deg);
@@ -503,7 +503,8 @@ main#iz-content {
             background-color: transparent;
         }
 
-        .iz-content-headline:not(nav#iz-nav-list *) {
+        .iz-animation-active .iz-content-headline {
+
             padding: 12px 35px;
             border-radius: 12px;
             background-color: #00000077;
@@ -861,6 +862,7 @@ div.iz-text-entry {
     padding: 0;
     margin: 0;
     display: none;
+    opacity: 0;
     transition: $default-transition-fast;
 
     &.iz-banner-video {
@@ -868,21 +870,57 @@ div.iz-text-entry {
         padding: 0;
         margin: 0;
         display: unset;
+        opacity: 1;
+        transition: $default-transition-fast;
+
         transition: $default-transition-fast;
 
         video {
-            object-fit: cover;
+            object-fit: contain;
             min-width: 100%;
+            width: 100vw;
+            min-height: 100%;
             position: fixed;
             top: $nav-height-total;
             z-index: -999;
             transition: $default-transition-fast;
         }
+
+        &.iz-parallax-video-invisible {
+            display: none;
+            opacity: 0;
+            transition: $default-transition-fast;
+
+            video {
+                transition: $default-transition-fast;
+                display: none;
+                opacity: 0;
+            }
+        }
     }
 
     &.iz-parallax-video-visible {
         display: unset;
+        opacity: 1;
         transition: $default-transition-fast;
+
+        video {
+            transition: $default-transition-fast;
+            display: unset;
+            opacity: 1;
+        }
+    }
+
+    &.iz-parallax-video-invisible {
+        display: none;
+        transition: $default-transition-fast;
+        opacity: 0;
+
+        video {
+            transition: $default-transition-fast;
+            display: none;
+            opacity: 0;
+        }
     }
 
     &.iz-parallax-video-z-top {
@@ -893,8 +931,10 @@ div.iz-text-entry {
     }
 
     video {
-        object-fit: cover;
+        object-fit: contain;
         min-width: 100%;
+        width: 100vw;
+        min-height: 100%;
         position: fixed;
         top: $nav-height-total;
         z-index: -999;
@@ -1056,8 +1096,8 @@ img.iz-animation-img-flow:hover {
     $animationElementsCountImage: 1;
 
     /*
-  * Elements settings
-  */
+    * Elements settings
+    */
     animation-name: iz-animation-img-flow-keys;
     animation-duration: #{$animationDurationImage}s;
     animation-iteration-count: infinite;
@@ -1065,8 +1105,8 @@ img.iz-animation-img-flow:hover {
     animation-fill-mode: forwards;
 
     /*
-  * Keyframe loop
-  */
+    * Keyframe loop
+    */
     $sum-hsla: 0;
     @keyframes iz-animation-img-flow-keys {
         @for $i from 0 through $animationStepsImage {
@@ -1084,8 +1124,8 @@ img.iz-animation-img-flow:hover {
     }
 
     /*
-  * Element animation delay loop
-  */
+    * Element animation delay loop
+    */
     $totalDelayTimeImage: $animationElementsCountImage;
 
     animation-delay: #{$totalDelayTimeImage}s;
