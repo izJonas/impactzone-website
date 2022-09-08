@@ -24,7 +24,9 @@ const CreateNavigationNode = function () {
 
     Object.entries(siteList).forEach(siteNavInfo => {
         const [key, value] = siteNavInfo;
-        console.log(key, value);
+        if (isDebug) {
+            console.log(key, value);
+        }
 
         if (key === "logo") {
             var fotoElementNode = document.createElement("img");
@@ -79,7 +81,9 @@ const CreateNavigationWithSubnavList = function (navigationValue) {
 
         Object.entries(navigationValue.subsites).forEach(subsiteNavInfo => {
             const [subKey, subValue] = subsiteNavInfo;
-            console.log(subKey, subValue);
+            if (isDebug) {
+                console.log(subKey, subValue);
+            }
             var sublistElementNode = document.createElement("li");
             sublistElementNode.classList.add("nav-sub-entry");
 
@@ -120,7 +124,9 @@ const ScrollBannerParallaxHeight = function () {
     if (!parallaxBannerVideoNode || !mainContentWrapperNode) {
         return;
     }
-    console.log(mainContentWrapperNode.scrollTop);
+    if (isDebug) {
+        console.log(mainContentWrapperNode.scrollTop);
+    }
     if (mainContentWrapperNode.scrollTop < 377) {
         parallaxBannerVideoNode.children[0].style.top = (77 - mainContentWrapperNode.scrollTop) + "px";
     }

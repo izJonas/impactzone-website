@@ -8,12 +8,12 @@
 - var parallaxOnscrollFunction = ""
 if isParallax
     - var parallaxClassesVideo = "iz-parallax-video iz-parallax-index-" + izIndexCurrent + " iz-parallax-video-index-" + izIndexCurrent
-    - var parallaxClassesContent =  "iz-parallax-content iz-parallax-index-" + izIndexCurrent
+    - var parallaxClassesContent =  "iz-parallax-content iz-parallax-index-" + izIndexCurrent + izContentClass
     - var parallaxClassesImage =  "iz-parallax-image iz-parallax-index-" + izIndexCurrent
     - var parallaxOnscrollFunction = "SetPrallaxVideoVisible(this)"
 if backgroundVideo && isParallax
     - var hasBackgroundVideo = true
-    - var parallaxClassesContent = "iz-parallax-content iz-parallax-content-transparent"
+    - var parallaxClassesContent = "iz-parallax-content iz-parallax-content-transparent " + izContentClass
 section.iz-content-entry(id=izContentId class=parallaxClassesContent izParallaxIndex=izIndexCurrent)
     if izTypes
         each izType in izTypes
