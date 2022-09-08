@@ -6,11 +6,13 @@ if izType == "list-of-cards"
             include ../components/card.pug
 else if izType == "list-of-squares"
     - var listEntries = mainSection.squares
-    each square in listEntries
-        include ../components/square.pug
+    section.iz-square-list
+        each square in listEntries
+            include ../components/square.pug
 else if izType ==  "list-of-refs"
     - var listEntries = mainSection.references
-    each reference in listEntries
-        include ../components/reference.pug
+    section.iz-ref-list
+        each reference in listEntries
+            include ../components/reference.pug
 else
     p No content found...

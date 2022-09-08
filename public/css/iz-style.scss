@@ -1,5 +1,6 @@
 @use 'sass:map';
 @import './scss/iz-variables';
+@import './scss/iz-mixins';
 
 html {
     background-color: #040404;
@@ -51,7 +52,11 @@ body {
 
         @import './scss/iz-footer';
 
+        @import './scss/iz-components';
+
+        @include gradient-classes("mirage" "mirage-transparent" "black2transparent" "sand2blue" "coal");
     }
+
 
     @import './scss/iz-parallax';
 

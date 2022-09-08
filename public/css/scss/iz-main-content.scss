@@ -64,6 +64,23 @@ main#iz-content {
             background-color: transparent;
         }
 
+        .iz-content-headline {
+            padding: 12px 35px;
+            border-radius: 12px;
+            background-color: #00000077;
+            box-shadow: 3px 1px 6px #e4e4e4aa;
+
+            span.iz-text {
+                text-transform: uppercase;
+                text-rendering: optimizeLegibility;
+                letter-spacing: 0.25em;
+                font-size: 2em;
+                line-height: 2;
+                font-weight: 200;
+                white-space: nowrap;
+            }
+        }
+
         &#pfs-unsere-agenturleistungen {
             video#pfs-unsere-agenturleistungen-background {
                 //background: url("/media/02_Planetpagebackground_v01_1.mp4");
@@ -146,6 +163,62 @@ main#iz-content {
 
                     * {
                         display: flex;
+                    }
+                }
+            }
+        }
+
+        .iz-square-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 50px;
+
+            .iz-square {
+                display: flex;
+                flex-direction: column;
+
+                .iz-square-top {
+                    figure {
+                        display: flex;
+                        margin: 0 auto;
+
+                        img.iz-square-image {
+                            display: flex;
+                            min-width: $card-image-width;
+                            max-width: $card-image-width;
+                            width: $card-image-width;
+                            filter: $card-image-filter;
+                            transition: $card-image-transition;
+                            transform: translateY(0px);
+
+                            &:hover {
+                                animation-duration: 0.5s;
+                                animation-name: iz-animation-boing;
+                                animation-iteration-count: infinite;
+                                animation-direction: alternate;
+                            }
+                        }
+                    }
+                    .iz-square-text {
+                        display: flex;
+                        flex-direction: column;
+
+                        * {
+                            display: flex;
+                        }
+
+                        .iz-square-headline {
+                        }
+
+                        .iz-square-content {
+                        }
+                    }
+                }
+
+                .iz-square-bottom {
+                    .iz-square-button {
+                        svg {
+                        }
                     }
                 }
             }

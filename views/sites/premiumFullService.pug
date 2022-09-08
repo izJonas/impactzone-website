@@ -21,4 +21,5 @@ block content
     each mainSection in mainSectionEntries
         - var izIndexCurrent = izIndex++
         - var izContentId = mainSection.id ? mainSection.id : "iz-content-entry-" + izIndexCurrent
+        - var izContentClass = mainSection.class ? " " + mainSection.class : " "
         include ../generators/mainSectionGenerator.pug

@@ -32,7 +32,8 @@ const connectionString = 'mongodb+srv://iz-admin:g837upv5LPUpkmA@impactzoneclust
 const SetViewEngine = function () {
     // Set the pug view engine
     //app.set('views', './views')
-    app.set('views', [path.join(__dirname, '/views'),
+    app.set('views', [
+        path.join(__dirname, '/views'),
         path.join(__dirname, '/views/sites'),
         path.join(__dirname, '/views/components'),
         path.join(__dirname, '/views/generators')
@@ -43,6 +44,10 @@ const SetViewEngine = function () {
     app.locals.basedir = path.join(__dirname, 'views')
 
     app.use(express.static(__dirname + '/public'))
+
+    app.use('/assets', [
+        express.static(__dirname + '/node_modules/jquery/dist/')
+    ])
 }
 
 SetViewEngine()

@@ -15,7 +15,8 @@
     },
     "sections": [
         {
-            "id": "first-id-to-use",
+            "id": "idee-zu-erfolg",
+            "class": "iz-gradient-mirage-transparent iz-animation-text-flow ",
             "izTypes": [
                 "headline-1",
                 "text-multi"
