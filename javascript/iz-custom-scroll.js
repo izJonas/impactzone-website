@@ -2,7 +2,7 @@
 let scrollWrapperNode = document.getElementById("iz-wrapper");
 let izContentEntryMainNodes = document.getElementsByClassName("iz-content-entry");
 let izBannerContentNodeList = document.getElementsByClassName("iz-content-banner");
-
+let footerWrapperNode = document.getElementById("iz-footer");
 let isAnimationTimerRunning = false;
 
 let izNodeListArray = [];
@@ -22,7 +22,17 @@ const ScrollCustomMade = function (event) {
         }
 
         izNodeListArray[izNodeListIndexCurrent].scrollIntoView({ behavior: "smooth" });
-
+        if (izNodeListIndexCurrent == izNodeListIndexMaximum) {
+            if (!footerWrapperNode.classList.contains("bottom-reached")) {
+                footerWrapperNode.classList.add("bottom-reached");
+                scrollWrapperNode.classList.add("bottom-reached");
+            }
+        } else {
+            if (footerWrapperNode.classList.contains("bottom-reached")) {
+                footerWrapperNode.classList.remove("bottom-reached");
+                scrollWrapperNode.classList.remove("bottom-reached");
+            }
+        }
         RunAnimationTimer();
     } else {
         console.log("Animation Timer running.... cancelling!");

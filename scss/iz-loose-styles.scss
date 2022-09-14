@@ -33,7 +33,13 @@ body {
         overflow: auto;
         flex-direction: column;
         margin-top: $nav-height-total;
+        margin-bottom: 0;
+            transition: all 0.5s ease;
 
+            &.bottom-reached {
+                    transition: all 0.5s ease;
+                    margin-bottom: 125px;
+                }
         h1,
         h2 {
 

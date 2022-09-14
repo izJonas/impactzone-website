@@ -134,7 +134,13 @@ body {
         overflow: auto;
         flex-direction: column;
         margin-top: $nav-height-total;
+        margin-bottom: 0;
+            transition: all 0.5s ease;
 
+            &.bottom-reached {
+                    transition: all 0.5s ease;
+                    margin-bottom: 125px;
+                }
         h1,
         h2 {
 
@@ -471,6 +477,12 @@ main#iz-content {
                     -webkit-text-stroke: 0.25px deepskyblue;
                     text-stroke: 0.25px deepskyblue;
                 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &.iz-content-headline {
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    transition: all 0.2s ease-out;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin: 15px auto;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -webkit-text-stroke: 0.25px deepskyblue;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    text-stroke: 0.25px deepskyblue;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
             }
 
             p.iz-banner-content {
@@ -503,21 +515,24 @@ main#iz-content {
             background-color: transparent;
         }
 
-        .iz-animation-active .iz-content-headline {
+        &.iz-animation-active {
+            .iz-content-headline {
 
-            padding: 12px 35px;
-            border-radius: 12px;
-            background-color: #00000077;
-            box-shadow: 3px 1px 6px #e4e4e4aa;
+                padding: 12px 35px;
+                border-radius: 12px;
+                background-color: #00000077;
+                box-shadow: 3px 1px 6px #e4e4e4aa;
 
-            > span.iz-text {
-                text-transform: uppercase;
-                text-rendering: geometricPrecision;
-                letter-spacing: 0.25em;
-                font-size: 2em;
-                line-height: 2;
-                font-weight: 500;
-                white-space: nowrap;
+                >span.iz-text {
+                    text-transform: uppercase;
+                    text-rendering: geometricPrecision;
+                    letter-spacing: 0.25em;
+                    font-size: 2em;
+                    line-height: 2;
+                    font-weight: 500;
+                    white-space: nowrap;
+
+                }
             }
         }
 
@@ -670,8 +685,18 @@ footer#iz-footer {
     display: flex;
     background-color: transparent;
     background-image: linear-gradient(130deg, #040404 0%, #1d1d1d 100%);
-    padding-bottom: 10px;
-    padding-top: 5px;
+    padding: 0;
+        bottom: 0;
+        position: fixed;
+        width: 100vw;
+        box-shadow: 0px -2px 0.5px #000000aa;
+        max-height: 0;
+        transition: all 0.5s ease;
+
+        &.bottom-reached {
+            max-height: 125px;
+            transition: all 0.5s ease;
+        }
     // Logo of the footer
     img#iz-footer-logo {
         display: flex;
@@ -684,20 +709,42 @@ footer#iz-footer {
         display: flex;
         flex-direction: column;
         margin: auto 1em;
-        padding: 5px;
+        padding: 10px;
         min-width: 333px;
+        max-height: 125px;
 
         #iz-footer-company-headline {
             display: flex;
             width: inherit;
+            margin: 0 auto;
+            padding: 0;
+            height: 38px;
+            max-height: 38px;
+            min-height: 38px;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: "Assistant", Sans-serif;
+            line-height: 14px;
         }
         #iz-footer-company-content {
             display: flex;
             width: inherit;
+            color: rgb(128, 128, 128);
+            outline: rgb(128, 128, 128);
+            font-size: 10px;
+            font-family: "Assistant", Sans-serif;
+            margin: 0 auto;
+            padding: 0;
+            height: 41px;
+            max-height: 41px;
+            min-height: 41px;
         }
         #iz-footer-company-button-row {
             display: flex;
             gap: 0.5em;
+            margin: 0;
+            padding: 0;
             align-content: center;
             align-items: center;
             align-self: center;
@@ -708,13 +755,16 @@ footer#iz-footer {
 
             text-align: center;
             vertical-align: middle;
+            height: 26px;
+                max-height: 26px;
+                min-height: 26px;
             a {
                 text-decoration: none;
                 display: flex;
                 border-radius: 50px;
                 font-size: 12px;
                 line-height: 15px;
-                padding: 8px 12px;
+                padding: 0;
                 background-color: transparent;
                 background-image: #{map.get($button-gradients, "footer")};
                 transition: #{map.get($button-transitions, "footer")};
@@ -965,6 +1015,15 @@ div.iz-text-entry {
     }
 }
 
+@keyframes iz-animation-stutter-transparency {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
 // Animation Definition
 @keyframes iz-animation-wavering-shadow {
     0% {
@@ -1033,6 +1092,7 @@ div.iz-text-entry {
     $animationElement: span;
     $animationElementsCount: 100;
     $delayBetweenLetters: 0.2;
+
     /*
     * Elements settings
     */
@@ -1055,9 +1115,9 @@ div.iz-text-entry {
             text-stroke: 1px white;
         }
 
-        span {
-        }
-    }
+                span {}
+                }
+
     /*
   * Keyframe loop
   */
@@ -1108,17 +1168,17 @@ img.iz-animation-img-flow:hover {
     * Keyframe loop
     */
     $sum-hsla: 0;
+
     @keyframes iz-animation-img-flow-keys {
         @for $i from 0 through $animationStepsImage {
             #{percentage($i * calc(1 / $animationStepsImage))} {
                 fill: hsla($sum-hsla, 60%, 60%, 1);
-                fill: -webkit-linear-gradient(
-                    to right,
-                    hsla($sum-hsla, 60%, 60%, 1),
-                    hsla($sum-hsla + 10, 60%, 60%, 1)
-                );
+                fill: -webkit-linear-gradient(to right,
+                            hsla($sum-hsla, 60%, 60%, 1),
+                        hsla($sum-hsla + 10, 60%, 60%, 1));
                 fill: linear-gradient(to right, hsla($sum-hsla, 60%, 60%, 1), hsla($sum-hsla + 10, 60%, 60%, 1));
             }
+
             $sum-hsla: $sum-hsla + 10;
         }
     }

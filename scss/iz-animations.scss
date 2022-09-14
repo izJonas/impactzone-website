@@ -9,6 +9,15 @@
     }
 }
 
+@keyframes iz-animation-stutter-transparency {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
 // Animation Definition
 @keyframes iz-animation-wavering-shadow {
     0% {
@@ -77,6 +86,7 @@
     $animationElement: span;
     $animationElementsCount: 100;
     $delayBetweenLetters: 0.2;
+
     /*
     * Elements settings
     */
@@ -99,9 +109,9 @@
             text-stroke: 1px white;
         }
 
-        span {
-        }
-    }
+                span {}
+                }
+
     /*
   * Keyframe loop
   */
@@ -152,17 +162,17 @@ img.iz-animation-img-flow:hover {
     * Keyframe loop
     */
     $sum-hsla: 0;
+
     @keyframes iz-animation-img-flow-keys {
         @for $i from 0 through $animationStepsImage {
             #{percentage($i * calc(1 / $animationStepsImage))} {
                 fill: hsla($sum-hsla, 60%, 60%, 1);
-                fill: -webkit-linear-gradient(
-                    to right,
-                    hsla($sum-hsla, 60%, 60%, 1),
-                    hsla($sum-hsla + 10, 60%, 60%, 1)
-                );
+                fill: -webkit-linear-gradient(to right,
+                            hsla($sum-hsla, 60%, 60%, 1),
+                        hsla($sum-hsla + 10, 60%, 60%, 1));
                 fill: linear-gradient(to right, hsla($sum-hsla, 60%, 60%, 1), hsla($sum-hsla + 10, 60%, 60%, 1));
             }
+
             $sum-hsla: $sum-hsla + 10;
         }
     }

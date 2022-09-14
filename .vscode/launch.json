@@ -5,14 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "npm run start",
-            "name": "Run server",
+            "command": "npm run dev",
+            "name": "Run development server",
             "request": "launch",
             "type": "node-terminal"
         },
         {
-            "command": "npm run dev",
-            "name": "Run development server",
+            "command": "npm run start",
+            "name": "Run server",
             "request": "launch",
             "type": "node-terminal"
         },

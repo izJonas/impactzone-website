@@ -225,7 +225,7 @@ const ScrollBannerParallaxHeight = function () {
     if (isDebug) {
         console.log(mainContentWrapperNode.scrollTop);
     }
-    debugger;
+
     if (mainContentWrapperNode.scrollTop < 377) {
         parallaxBannerVideoNode.children[0].style.top = (78 - mainContentWrapperNode.scrollTop) + "px";
         if (parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
@@ -381,7 +381,7 @@ const SetInitialNavigationClass = function () {
 let scrollWrapperNode = document.getElementById("iz-wrapper");
 let izContentEntryMainNodes = document.getElementsByClassName("iz-content-entry");
 let izBannerContentNodeList = document.getElementsByClassName("iz-content-banner");
-
+let footerWrapperNode = document.getElementById("iz-footer");
 let isAnimationTimerRunning = false;
 
 let izNodeListArray = [];
@@ -401,7 +401,17 @@ const ScrollCustomMade = function (event) {
         }
 
         izNodeListArray[izNodeListIndexCurrent].scrollIntoView({ behavior: "smooth" });
-
+        if (izNodeListIndexCurrent == izNodeListIndexMaximum) {
+            if (!footerWrapperNode.classList.contains("bottom-reached")) {
+                footerWrapperNode.classList.add("bottom-reached");
+                scrollWrapperNode.classList.add("bottom-reached");
+            }
+        } else {
+            if (footerWrapperNode.classList.contains("bottom-reached")) {
+                footerWrapperNode.classList.remove("bottom-reached");
+                scrollWrapperNode.classList.remove("bottom-reached");
+            }
+        }
         RunAnimationTimer();
     } else {
         console.log("Animation Timer running.... cancelling!");
