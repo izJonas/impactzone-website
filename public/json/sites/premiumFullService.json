@@ -11,12 +11,13 @@
         "content": "INDIVIDUELLE GESAMTLÖSUNGEN & CROSS-MEDIALE UNTERNEHMENSBETREUUNG.",
         "video": "/media/impactzone-Premium-Full-Service-Intro.mp4",
         "id": "iz-banner-background-video",
-        "class": "iz-banner-video iz-parallax-video"
+        "class": "iz-banner-video iz-parallax-video",
+        "mainClass": "iz-gradient-sand2blue"
     },
     "sections": [
         {
             "id": "idee-zu-erfolg",
-            "class": "iz-gradient-mirage-transparent iz-animation-text-flow ",
+            "class": "iz-gradient-mirage iz-animation-text-flow iz-animation-active ",
             "izTypes": [
                 "headline-1",
                 "text-multi"
@@ -30,6 +31,7 @@
         },
         {
             "id": "pfs-unsere-agenturleistungen",
+            "class": "iz-animation-active ",
             "izTypes": [
                 "headline-1",
                 "list-of-cards",
@@ -47,49 +49,49 @@
             "cards": [
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_wirkung.svg",
+                    "image": "/img/svg/02_icon_wirkung.svg",
                     "headline": "BRAND- & CORPORATE-SERVICE",
                     "content": "Durch gezieltes impact-Design, Wirkungsanalysen und durch konzeptionelle Aufbereitung die gewünschte Wirkung erzielen. Bringen Sie Ihr Thema auf den Punkt und ermöglichen Sie Ihrem Zuhörer den &quotAHA-Effekt&quot;."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_design.svg",
+                    "image": "/img/svg/02_icon_design.svg",
                     "headline": "PRÄSENTATIONS-SERVICE",
                     "content": "Keynote Artists | Neuerstellung | Veredelung | Konzepterstellung | Face-Lift | Betreuung Animationen | Komplett navigierbar | Druck-optimiert | Corporate Design konform"
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_video.svg",
+                    "image": "/img/svg/02_icon_video.svg",
                     "headline": "ANIMATIONS-SERVICE",
                     "content": "Trailer- und Unternehmensvideos | Videobearbeitung | Filmschnitt | Storyboarding | 3D-Animationen | Vektor-Animationen | Spezialeffekte | Animierte Hintergründe | Hollywood-Animationen für Powerpoint"
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_homepage.svg",
+                    "image": "/img/svg/02_icon_homepage.svg",
                     "headline": "ONLINE-SERVICE",
                     "content": "Kompletterstellung von Konzept über das Design bis hin zur technischen Umsetzung Ihrer Wünsche & Ideen | Präsentative Landingpages | Moderne Online-Shops | Search Engine Optimization (SEO) | u.v.m."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_druck.svg",
+                    "image": "/img/svg/02_icon_druck.svg",
                     "headline": "PRINT-SERVICE",
                     "content": "Natürlich designen wir auch gerne Ihre Print-Produkte: Unternehmensdokumente | Rechnungen | Visitenkarten | Flyer | Vertriebsunterlagen | Plakate | Banner | Werbung"
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_infographic.svg",
+                    "image": "/img/svg/02_icon_infographic.svg",
                     "headline": "KONZEPT & ANALYSE-SERVICE",
                     "content": "Wir helfen beim Veranschaulichen komplexer Zusammenhänge."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_text.svg",
+                    "image": "/img/svg/02_icon_text.svg",
                     "headline": "CONTENT & IMPACT-SERVICE",
                     "content": "Grobe Gedankengänge? Fehlende Formulierungen? Kein Problem. Wir entwickeln Ihre Texte weiter oder finden neue Ansätze und Wege für Ihre Kommunikation."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_story.svg",
+                    "image": "/img/svg/02_icon_story.svg",
                     "headline": "KONZEPT-SERVICE",
                     "content": "Bringen Sie mehr Spannung in die Sache: Langatmige Themen kurzweilig präsentiert."
                 }
@@ -118,42 +120,42 @@
             "squares": [
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_sprechblasen.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_ausrufezeichen.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_visitenkarte.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_statistikmonitor.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_weggabelung.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_telefonhoerer.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
@@ -188,43 +190,43 @@
             "headliner": "4",
             "squares": [
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_.svg",
                     "headline": "KURZE ABSPRACHEWEGE",
                     "content": "FÜR EINE MAXIMALE ENTLASTUNG FÜR SIE.",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_.svg",
                     "headline": "BRANCHENKENNTNIS",
                     "content": "LANGJÄHRIGE ZUSAMMNARBEIT",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_.svg",
                     "headline": "PFLEGE & BETREUUNG",
                     "content": "UMFASSENDE KONZEPTIONS- UND REALISATIONSKOMPETENZ FÜR",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_.svg",
                     "headline": "MARKETINGPARTNER",
                     "content": "IHRE EXTERNE MARKETINGABTEILUNG",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_.svg",
                     "headline": "MEDIENÜBERGREIFENDE MASSNAHMEN",
                     "content": "LANGJÄHRIGE ZUSAMMENARBEIT",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_.svg",
                     "headline": "KOMPETENTTEAMS",
                     "content": "FESTE BETREUER FÜR IHRE BELANGE",
                     "arrow": "Mehr erfahren"

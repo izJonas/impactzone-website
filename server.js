@@ -8,6 +8,19 @@ const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const app = express();
 const fs = require('fs');
+const minify = require('express-minify');
+app.use(minify({
+    cache: __dirname + '/cache',
+    uglifyJsModule: null,
+    errorHandler: null,
+    jsMatch: /javascript/,
+    cssMatch: /css/,
+    jsonMatch: /json/,
+    sassMatch: /css/,
+    lessMatch: /less/,
+    stylusMatch: /stylus/,
+    coffeeScriptMatch: /coffeescript/,
+}));
 
 function readJSONFile(filename, callback) {
     fs.readFile(filename, function (err, data) {

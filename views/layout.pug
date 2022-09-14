@@ -3,31 +3,35 @@
 
 doctype html
 html(lang='de')
-    head
-        title= title
+  head
+    title= title
 
-        //- Meta Tags
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        meta(charset="UTF-8")
+    //- Meta Tags
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(charset="UTF-8")
 
-        //- CSS Files
-        link(rel="stylesheet" href="/css/iz-style.css")
+    //- Favicon
+    link(rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png")
+    link(rel="manifest" href="/site.webmanifest")
 
-        //- Scripts
-        script(src="https://kit.fontawesome.com/56d793c70e.js" crossorigin="anonymous")
-        script(type="module" src="/js/iz-module-load.js")
-        script(src="/assets/jquery.min.js")
-        script(src="/js/iz-vars.js")
-        script(src="/js/iz-jquery.js")
-        script(src="/js/iz-parallax.js")
-        script(src="/js/iz-custom-scroll.js")
-        script(src="/js/iz-run.js")
-    body
-        #iz-wrapper
-            nav#iz-nav-list
-                ul#iz-nav-ul
-            main#iz-content(
-                class=sitesContent.name
-                )
-                block content
-            include footer.pug
+    //- CSS Files
+    link(rel="stylesheet" href="/css/iz-styles-all.css" type="text/css" media="screen" defer)
+
+    //- Scripts
+    script(src="https://kit.fontawesome.com/56d793c70e.js" crossorigin="anonymous" type="application/ecmascript" defer)
+    script(type="module" src="/js/iz-module-load.js" )
+
+    script(src="/assets/jquery.min.js" type="application/ecmascript" defer)
+
+    script(src="/js/iz-funct.js" type="application/ecmascript" defer)
+  body(onmousemove="UpdateMousePosition(event);")
+    #iz-wrapper
+      nav#iz-nav-list
+        ul#iz-nav-ul
+      main#iz-content(
+        class=sitesContent.name
+        )
+        block content
+      include footer.pug
