@@ -1,6 +1,7 @@
 // Banner
 nav#iz-nav-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
     position: fixed;
     height: $nav-height;
     max-height: $nav-height;
@@ -11,6 +12,7 @@ nav#iz-nav-list {
     background-color: $background-color-navigation;
     z-index: 999;
     border-bottom: $nav-border-width solid #e1e1e182;
+    box-sizing: border-box;
 
     * {
         text-align: center;
@@ -22,6 +24,16 @@ nav#iz-nav-list {
         margin-left: auto;
         height: 60px;
         width: 60px;
+
+        &.iz-awaa-shock {
+            -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            border-radius: 50px;
+
+            &:hover {
+                animation: iz-awaa-nav-logo-shock 0.05s steps(10) forwards;
+            }
+        }
     }
 
     &.iz-nav-fade-in {
@@ -40,6 +52,8 @@ nav#iz-nav-list {
         transition: $default-transition-slow;
         opacity: 0;
         visibility: hidden;
+        justify-self: center;
+        padding: 0;
 
 
         // Navigation Entry
@@ -78,7 +92,7 @@ nav#iz-nav-list {
 
             &.nav-entry-sublist {
 
-                > a::after {
+                >a::after {
                     display: inline-block;
                     transform: rotate(90deg);
                     padding-left: 8px;
@@ -87,10 +101,12 @@ nav#iz-nav-list {
                     line-height: 0px;
                     font-size: medium;
                     width: 15px;
+                    box-sizing: border-box;
                     transition: map-get($navigation-text, "transition");
                 }
+
                 &:hover {
-                    > a::after {
+                    >a::after {
                         transform: rotate(0deg);
                         font-weight: 900;
                         font-size: large;
@@ -99,7 +115,7 @@ nav#iz-nav-list {
                 }
             }
 
-            > a {
+            >a {
                 color: map-get($navigation-text, "color");
                 transition: map-get($navigation-text, "transition");
                 padding: 8px 12px;
@@ -109,13 +125,14 @@ nav#iz-nav-list {
                 text-transform: uppercase;
             }
 
-            &:hover > a {
+            &:hover>a {
                 transition: map-get($navigation-text, "transition");
                 color: map-get($navigation-text, "hover");
                 text-decoration: underline;
             }
 
             &:hover {
+
                 // Navigation Sublist
                 ul.iz-subnav-ul {
                     transition: map-get($navigation-sublist, "transition");
@@ -180,6 +197,7 @@ nav#iz-nav-list {
                         display: flex;
                         height: 45px;
                         padding-left: 32px;
+                        box-sizing: border-box;
                         align-items: center;
                         justify-content: left;
 
@@ -203,6 +221,7 @@ nav#iz-nav-list {
                 }
             }
         }
+
         // Hover of entry with sublist
         .nav-entry-sublist {
             * {
@@ -218,6 +237,7 @@ nav#iz-nav-list {
             }
         }
     }
+
     // Search Field
     form.iz-search-form {
         display: flex;
@@ -235,6 +255,7 @@ nav#iz-nav-list {
             display: flex;
             background-color: transparent;
             width: 100px;
+            box-sizing: border-box;
             height: 30px;
             border-radius: 10px;
             border: none;
@@ -242,7 +263,7 @@ nav#iz-nav-list {
             padding-left: 8px;
             transition: $default-transition-fast;
 
-            + svg {
+            +svg {
                 transition: $default-transition-fast;
                 display: flex;
                 margin-top: auto;
@@ -257,7 +278,7 @@ nav#iz-nav-list {
                 border-radius: 5px;
                 border: 1px solid $background-color-navigation;
 
-                + svg {
+                +svg {
                     transition: $default-transition-fast;
                     color: black;
                 }

@@ -129,11 +129,7 @@ const ScrollBannerParallaxHeight = function () {
         console.log(mainContentWrapperNode.scrollTop);
     }
 
-    if (mainContentWrapperNode.scrollTop < 377) {
-        if (parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
-            parallaxBannerVideoNode.classList.remove(parallaxVideoInvisibleClass);
-        }
-    } else if (mainContentWrapperNode.scrollTop > parallaxBannerVideoNode.parentNode.clientHeight - 78) {
+    if (mainContentWrapperNode.scrollTop > parallaxBannerVideoNode.parentNode.clientHeight - 78) {
         if (!parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
             parallaxBannerVideoNode.classList.add(parallaxVideoInvisibleClass);
         }
@@ -239,14 +235,14 @@ const SetParallaxClassesForAll = function () {
 const CheckVisible = function (element) {
     var rect = element.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    return !(rect.bottom < 0 || rect.top - ((viewHeight - 78) * 2) >= 0);
 };
 
 const CheckRemainingParallaxHeight = function (element) {
     var rect = element.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     var remainingHeight = viewHeight * 2 + rect.top;
-    return remainingHeight;
+    return remainingHeight - 200;
 };
 
 const MarkSelectedNavPoint = function () {

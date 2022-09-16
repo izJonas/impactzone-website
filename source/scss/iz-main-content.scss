@@ -7,7 +7,16 @@ main#iz-content {
     header.iz-content-banner {
         display: flex;
         flex-direction: column;
-        min-height: calc(100vh - $nav-height-total);
+        min-height: calc(200vh - $nav-height-total);
+
+        &::after {
+            content: " ";
+            background: black;
+            color: black;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
 
         .iz-button-abs {
             position: relative;
@@ -54,6 +63,8 @@ main#iz-content {
             user-select: none;
 
 
+
+
             img.iz-banner-image {
                 grid-column-start: 1;
                 grid-column-end: 1;
@@ -85,6 +96,14 @@ main#iz-content {
                 text-transform: uppercase;
                 letter-spacing: 0px;
                 max-height: 45px;
+            }
+
+            header.iz-content-banner::after {
+                background: black;
+                color: black;
+                width: 100vw;
+                height: 50vh;
+                display: flex;
             }
 
             h1,
@@ -131,12 +150,21 @@ main#iz-content {
     section.iz-content-entry {
         display: flex;
         flex-direction: column;
-        $entry-height: calc(100vh - 77px + 200px);
+        $entry-height: calc(200vh - 78px + 200px);
         height: $entry-height;
         min-height: $entry-height;
         min-width: 100%;
         box-shadow: 0px 0px 10px 9px #00000088;
         transition: $default-transition-fast;
+
+        &::after {
+            content: " ";
+            background: black;
+            color: black;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
 
         &#idee-zu-erfolg {
             background-repeat: no-repeat;
@@ -151,6 +179,7 @@ main#iz-content {
                 background-size: 150%;
                 -webkit-background-clip: text;
                 -moz-background-clip: text;
+                background-clip: text;
                 filter: drop-shadow(1px 0.5px 1.5px #00000099) saturate(1.25) brightness(1.1);
             }
 

@@ -218,11 +218,7 @@ const ScrollBannerParallaxHeight = function () {
         console.log(mainContentWrapperNode.scrollTop);
     }
 
-    if (mainContentWrapperNode.scrollTop < 377) {
-        if (parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
-            parallaxBannerVideoNode.classList.remove(parallaxVideoInvisibleClass);
-        }
-    } else if (mainContentWrapperNode.scrollTop > parallaxBannerVideoNode.parentNode.clientHeight - 78) {
+    if (mainContentWrapperNode.scrollTop > parallaxBannerVideoNode.parentNode.clientHeight - 78) {
         if (!parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
             parallaxBannerVideoNode.classList.add(parallaxVideoInvisibleClass);
         }
@@ -328,14 +324,14 @@ const SetParallaxClassesForAll = function () {
 const CheckVisible = function (element) {
     var rect = element.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    return !(rect.bottom < 0 || rect.top - ((viewHeight - 78) * 2) >= 0);
 };
 
 const CheckRemainingParallaxHeight = function (element) {
     var rect = element.getBoundingClientRect();
     var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
     var remainingHeight = viewHeight * 2 + rect.top;
-    return remainingHeight;
+    return remainingHeight - 200;
 };
 
 const MarkSelectedNavPoint = function () {
@@ -379,6 +375,13 @@ let izNodeListArray = [];
 let izNodeListIndexCurrent = 0;
 let izNodeListIndexMaximum = 0;
 
+
+let scrollingDistance = ((window.innerHeight - 78) * 2);
+let scrollingTime = 1000;
+let easeInOutCubic = function (t) {
+    return t < .5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+}
+
 const ScrollCustomMade = function (event) {
     event.preventDefault();
     event.cancelBubble = true;
@@ -391,7 +394,13 @@ const ScrollCustomMade = function (event) {
             console.log("index didnt change");
         }
 
-        izNodeListArray[izNodeListIndexCurrent].scrollIntoView({ behavior: "smooth" });
+        if (isDebug) {
+            console.log(izNodeListArray[izNodeListIndexCurrent]);
+            console.log(scrollingDistance);
+            console.log(scrollingTime);
+        }
+
+        ScrollBy(izNodeListArray[izNodeListIndexCurrent], scrollingDistance, scrollingTime, easeInOutCubic, izNodeListIndexCurrent);
         if (izNodeListIndexCurrent == izNodeListIndexMaximum) {
             if (!footerWrapperNode.classList.contains("bottom-reached")) {
                 footerWrapperNode.classList.add("bottom-reached");
@@ -439,6 +448,39 @@ const RunAnimationTimer = function () {
             isAnimationTimerRunning = false;
         }, 500);
     }
+};
+
+const ScrollBy = function (element, value, duration, easingFunc, index) {
+    var startTime;
+    var startPos = element.scrollTop;
+    //var startPos = scrollWrapperNode.scrollTop;
+    var clientHeight = element.clientHeight;
+    var maxScroll = scrollWrapperNode.scrollHeight - (clientHeight * index);
+    var scrollIntendedDestination = startPos + ((value + 200) * index);
+    // low and high bounds for possible scroll destinations
+    var scrollEndValue = Math.min(Math.max(scrollIntendedDestination, 0), maxScroll);
+
+    if (isDebug || true) {
+        console.log("scrollHeight:");
+        console.log(scrollWrapperNode.scrollHeight);
+
+        console.log("Values:");
+        console.log(startPos);
+        console.log(clientHeight);
+        console.log(maxScroll);
+        console.log(scrollIntendedDestination);
+        console.log(scrollEndValue);
+    }
+
+    // create recursive function to call every frame
+    let scroll = function (timestamp) {
+        startTime = startTime || timestamp;
+        var elapsed = timestamp - startTime;
+        scrollWrapperNode.scrollTop = startPos + (scrollEndValue - startPos) * easingFunc(elapsed / duration);
+        elapsed <= duration && window.requestAnimationFrame(scroll);
+    };
+    // call recursive function
+    if (startPos != scrollEndValue) window.requestAnimationFrame(scroll);
 };
 // Code Execution
 CreateNavigationNode();
