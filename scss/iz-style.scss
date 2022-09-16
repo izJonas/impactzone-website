@@ -2,59 +2,12 @@
 @import "./iz-variables";
 @import "./iz-mixins";
 
-html {
-    background-color: #040404;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    shape-rendering: crispedges;
-    text-rendering: geometricPrecision;
-}
+@import "./iz-loose-styles";
 
 // Body of HTML
 body {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    font-family: $base-font-family;
-    font-weight: 500;
-    font-size: 15px;
-
-    * {
-        box-sizing: content-box;
-    }
-
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-
     // Main Wrapper
     #iz-wrapper {
-        display: flex;
-        width: inherit;
-        overflow: auto;
-        flex-direction: column;
-        margin-top: $nav-height-total;
-        margin-bottom: calc(125px + 2px);
-
-        h1,
-        h2 {
-
-            &.iz-animation-active {
-                font-weight: 500;
-                shape-rendering: crispedges;
-                text-rendering: geometricPrecision;
-                -webkit-user-select: none;
-                user-select: none;
-
-                &:hover {
-                    cursor: url("/img/svg/meteor-comet-svgrepo-com.svg");
-                }
-            }
-
-        }
 
         @import "./iz-navigation";
 
@@ -63,8 +16,6 @@ body {
         @import "./iz-footer";
 
         @import "./iz-components";
-
-        @include gradient-classes("mirage" "mirage-transparent" "black2transparent" "sand2blue" "coal");
 
     }
 

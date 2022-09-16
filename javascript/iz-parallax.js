@@ -130,7 +130,6 @@ const ScrollBannerParallaxHeight = function () {
     }
 
     if (mainContentWrapperNode.scrollTop < 377) {
-        parallaxBannerVideoNode.children[0].style.top = (78 - mainContentWrapperNode.scrollTop) + "px";
         if (parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
             parallaxBannerVideoNode.classList.remove(parallaxVideoInvisibleClass);
         }

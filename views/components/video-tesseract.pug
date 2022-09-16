@@ -1,0 +1,11 @@
+//- Video Tesseract Element
+div(class=izType)
+    if tesseracts
+        - var isTesseract = true
+        each tesseract in tesseracts
+            if tesseract.izType == "video"
+                - var video = tesseract.video
+                include video.pug
+            else if tesseract.izType == "text-simple"
+                - var content = tesseract.content
+                include text-simple.pug
