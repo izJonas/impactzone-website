@@ -223,6 +223,81 @@
     }
 }
 
+/* AWAA => ( A Wild Animation Appeared ) */
+@keyframes iz-awaa-nav-logo-slendering {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-15vw);
+    }
+}
+
+@keyframes iz-awaa-nav-logo-glowing {
+    from {
+        filter: drop-shadoww(0px 0px 0px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+
+    to {
+        filter: drop-shadow(2px 2px 4px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+}
+
+@keyframes iz-awaa-nav-logo-electrocute {
+    from {
+        filter: drop-shadow(0px 0px 0px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+
+    to {
+        filter: drop-shadow(2px 2px 4px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+}
+
+@keyframes iz-awaa-nav-logo-shock {
+    from {
+        margin-top: 5px;
+        margin-right: 5px;
+        filter: drop-shadow(-5px -5px 3px #902522);
+        animation-timing-function: linear;
+    }
+
+    20% {
+        margin-top: -5px;
+        margin-right: -5px;
+        filter: drop-shadow(5px 5px 5px #902522);
+        animation-timing-function: linear;
+    }
+
+    40% {
+        margin-top: 5px;
+        margin-right: -5px;
+        filter: drop-shadow(-5px 5px 3px #902522);
+        animation-timing-function: linear;
+    }
+
+    60% {
+        margin-top: 5px;
+        margin-right: 5px;
+        filter: drop-shadow(5px 5px 5px #902522);
+        animation-timing-function: linear;
+    }
+
+    80% {
+        margin-top: -5px;
+        margin-right: 5px;
+        filter: drop-shadow(5px -5px 5px #902522);
+        animation-timing-function: linear;
+    }
+
+    to {
+        margin-top: 0;
+        margin-right: 0;
+        filter: drop-shadow(0px 0px 0px #902522);
+        animation-timing-function: linear;
+    }
+}
+
 /*
 * Animation module with all animation code
 */

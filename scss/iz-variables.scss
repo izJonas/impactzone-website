@@ -3,9 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Shippori+Antique+B1&display=swap");
 
 $scroll-bar-width: 25px;
-$nav-height: 77px;
+$nav-height: 78px;
 $nav-border-width: 1px;
-$nav-height-total: calc($nav-height + $nav-border-width);
+$nav-height-total: $nav-height;
 $content-entry-max-width: 1200px;
 $color-link-facebook: #3b5998;
 $background-color-links: (

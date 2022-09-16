@@ -66,9 +66,9 @@
 
         video {
             object-fit: cover;
-            min-width: 100%;
+            min-width: 100vw;
             width: 100vw;
-            min-height: 100%;
+            min-height: 125vh;
             position: fixed;
             top: 25%;
             left: 50%;
