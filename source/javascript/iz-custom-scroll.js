@@ -34,7 +34,8 @@ const ScrollCustomMade = function (event) {
             console.log(scrollingTime);
         }
 
-        ScrollBy(izNodeListArray[izNodeListIndexCurrent], scrollingDistance, scrollingTime, easeInOutCubic, izNodeListIndexCurrent);
+        izNodeListArray[izNodeListIndexCurrent].scrollIntoView({ behavior: "smooth" });
+        //ScrollBy(izNodeListArray[izNodeListIndexCurrent], scrollingDistance, scrollingTime, easeInOutCubic, izNodeListIndexCurrent);
         if (izNodeListIndexCurrent == izNodeListIndexMaximum) {
             if (!footerWrapperNode.classList.contains("bottom-reached")) {
                 footerWrapperNode.classList.add("bottom-reached");
