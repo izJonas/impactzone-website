@@ -1,0 +1,25 @@
+@use "sass:map";
+@import "../../source/scss/_iz-variables";
+@import "../../source/scss/iz-mixins";
+
+@import "../../source/scss/iz-loose-styles";
+
+// Body of HTML
+body {
+    // Main Wrapper
+    #iz-wrapper {
+
+        @import "../../source/scss/iz-navigation";
+
+        @import "../../source/scss/iz-main-content";
+
+        @import "../../source/scss/iz-footer";
+
+        @import "../../source/scss/iz-components";
+
+    }
+
+    @import "../../source/scss/iz-parallax";
+
+    @import "../../source/scss/iz-animations";
+}
