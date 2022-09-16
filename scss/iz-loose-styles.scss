@@ -1,9 +1,11 @@
+
 html {
     background-color: #040404;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     shape-rendering: crispedges;
     text-rendering: geometricPrecision;
+    scroll-behavior: smooth;
 }
 
 // Body of HTML
@@ -20,6 +22,7 @@ body {
 
     * {
         box-sizing: content-box;
+        scroll-behavior: smooth;
     }
 
     -webkit-text-size-adjust: 100%;
@@ -34,12 +37,13 @@ body {
         flex-direction: column;
         margin-top: $nav-height-total;
         margin-bottom: 0;
-            transition: all 0.5s ease;
+        overflow-x: hidden;
+        transition: all 0.5s ease;
 
-            &.bottom-reached {
-                    transition: all 0.5s ease;
-                    margin-bottom: 125px;
-                }
+        &.bottom-reached {
+            transition: all 0.5s ease;
+            margin-bottom: 125px;
+        }
         h1,
         h2 {
 

@@ -2,38 +2,89 @@
 main#iz-content {
     display: flex;
     flex-direction: column;
+    background: transparent;
 
     header.iz-content-banner {
         display: flex;
         flex-direction: column;
         min-height: calc(100vh - $nav-height-total);
 
+        .iz-button-abs {
+            position: relative;
+            bottom: 150px;
+            width: 1em;
+            height: 0px;
+            overflow: visible;
+            font-size: 30px;
+            color: #FFFFFF8F;
+            left: 50%;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            shape-rendering: geometricprecision;
+            animation-duration: 0.5s;
+            animation-name: iz-animation-pulsation;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            transition: all 0.2s ease;
+
+            svg {
+                text-rendering: optimizeLegibility;
+                shape-rendering: geometricprecision;
+            }
+        }
+
         section.iz-banner-wrapper {
-            display: flex;
-            flex-direction: column;
-            margin: auto auto 50px auto;
-            padding: 4em;
-            max-width: 45%;
-            border-radius: 13px;
-            box-shadow: 0px -5px 12px #ffd70077;
+            display: grid;
+            grid-template-columns: 1fr 500px;
+            grid-template-rows: 55px 45px;
+            margin: auto 0 0 0;
+            padding: 0;
+            max-width: 100%;
+            min-width: 100%;
+            width: 100%;
+            height: 100px;
+            box-sizing: border-box;
+            border-radius: 0;
+            box-shadow: 0px 0px 26px 16px rgba(0, 0, 0, 0.5);
+            background-color: #000000C2;
+            border-style: solid;
+            border-width: 1px 0px 0px 0px;
+            border-color: #FFFFFF7D;
+            user-select: none;
+
 
             img.iz-banner-image {
-                display: flex;
-                margin: auto auto 15px auto;
-                width: 75px;
-                max-width: 75px;
-                height: auto;
-                border-radius: 150px;
-                background: darkslategray;
-                padding: 3em;
-                filter: drop-shadow(0px -3px 4px gold);
+                grid-column-start: 1;
+                grid-column-end: 1;
+                grid-row-start: 1;
+                grid-row-end: span 2;
+                margin: 0;
+                width: auto;
+                max-width: auto;
+                height: 50px;
+                border-radius: 0;
+                padding: 0;
+                justify-self: flex-end;
+                align-self: center;
+            }
 
-                &:hover {
-                    animation-duration: 5s;
-                    animation-name: iz-animation-wavering-shadow;
-                    animation-iteration-count: infinite;
-                    animation-direction: alternate;
-                }
+            .iz-banner-content {
+                grid-column-start: 2;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 2;
+                transition: all 0.2s ease-out;
+                justify-self: left;
+                padding: 0 0 0 20px;
+                margin: 0;
+                color: #FFFFFF;
+                font-family: "Assistant", Sans-serif;
+                font-size: 11px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0px;
+                max-height: 45px;
             }
 
             h1,
@@ -43,67 +94,68 @@ main#iz-content {
             h5,
             h6 {
                 &.iz-banner-headline {
-                    transition: all 0.2s ease-out;
-                    margin: 15px auto;
-                    -webkit-text-stroke: 0.25px deepskyblue;
-                    text-stroke: 0.25px deepskyblue;
+                    grid-column-start: 2;
+                    grid-column-end: 2;
+                    grid-row-start: 1;
+                    grid-row-end: 1;
+                    margin: 0;
+                    color: #f4dc8c;
+                    font-family: "Assistant", Sans-serif;
+                    text-transform: uppercase;
+                    letter-spacing: 0px;
+                    -webkit-text-stroke-width: 0.2px;
+                    stroke-width: 0.2px;
+                    -webkit-text-stroke-color: #f4dc8c;
+                    stroke: #f4dc8c;
+                    text-shadow: 1px 1px 12px rgba(255, 255, 255, 0.3);
+                    font-size: 18px;
+                    font-weight: 700;
+                    max-height: 55px;
+                    align-self: flex-end;
+                    transition: all .2s ease-out;
+                    justify-self: left;
+                    padding: 0 0 0 20px;
+                    background: linear-gradient(90deg, #EFD592, #E5C47F, #C38D50);
+                    //color: transparent;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    background-color: #f3ec78 !important;
+                    background-image: linear-gradient(45deg, #F3DFA7, #E5C47F);
+                    background-size: 150% !important;
                 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                &.iz-content-headline {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    transition: all 0.2s ease-out;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    margin: 15px auto;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    -webkit-text-stroke: 0.25px deepskyblue;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    text-stroke: 0.25px deepskyblue;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }
-            }
-
-            p.iz-banner-content {
-                margin: 15px auto;
             }
         }
     }
 
+
     section.iz-content-entry {
         display: flex;
         flex-direction: column;
-        $entry-height: calc(100vh - 77px);
+        $entry-height: calc(100vh - 77px + 200px);
         height: $entry-height;
         min-height: $entry-height;
-        box-shadow: 0px 0px 10px 9px rgb(0 0 0 / 50%);
+        min-width: 100%;
+        box-shadow: 0px 0px 10px 9px #00000088;
         transition: $default-transition-fast;
 
-        & > * {
-            max-width: $content-entry-max-width;
-            margin: auto;
-        }
+        &#idee-zu-erfolg {
+            background-repeat: no-repeat;
+            background: url(/img/jpg/impactzone-Animations-und-Praesentationsdesign-scaled.jpg) white;
+            background-size: cover;
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p {
-            background-color: transparent;
-        }
+            h1 {
+                background-color: #f3ec78;
+                background: linear-gradient(90deg, #EFD592, #E5C47F, #C38D50);
+                background-image: linear-gradient(90deg, rgb(239, 213, 146), rgb(229, 196, 127), rgb(195, 141, 80));
+                color: transparent;
+                background-size: 150%;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                filter: drop-shadow(1px 0.5px 1.5px #00000099) saturate(1.25) brightness(1.1);
+            }
 
-        &.iz-animation-active {
-            .iz-content-headline {
-
-                padding: 12px 35px;
-                border-radius: 12px;
-                background-color: #00000077;
-                box-shadow: 3px 1px 6px #e4e4e4aa;
-
-                >span.iz-text {
-                    text-transform: uppercase;
-                    text-rendering: geometricPrecision;
-                    letter-spacing: 0.25em;
-                    font-size: 2em;
-                    line-height: 2;
-                    font-weight: 500;
-                    white-space: nowrap;
-
-                }
+            .video-tesseract {
+                margin-top: 150px;
             }
         }
 
@@ -115,100 +167,143 @@ main#iz-content {
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
+
+            .iz-content-entry-wrapper {
+                padding: 2.5em;
+                border-radius: 12px;
+                background-color: transparent;
+                background-image: linear-gradient(180deg, #0000009C 0%, #0000008F 100%);
+                margin: auto;
+                min-width: unset !important;
+            }
+
+
         }
 
-        & > *:first-child {
+        .iz-content-entry-wrapper {
             display: flex;
-            margin-top: auto;
-        }
-
-        & > *:last-child {
-            display: flex;
-            margin-bottom: auto;
-        }
-
-        button.iz-button-href {
-            text-decoration: none;
-            border-radius: 50px;
-            background: transparent;
-            background-image: #{map.get($button-gradients, "main-content")};
-            transition: #{map.get($button-transitions, "main-content")};
-            color: white;
-            border: none;
-            padding: 10px 2em;
-            font-weight: 700;
-            display: flex;
+            flex-direction: inherit;
+            height: auto;
+            box-sizing: border-box;
             margin: auto;
-            font-family: "Shippori Antique B1", Sans-serif;
+            min-height: max-content;
+            min-width: 100%;
+            transition: $default-transition-fast;
+            padding: 3em 0;
+            gap: 2.5em;
 
-            &:hover {
-                background-image: #{map.get($button-gradients, "main-content-hover")};
-                transition: #{map.get($button-transitions, "main-content-hover")};
-                color: black;
+            &>* {
+                margin-bottom: 2.5em;
             }
 
-            &::before {
-                margin-right: 1em;
-                content: ">";
+            .iz-text-simple-content {
+                text-align: left;
+                font-family: "Assistant", Sans-serif;
+                font-size: 13px;
+                font-weight: 400;
+                line-height: 1.2em;
+                color: #7a7c7f;
+                max-width: 250px;
             }
-        }
 
-        .iz-card-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            gap: 50px;
+            &>* {
+                max-width: $content-entry-max-width;
+                margin: auto;
+                scroll-behavior: smooth;
+            }
 
-            .iz-card {
-                display: flex;
-                flex-direction: column;
+            h1,
+            h2,
+            h3 {
+                color: #f4dc8c;
+                font-family: "Shippori Antique B1", Sans-serif;
+                font-size: 20px;
+                font-weight: 800;
+                text-transform: uppercase;
+                letter-spacing: 0px;
+                text-shadow: 1px 1px 12px rgba(255, 255, 255, 0.3);
+            }
 
-                figure {
-                    display: flex;
-                    margin: 0 auto;
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            p {
+                background-color: transparent;
+            }
 
-                    img.iz-card-image {
-                        display: flex;
-                        min-width: $card-image-width;
-                        max-width: $card-image-width;
-                        width: $card-image-width;
-                        filter: $card-image-filter;
-                        transition: $card-image-transition;
-                        transform: translateY(0px);
+            &.iz-animation-active {
+                .iz-content-headline {
 
-                        &:hover {
-                            animation-duration: 0.5s;
-                            animation-name: iz-animation-boing;
-                            animation-iteration-count: infinite;
-                            animation-direction: alternate;
-                        }
+                    /*padding: 12px 35px;
+                    border-radius: 12px;
+                    background-color: #00000077;
+                    box-shadow: 3px 1px 6px #e4e4e4aa;*/
+
+                    >span.iz-text {
+                        text-transform: uppercase;
+                        text-rendering: geometricPrecision;
+                        letter-spacing: 0.25em;
+                        font-size: 2em;
+                        line-height: 2;
+                        font-weight: 500;
+                        white-space: nowrap;
+
                     }
                 }
-                .iz-card-text {
+            }
+
+            &>*:first-child {
+                display: flex;
+                margin: auto auto 0 auto;
+            }
+
+            &>*:last-child {
+                display: flex;
+                margin: 0 auto auto auto;
+            }
+
+            button.iz-button-href {
+                text-decoration: none;
+                border-radius: 50px;
+                background: transparent;
+                background-image: #{map.get($button-gradients, "main-content")};
+                transition: #{map.get($button-transitions, "main-content")};
+                color: white;
+                border: none;
+                padding: 10px 2em;
+                font-weight: 700;
+                display: flex;
+                margin: auto;
+                font-family: "Shippori Antique B1", Sans-serif;
+
+                &:hover {
+                    background-image: #{map.get($button-gradients, "main-content-hover")};
+                    transition: #{map.get($button-transitions, "main-content-hover")};
+                    color: black;
+                }
+
+                &::before {
+                    margin-right: 1em;
+                    content: ">";
+                }
+            }
+
+            .iz-card-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 50px;
+
+                .iz-card {
                     display: flex;
                     flex-direction: column;
 
-                    * {
-                        display: flex;
-                    }
-                }
-            }
-        }
-
-        .iz-square-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 50px;
-
-            .iz-square {
-                display: flex;
-                flex-direction: column;
-
-                .iz-square-top {
                     figure {
                         display: flex;
-                        margin: 0 auto;
 
-                        img.iz-square-image {
+                        img.iz-card-image {
                             display: flex;
                             min-width: $card-image-width;
                             max-width: $card-image-width;
@@ -216,34 +311,78 @@ main#iz-content {
                             filter: $card-image-filter;
                             transition: $card-image-transition;
                             transform: translateY(0px);
+                            margin: 0 auto 0 45px;
+
 
                             &:hover {
-                                animation-duration: 0.5s;
+                                /*animation-duration: 0.5s;
                                 animation-name: iz-animation-boing;
                                 animation-iteration-count: infinite;
-                                animation-direction: alternate;
+                                animation-direction: alternate;*/
                             }
                         }
                     }
-                    .iz-square-text {
+
+                    .iz-card-text {
                         display: flex;
                         flex-direction: column;
 
                         * {
                             display: flex;
                         }
-
-                        .iz-square-headline {
-                        }
-
-                        .iz-square-content {
-                        }
                     }
                 }
+            }
 
-                .iz-square-bottom {
-                    .iz-square-button {
-                        svg {
+            .iz-square-list {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 50px;
+
+                .iz-square {
+                    display: flex;
+                    flex-direction: column;
+
+                    .iz-square-top {
+                        figure {
+                            display: flex;
+                            margin: 0 auto;
+
+                            img.iz-square-image {
+                                display: flex;
+                                min-width: $card-image-width;
+                                max-width: $card-image-width;
+                                width: $card-image-width;
+                                filter: $card-image-filter;
+                                transition: $card-image-transition;
+                                transform: translateY(0px);
+
+                                &:hover {
+                                    animation-duration: 0.5s;
+                                    animation-name: iz-animation-boing;
+                                    animation-iteration-count: infinite;
+                                    animation-direction: alternate;
+                                }
+                            }
+                        }
+
+                        .iz-square-text {
+                            display: flex;
+                            flex-direction: column;
+
+                            * {
+                                display: flex;
+                            }
+
+                            .iz-square-headline {}
+
+                            .iz-square-content {}
+                        }
+                    }
+
+                    .iz-square-bottom {
+                        .iz-square-button {
+                            svg {}
                         }
                     }
                 }

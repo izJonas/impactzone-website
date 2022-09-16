@@ -61,7 +61,12 @@ const SetViewEngine = function () {
     app.use('/assets', [
         express.static(__dirname + '/node_modules/jquery/dist/')
     ])
+
 }
+
+
+
+ClearCache();
 
 SetViewEngine()
 
@@ -108,4 +113,19 @@ const AfterMongoConnect = function (collectionToUse) {
             })
             .catch(error => console.error(error))
     })
+}
+function ClearCache() {
+    const directory = 'cache';
+
+    fs.readdir(directory, (err, files) => {
+        if (err)
+            throw err;
+
+        for (const file of files) {
+            fs.unlink(path.join(directory, file), err => {
+                if (err)
+                    throw err;
+            });
+        }
+    });
 }

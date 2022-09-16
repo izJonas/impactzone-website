@@ -44,10 +44,12 @@ const InitScrollCustomMade = function () {
     izBannerContentNodeList = document.getElementsByClassName("iz-content-banner");
     izContentEntryMainNodes = document.getElementsByClassName("iz-content-entry");
     izNodeListArray = [];
+    var bodyNode = document.body;
 
-    if (!scrollWrapperNode || izContentEntryMainNodes < 1 || !izBannerContentNodeList || !izBannerContentNodeList[0]) {
+    if (!bodyNode || !scrollWrapperNode || izContentEntryMainNodes < 1 || !izBannerContentNodeList || !izBannerContentNodeList[0]) {
         setTimeout(InitScrollCustomMade, 50);
     } else {
+        bodyNode.setAttribute("onmousemove", "UpdateMousePosition(event);");
         for (var izBannerNode of izBannerContentNodeList) {
             izNodeListArray.push(izBannerNode);
         }

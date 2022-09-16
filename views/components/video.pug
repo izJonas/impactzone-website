@@ -1,2 +1,5 @@
 //- Headlined Text Entry
-video.iz-video(src=video.src)
+if isTesseract
+    video.iz-video(src=video.src id=video.id autoplay loop muted playsinline controlslist="nodownload")
+else
+    video.iz-video(src=video.src id=video.id)

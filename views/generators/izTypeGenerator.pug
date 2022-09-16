@@ -31,5 +31,9 @@ else if izType.startsWith("cascade")
     - var cascades = mainSection.cascades
     include ../components/cascade.pug
 else if izType.startsWith("video")
-    - var video = mainSection.video
-    include ../components/video.pug
+    if izType.endsWith("tesseract")
+        - var tesseracts = mainSection.tesseracts
+        include ../components/video-tesseract.pug
+    else
+        - var video = mainSection.video
+        include ../components/video.pug

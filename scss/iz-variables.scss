@@ -1,6 +1,5 @@
 @use "sass:map";
 @use "sass:list";
-
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=Shippori+Antique+B1&display=swap");
 
 $scroll-bar-width: 25px;
@@ -65,8 +64,8 @@ $fill-color-links: #fff;
 $footer-button-row-icon-width: 15px;
 
 $card-image-width: 66px;
-$card-image-filter: brightness(200%) contrast(134%) saturate(0%) blur(0px) hue-rotate(0deg);
 $card-image-filter: blur(0.5px);
+$card-image-filter: brightness(200%) contrast(134%) saturate(0%) blur(0px) hue-rotate(0deg);
 $card-image-transition: all 0.5s ease;
 
 $base-font-family: "Assistant", Sans-serif;

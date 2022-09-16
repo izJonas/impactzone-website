@@ -6,27 +6,59 @@
     "parallax": true,
     "banner": {
         "izType": "banner",
-        "image": "/img/png//IZ-Signet-Gold-01.png",
+        "image": "/img/png/IZ-Signet-Gold-01.png",
         "headline": "IMPACTZONE – DIE ALLES-AGENTUR",
         "content": "INDIVIDUELLE GESAMTLÖSUNGEN & CROSS-MEDIALE UNTERNEHMENSBETREUUNG.",
         "video": "/media/impactzone-Premium-Full-Service-Intro.mp4",
         "id": "iz-banner-background-video",
         "class": "iz-banner-video iz-parallax-video",
-        "mainClass": "iz-gradient-sand2blue"
+        "href": "#idee-zu-erfolg"
     },
     "sections": [
         {
             "id": "idee-zu-erfolg",
-            "class": "iz-gradient-mirage iz-animation-text-flow iz-animation-active ",
+            "class": "",
             "izTypes": [
                 "headline-1",
-                "text-multi"
+                "cascade-horizontal",
+                "video-tesseract"
             ],
+            "background": {
+                "image": {
+                    "src": "/img/jpg/impactzone-Animations-und-Praesentationsdesign-scaled.jpg",
+                    "alt": "impactzone"
+                }
+            },
             "headline": "VON DER IDEE BIS ZUM ONLINE-ERFOLG",
-            "text": [
-                "Mit fortschreitender Digitalisierung unserer Welt und mehr und mehr technischen Möglichkeiten wird der internationale Wettbewerb und das Erschließen der digitalen Welten für uns alle von Tag zu Tag wichtiger. Die Anforderungen an digitale Produkte sind im stetigen Wandel und die Masse an existierendem digitalen Content wächst.",
-                "Um sich aus der Masse hervorzuheben und mit all diesen Entwicklungen Schritt zu halten, gibt es uns. Durch das Zusammenführen der verschiedensten digitalen Fähigkeiten durch <b>erfahrene Spezialisten</b> als Full-Service Agentur, wollen wir Ihnen die Möglichkeit bieten auch komplexere mediale Zusammenhänge & Herausforderungen als Chance für sich zu nutzen.",
-                "<b>Für jede Anforderung gibt es eine passgenaue Lösung.</b> Unser Ziel ist es, Sie dieser Lösung durch eine gesamtheitliche Betrachtung von Situation und Herausforderung, in gemeinsamer Projektarbeit näher zu bringen. Die Möglichkeiten digitale Medien zu kombinieren sind immens. Rufen Sie uns gerne einfach an, wir finden für Sie die passenden Experten oder erstellen Ihre Unterlagen direkt inhouse."
+            "cascades": [
+                {
+                    "izType": "text-simple",
+                    "content": "Mit fortschreitender Digitalisierung unserer Welt und immer mehr technischen Möglichkeiten, wird der internationale Wettbewerb und das Erschließen der digitalen Welten für uns alle von Tag zu Tag wichtiger. Die Anforderungen an digitale Produkte sind im stetigen Wandel und die Masse an existierendem digitalen Content wächst."
+                },
+                {
+                    "izType": "text-simple",
+                    "content": "Um sich aus der Masse hervorzuheben und mit all diesen Entwicklungen Schritt zu halten, gibt es uns. Durch das Zusammenführen der verschiedensten digitalen Fähigkeiten durch <strong>erfahrene Spezialisten als Full-Service Agentur</strong>, wollen wir Ihnen die Möglichkeit bieten auch komplexere mediale Zusammenhänge &amp; Herausforderungen als Chance für sich zu nutzen."
+                },
+                {
+                    "izType": "text-simple",
+                    "content": "<strong>F&uuml;r jede Anforderung gibt es eine passgenaue L&ouml;sung.&nbsp;</strong>Unser Ziel ist es, Sie dieser Lösung durch eine gesamtheitliche Betrachtung von Situation und Herausforderung, in gemeinsamer Projektarbeit näher zu bringen. Die Möglichkeiten digitale Medien zu kombinieren sind immens. Rufen Sie uns gerne einfach an, wir finden für Sie die passenden Experten oder erstellen Ihre Unterlagen direkt inhouse."
+                }
+            ],
+            "tesseracts": [
+                {
+                    "izType": "video",
+                    "video": {
+                        "src": "/media/impactzone-Intro-Premium-Title.mp4",
+                        "id": "iz-intro-video-premium-title"
+                    }
+                },
+                {
+                    "izType": "video",
+                    "video": {
+                        "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
+                        "id": "iz-intro-video-animation-und-3d"
+                    }
+                }
             ]
         },
         {
@@ -39,12 +71,14 @@
             ],
             "headline": "UNSERE AGENTURLEISTUNGEN",
             "headliner": "2",
-            "backgroundVideo": {
-                "id": "pfs-unsere-agenturleistungen-background",
-                "src": "/media/02_Planetpagebackground_v01_1.mp4",
-                "autoplay": "autoplay",
-                "muted": "muted",
-                "loop": "loop"
+            "background": {
+                "video": {
+                    "id": "pfs-unsere-agenturleistungen-background",
+                    "src": "/media/pexels-rostislav-uzunov-6151238.mp4",
+                    "autoplay": "autoplay",
+                    "muted": "muted",
+                    "loop": "loop"
+                }
             },
             "cards": [
                 {
@@ -109,12 +143,14 @@
             ],
             "headline": "MIT KOMBINATIONEN MEHRFACH PROFITIEREN.",
             "headliner": "2",
-            "backgroundVideo": {
-                "id": "kombinieren-background",
-                "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
-                "autoplay": "autoplay",
-                "muted": "muted",
-                "loop": "loop"
+            "background": {
+                "video": {
+                    "id": "kombinieren-background",
+                    "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
+                    "autoplay": "autoplay",
+                    "muted": "muted",
+                    "loop": "loop"
+                }
             },
             "content": "UNSERE DIENSTLEISTUNGEN KÖNNEN SIE FREI KOMBINIEREN. FÜR BESONDERS INNOVATIVE PROJEKTERGEBNISSE",
             "squares": [
@@ -190,45 +226,39 @@
             "headliner": "4",
             "squares": [
                 {
-                    "svg": "/img/svg/01_icon_.svg",
+                    "svg": "/img/svg/01_icon_schachbrett.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/img/svg/01_icon_.svg",
+                    "svg": "/img/svg/01_icon_koordinaten.svg",
                     "headline": "KURZE ABSPRACHEWEGE",
                     "content": "FÜR EINE MAXIMALE ENTLASTUNG FÜR SIE.",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/img/svg/01_icon_.svg",
+                    "svg": "/img/svg/01_icon_herzmonitor.svg",
                     "headline": "BRANCHENKENNTNIS",
                     "content": "LANGJÄHRIGE ZUSAMMNARBEIT",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/img/svg/01_icon_.svg",
+                    "svg": "/img/svg/01_icon_blubber.svg",
                     "headline": "PFLEGE & BETREUUNG",
                     "content": "UMFASSENDE KONZEPTIONS- UND REALISATIONSKOMPETENZ FÜR",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/img/svg/01_icon_.svg",
+                    "svg": "/img/svg/01_icon_briefumschlag.svg",
                     "headline": "MARKETINGPARTNER",
                     "content": "IHRE EXTERNE MARKETINGABTEILUNG",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/img/svg/01_icon_.svg",
+                    "svg": "/img/svg/01_icon_herz.svg",
                     "headline": "MEDIENÜBERGREIFENDE MASSNAHMEN",
                     "content": "LANGJÄHRIGE ZUSAMMENARBEIT",
-                    "arrow": "Mehr erfahren"
-                },
-                {
-                    "svg": "/img/svg/01_icon_.svg",
-                    "headline": "KOMPETENTTEAMS",
-                    "content": "FESTE BETREUER FÜR IHRE BELANGE",
                     "arrow": "Mehr erfahren"
                 }
             ]

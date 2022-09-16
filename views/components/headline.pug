@@ -1,24 +1,19 @@
 - var classHeadline = "iz-content-headline"
-- var spanClasses = "iz-text iz-animation-text-flow"
-- var funcOnMouseMove = "ChangeShadowAnimationColor(this);"
+- var spanClasses = "iz-text "
+- var funcOnMouseMove = ""
 if headliner.endsWith("1")
-    h1(class=classHeadline)
-        span(class=spanClasses onmousemove=funcOnMouseMove)= headline
+    h1(class=classHeadline)= headline
 else if headliner.endsWith("2")
-    h2(class=classHeadline)
-        span(class=spanClasses onmousemove=funcOnMouseMove)= headline
+    h2(class=classHeadline)= headline
 else if headliner.endsWith("3")
-    h3(class=classHeadline)
-        span(class=spanClasses onmousemove=funcOnMouseMove)= headline
+    h3(class=classHeadline)= headline
 else if headliner.endsWith("4")
-    h4(class=classHeadline)
-        span(class=spanClasses onmousemove=funcOnMouseMove)= headline
+    h4(class=classHeadline)= headline
 else if headliner.endsWith("5")
-    h5(class=classHeadline)
-        span(class=spanClasses onmousemove=funcOnMouseMove)= headline
+    h5(class=classHeadline)= headline
 else if headliner.endsWith("6")
-    h6(class=classHeadline)
-        span(class=spanClasses onmousemove=funcOnMouseMove)= headline
+    h6(class=classHeadline)= headline
 else
-    h1(class=classHeadline)
-        span(class=spanClasses onmousemove=funcOnMouseMove)= headline
+    h1(class=classHeadline)= headline
+
+//- span(class=spanClasses onmousemove=funcOnMouseMove)= headline

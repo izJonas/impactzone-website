@@ -64,15 +64,16 @@
         opacity: 1;
         transition: $default-transition-fast;
 
-        transition: $default-transition-fast;
-
         video {
-            object-fit: contain;
+            object-fit: cover;
             min-width: 100%;
             width: 100vw;
             min-height: 100%;
             position: fixed;
-            top: $nav-height-total;
+            top: 25%;
+            left: 50%;
+            margin-top: calc($nav-height-total - 50vh);
+            margin-left: -50vw;
             z-index: -999;
             transition: $default-transition-fast;
         }
@@ -122,14 +123,14 @@
     }
 
     video {
-        object-fit: contain;
+        object-fit: cover;
         min-width: 100%;
         width: 100vw;
         min-height: 100%;
         position: fixed;
-        top: $nav-height-total;
         z-index: -999;
         transition: $default-transition-fast;
+        top: 0;
     }
 
     h1,

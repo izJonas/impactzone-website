@@ -1,9 +1,7 @@
 Remove-Item -Path ..\public\css\iz-styles-all.scss
-Remove-Item -Path ..\public\css\iz-styles-all.min.css
-Remove-Item -Path ..\public\css\iz-styles-all.min.css.map
+Remove-Item -Path ..\public\css\iz-styles-all.css
 
 Remove-Item -Path ..\public\js\iz-funct.js
-Remove-Item -Path ..\public\js\iz-funct-min.js
 Remove-Item -Path ..\public\js\iz-module-load.js
 
 New-Item -Path ..\public\css\iz-styles-all.scss -ItemType "file" -Value "" -Force

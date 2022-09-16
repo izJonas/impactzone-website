@@ -12,3 +12,129 @@ div.iz-text-entry {
     display: flex;
     flex-direction: column;
 }
+
+.cascade-horizontal {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.video-tesseract {
+    flex-direction: column;
+    max-width: 33vw;
+    transition: all 0.2s ease;
+    max-height: 500px;
+    height: 1000px;
+    user-select: none;
+
+    &:hover {
+
+        video {
+            transition: all 0.2s ease;
+            z-index: 50;
+        }
+    }
+
+    :first-child {
+        transition: all 0.2s ease;
+        margin-top: -25%;
+        z-index: 75;
+        margin: 0 auto 0 -15%;
+    }
+
+    :last-child {
+        transition: all 0.2s ease;
+        z-index: 125;
+        margin-top: -15%;
+        margin-left: 15%;
+    }
+
+    video {
+        max-width: 500px;
+        max-height: 500px;
+        width: 500px;
+        object-fit: cover;
+        border-radius: 12px;
+        transform: scale(1);
+        z-index: 55;
+        transition: all 0.2s ease;
+        display: flex;
+        box-shadow: 0px 0px 10px 6px #000000AA;
+
+        &:hover {
+            z-index: 150;
+            transform: scale(2);
+            transition: all 0.66s ease;
+            box-shadow: 3px -3px 9px 9px #000000e8;
+        }
+    }
+
+    #iz-intro-video-premium-title {}
+
+    #iz-intro-video-animation-und-3d {}
+}
+
+.iz-card-list {}
+
+.iz-card {
+    padding: 2em 1.5em;
+    gap: 1em;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #0000009C 0%, #0000008F 100%);
+    border-radius: 12px;
+
+    figure {
+        margin: 0;
+        transition: all 1s ease;
+        width: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+        border-radius: 50px;
+
+        img.iz-card-image {
+                padding-left: 33px;
+                padding-top: 8px;
+            }
+    }
+
+
+    &:hover {
+        transition: all 1s ease;
+
+        figure {
+            animation: iz-animation-card-side-pumper 1s steps(20) infinite alternate-reverse;
+
+            img.iz-card-image {
+                animation:
+                    iz-animation-card-icon-walk 1s steps(50) infinite alternate,
+                    iz-animation-card-icon-bounce 0.3s steps(20) infinite alternate;
+            }
+        }
+
+    }
+
+    .iz-card-text {
+
+        &>* {
+            margin: 0;
+            padding: 0;
+        }
+
+        .iz-card-headline {
+            margin-bottom: 9px;
+            color: #f1dda0;
+            font-family: "Shippori Antique B1", Sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 22px;
+        }
+
+        .iz-card-content {
+            font-family: sans-serif;
+            font-weight: 300;
+            font-size: 12px;
+            font-variant: unicase;
+        }
+    }
+}

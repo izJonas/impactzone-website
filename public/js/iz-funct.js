@@ -1,13 +1,5 @@
 ﻿let isDebug = false;
 let isDebugDeltaTime = true;
-$(document).ready(function () {
-    console.log("ready!");
-    $('.iz-animation-active .iz-text').html(function (i, html) {
-        var chars = $.trim(html).split("");
-
-        return '<span>' + chars.join('</span><span>') + '</span>';
-    });
-});
 
 let spanNodeFound;
 let cssToAppend = '.iz-animation-text-flow:hover > span > span.iz-animation-hover { text-shadow: ';
@@ -227,7 +219,6 @@ const ScrollBannerParallaxHeight = function () {
     }
 
     if (mainContentWrapperNode.scrollTop < 377) {
-        parallaxBannerVideoNode.children[0].style.top = (78 - mainContentWrapperNode.scrollTop) + "px";
         if (parallaxBannerVideoNode.classList.contains(parallaxVideoInvisibleClass)) {
             parallaxBannerVideoNode.classList.remove(parallaxVideoInvisibleClass);
         }
@@ -423,10 +414,12 @@ const InitScrollCustomMade = function () {
     izBannerContentNodeList = document.getElementsByClassName("iz-content-banner");
     izContentEntryMainNodes = document.getElementsByClassName("iz-content-entry");
     izNodeListArray = [];
+    var bodyNode = document.body;
 
-    if (!scrollWrapperNode || izContentEntryMainNodes < 1 || !izBannerContentNodeList || !izBannerContentNodeList[0]) {
+    if (!bodyNode || !scrollWrapperNode || izContentEntryMainNodes < 1 || !izBannerContentNodeList || !izBannerContentNodeList[0]) {
         setTimeout(InitScrollCustomMade, 50);
     } else {
+        bodyNode.setAttribute("onmousemove", "UpdateMousePosition(event);");
         for (var izBannerNode of izBannerContentNodeList) {
             izNodeListArray.push(izBannerNode);
         }
