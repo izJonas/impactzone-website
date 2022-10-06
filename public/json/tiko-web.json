@@ -1,0 +1,37 @@
+{
+    "sites": {
+        "logo": {
+            "src": "/img/png/tiko/TIKO-Logo_400.png",
+            "id": "iz-nav-logo"
+        },
+        "home": {
+            "label": "Home",
+            "href": "/"
+        },
+        "onlineShop": {
+            "label": "Online-Shop",
+            "href": "/onlineShop"
+        },
+        "beispiele": {
+            "label": "Leistungen",
+            "href": "/leistungen"
+        },
+        "informationen": {
+            "label": "Angebote",
+            "href": "/angebote"
+        },
+        "kontakt": {
+            "label": "Kontakt",
+            "href": "/kontakt"
+        },
+        "search": {
+            "class": "iz-search-form",
+            "method": "GET",
+            "location": "/",
+            "type": "search",
+            "name": "search-value",
+            "id": "search-value",
+            "placeholder": "Suche"
+        }
+    }
+}

@@ -1,0 +1,400 @@
+{
+    "_id": {
+        "$oid": "63111abce9d62a13447ab37b"
+    },
+    "name": "tikoOffice",
+    "parallax": true,
+    "banner": {
+        "izType": "banner",
+        "image": "/img/png/tiko/TIKO-Logo_400.png",
+        "headline": "Ihr Partner seit 2005",
+        "content": "TIKO Office steht für hohe Qualität und Serviceleistungen rund um die Themen Büro- & Schulbedarf, Büromaschinen und Büromöbel.",
+        "video": "/media/impactzone-Premium-Full-Service-Intro.mp4",
+        "id": "iz-banner-background-video",
+        "class": "iz-banner-video iz-parallax-video",
+        "href": "#idee-zu-erfolg"
+    },
+    "sections": [
+        {
+            "id": "idee-zu-erfolg",
+            "class": "",
+            "izTypes": [
+                "headline-1",
+                "cascade-horizontal",
+                "video-tesseract"
+            ],
+            "background": {
+                "image": {
+                    "src": "/img/jpg/impactzone-Animations-und-Praesentationsdesign-scaled.jpg",
+                    "alt": "impactzone"
+                }
+            },
+            "headline": "VON DER IDEE BIS ZUM ONLINE-ERFOLG",
+            "cascades": [
+                {
+                    "izType": "text-simple",
+                    "content": "Mit fortschreitender Digitalisierung unserer Welt und immer mehr technischen Möglichkeiten, wird der internationale Wettbewerb und das Erschließen der digitalen Welten für uns alle von Tag zu Tag wichtiger. Die Anforderungen an digitale Produkte sind im stetigen Wandel und die Masse an existierendem digitalen Content wächst."
+                },
+                {
+                    "izType": "text-simple",
+                    "content": "Um sich aus der Masse hervorzuheben und mit all diesen Entwicklungen Schritt zu halten, gibt es uns. Durch das Zusammenführen der verschiedensten digitalen Fähigkeiten durch <strong>erfahrene Spezialisten als Full-Service Agentur</strong>, wollen wir Ihnen die Möglichkeit bieten auch komplexere mediale Zusammenhänge &amp; Herausforderungen als Chance für sich zu nutzen."
+                },
+                {
+                    "izType": "text-simple",
+                    "content": "<strong>F&uuml;r jede Anforderung gibt es eine passgenaue L&ouml;sung.&nbsp;</strong>Unser Ziel ist es, Sie dieser Lösung durch eine gesamtheitliche Betrachtung von Situation und Herausforderung, in gemeinsamer Projektarbeit näher zu bringen. Die Möglichkeiten digitale Medien zu kombinieren sind immens. Rufen Sie uns gerne einfach an, wir finden für Sie die passenden Experten oder erstellen Ihre Unterlagen direkt inhouse."
+                }
+            ],
+            "tesseracts": [
+                {
+                    "izType": "video",
+                    "video": {
+                        "src": "/media/impactzone-Intro-Premium-Title.mp4",
+                        "id": "iz-intro-video-premium-title"
+                    }
+                },
+                {
+                    "izType": "video",
+                    "video": {
+                        "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
+                        "id": "iz-intro-video-animation-und-3d"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "pfs-unsere-agenturleistungen",
+            "class": "iz-animation-active ",
+            "izTypes": [
+                "headline-1",
+                "list-of-cards",
+                "button-href"
+            ],
+            "headline": "UNSERE AGENTURLEISTUNGEN",
+            "headliner": "2",
+            "background": {
+                "video": {
+                    "id": "pfs-unsere-agenturleistungen-background",
+                    "src": "/media/pexels-rostislav-uzunov-6151238.mp4",
+                    "autoplay": "autoplay",
+                    "muted": "muted",
+                    "loop": "loop"
+                }
+            },
+            "cards": [
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_wirkung.svg",
+                    "headline": "BRAND- & CORPORATE-SERVICE",
+                    "content": "Durch gezieltes impact-Design, Wirkungsanalysen und durch konzeptionelle Aufbereitung die gewünschte Wirkung erzielen. Bringen Sie Ihr Thema auf den Punkt und ermöglichen Sie Ihrem Zuhörer den &quotAHA-Effekt&quot;."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_design.svg",
+                    "headline": "PRÄSENTATIONS-SERVICE",
+                    "content": "Keynote Artists | Neuerstellung | Veredelung | Konzepterstellung | Face-Lift | Betreuung Animationen | Komplett navigierbar | Druck-optimiert | Corporate Design konform"
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_video.svg",
+                    "headline": "ANIMATIONS-SERVICE",
+                    "content": "Trailer- und Unternehmensvideos | Videobearbeitung | Filmschnitt | Storyboarding | 3D-Animationen | Vektor-Animationen | Spezialeffekte | Animierte Hintergründe | Hollywood-Animationen für Powerpoint"
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_homepage.svg",
+                    "headline": "ONLINE-SERVICE",
+                    "content": "Kompletterstellung von Konzept über das Design bis hin zur technischen Umsetzung Ihrer Wünsche & Ideen | Präsentative Landingpages | Moderne Online-Shops | Search Engine Optimization (SEO) | u.v.m."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_druck.svg",
+                    "headline": "PRINT-SERVICE",
+                    "content": "Natürlich designen wir auch gerne Ihre Print-Produkte: Unternehmensdokumente | Rechnungen | Visitenkarten | Flyer | Vertriebsunterlagen | Plakate | Banner | Werbung"
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_infographic.svg",
+                    "headline": "KONZEPT & ANALYSE-SERVICE",
+                    "content": "Wir helfen beim Veranschaulichen komplexer Zusammenhänge."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_text.svg",
+                    "headline": "CONTENT & IMPACT-SERVICE",
+                    "content": "Grobe Gedankengänge? Fehlende Formulierungen? Kein Problem. Wir entwickeln Ihre Texte weiter oder finden neue Ansätze und Wege für Ihre Kommunikation."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_story.svg",
+                    "headline": "KONZEPT-SERVICE",
+                    "content": "Bringen Sie mehr Spannung in die Sache: Langatmige Themen kurzweilig präsentiert."
+                }
+            ],
+            "button": {
+                "izType": "button-href",
+                "label": "Zum gesamten Leistungsportfolio",
+                "href": "/agenturleistungen"
+            }
+        },
+        {
+            "id": "pfs-unsere-agenturleistungen",
+            "class": "iz-animation-active ",
+            "izTypes": [
+                "headline-1",
+                "list-of-cards",
+                "button-href"
+            ],
+            "headline": "UNSERE AGENTURLEISTUNGEN",
+            "headliner": "2",
+            "background": {
+                "video": {
+                    "id": "pfs-unsere-agenturleistungen-background",
+                    "src": "/media/pexels-rostislav-uzunov-6151238.mp4",
+                    "autoplay": "autoplay",
+                    "muted": "muted",
+                    "loop": "loop"
+                }
+            },
+            "cards": [
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_wirkung.svg",
+                    "headline": "BRAND- & CORPORATE-SERVICE",
+                    "content": "Durch gezieltes impact-Design, Wirkungsanalysen und durch konzeptionelle Aufbereitung die gewünschte Wirkung erzielen. Bringen Sie Ihr Thema auf den Punkt und ermöglichen Sie Ihrem Zuhörer den &quotAHA-Effekt&quot;."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_design.svg",
+                    "headline": "PRÄSENTATIONS-SERVICE",
+                    "content": "Keynote Artists | Neuerstellung | Veredelung | Konzepterstellung | Face-Lift | Betreuung Animationen | Komplett navigierbar | Druck-optimiert | Corporate Design konform"
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_video.svg",
+                    "headline": "ANIMATIONS-SERVICE",
+                    "content": "Trailer- und Unternehmensvideos | Videobearbeitung | Filmschnitt | Storyboarding | 3D-Animationen | Vektor-Animationen | Spezialeffekte | Animierte Hintergründe | Hollywood-Animationen für Powerpoint"
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_homepage.svg",
+                    "headline": "ONLINE-SERVICE",
+                    "content": "Kompletterstellung von Konzept über das Design bis hin zur technischen Umsetzung Ihrer Wünsche & Ideen | Präsentative Landingpages | Moderne Online-Shops | Search Engine Optimization (SEO) | u.v.m."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_druck.svg",
+                    "headline": "PRINT-SERVICE",
+                    "content": "Natürlich designen wir auch gerne Ihre Print-Produkte: Unternehmensdokumente | Rechnungen | Visitenkarten | Flyer | Vertriebsunterlagen | Plakate | Banner | Werbung"
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_infographic.svg",
+                    "headline": "KONZEPT & ANALYSE-SERVICE",
+                    "content": "Wir helfen beim Veranschaulichen komplexer Zusammenhänge."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_text.svg",
+                    "headline": "CONTENT & IMPACT-SERVICE",
+                    "content": "Grobe Gedankengänge? Fehlende Formulierungen? Kein Problem. Wir entwickeln Ihre Texte weiter oder finden neue Ansätze und Wege für Ihre Kommunikation."
+                },
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_story.svg",
+                    "headline": "KONZEPT-SERVICE",
+                    "content": "Bringen Sie mehr Spannung in die Sache: Langatmige Themen kurzweilig präsentiert."
+                }
+            ],
+            "button": {
+                "izType": "button-href",
+                "label": "Zum gesamten Leistungsportfolio",
+                "href": "/agenturleistungen"
+            },
+        {
+            "izTypes": [
+                "header-3",
+                "list-of-squares"
+            ],
+            "headline": "MIT KOMBINATIONEN MEHRFACH PROFITIEREN.",
+            "headliner": "2",
+            "background": {
+                "video": {
+                    "id": "kombinieren-background",
+                    "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
+                    "autoplay": "autoplay",
+                    "muted": "muted",
+                    "loop": "loop"
+                }
+            },
+            "content": "UNSERE DIENSTLEISTUNGEN KÖNNEN SIE FREI KOMBINIEREN. FÜR BESONDERS INNOVATIVE PROJEKTERGEBNISSE",
+            "squares": [
+                {
+                    "izType": "square",
+                    "svg": "/img/svg/01_icon_sprechblasen.svg",
+                    "headline": "STRATEGIE & PLAN",
+                    "content": "GEZIELT DURCH IHR PROJEKT",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "izType": "square",
+                    "svg": "/img/svg/01_icon_ausrufezeichen.svg",
+                    "headline": "STRATEGIE & PLAN",
+                    "content": "GEZIELT DURCH IHR PROJEKT",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "izType": "square",
+                    "svg": "/img/svg/01_icon_visitenkarte.svg",
+                    "headline": "STRATEGIE & PLAN",
+                    "content": "GEZIELT DURCH IHR PROJEKT",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "izType": "square",
+                    "svg": "/img/svg/01_icon_statistikmonitor.svg",
+                    "headline": "STRATEGIE & PLAN",
+                    "content": "GEZIELT DURCH IHR PROJEKT",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "izType": "square",
+                    "svg": "/img/svg/01_icon_weggabelung.svg",
+                    "headline": "STRATEGIE & PLAN",
+                    "content": "GEZIELT DURCH IHR PROJEKT",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "izType": "square",
+                    "svg": "/img/svg/01_icon_telefonhoerer.svg",
+                    "headline": "STRATEGIE & PLAN",
+                    "content": "GEZIELT DURCH IHR PROJEKT",
+                    "arrow": "Mehr erfahren"
+                }
+            ]
+        },
+        {
+            "izTypes": [
+                "headline-3",
+                "text-multi",
+                "list-of-refs"
+            ],
+            "headline": "REFERENZEN & ERFAHRUNGEN",
+            "text": [
+                "International unterstützen und betreuen wir schon seit vielen Jahren unsere Kunden & Partner.",
+                "Wir freuen uns auch auf erfolgreiche Projekte mit Ihnen zusammen. Rufen Sie einfach an."
+            ],
+            "references": [
+                "/img/png/Warner_white-983x1024.png",
+                "/img/png/Walt_Disney_white-1024x597.png",
+                "/img/png/Buckau-Wolf-Logo@4x_white.png",
+                "/img/png/VigorHydrogen-AG-Logo.png",
+                "/img/png/VigorHydrogen-AG-Logo.png",
+                "/img/png/Pergola-Living-Logo.png",
+                "/img/png/SSI_Schaefer_white-1024x91.png"
+            ]
+        },
+        {
+            "izTypes": [
+                "list-of-squares"
+            ],
+            "headliner": "4",
+            "squares": [
+                {
+                    "svg": "/img/svg/01_icon_schachbrett.svg",
+                    "headline": "STRATEGIE & PLAN",
+                    "content": "GEZIELT DURCH IHR PROJEKT",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "svg": "/img/svg/01_icon_koordinaten.svg",
+                    "headline": "KURZE ABSPRACHEWEGE",
+                    "content": "FÜR EINE MAXIMALE ENTLASTUNG FÜR SIE.",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "svg": "/img/svg/01_icon_herzmonitor.svg",
+                    "headline": "BRANCHENKENNTNIS",
+                    "content": "LANGJÄHRIGE ZUSAMMNARBEIT",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "svg": "/img/svg/01_icon_blubber.svg",
+                    "headline": "PFLEGE & BETREUUNG",
+                    "content": "UMFASSENDE KONZEPTIONS- UND REALISATIONSKOMPETENZ FÜR",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "svg": "/img/svg/01_icon_briefumschlag.svg",
+                    "headline": "MARKETINGPARTNER",
+                    "content": "IHRE EXTERNE MARKETINGABTEILUNG",
+                    "arrow": "Mehr erfahren"
+                },
+                {
+                    "svg": "/img/svg/01_icon_herz.svg",
+                    "headline": "MEDIENÜBERGREIFENDE MASSNAHMEN",
+                    "content": "LANGJÄHRIGE ZUSAMMENARBEIT",
+                    "arrow": "Mehr erfahren"
+                }
+            ]
+        },
+        {
+            "izTypes": [
+                "header-1",
+                "button-href",
+                "image-star"
+            ],
+            "headline": "IHRE VORTEILE",
+            "content": "UNSERE ZUSAMMENARBEIT",
+            "button": {
+                "label": "> Zum gesamten Leistungsportfolio",
+                "href": "/#"
+            },
+            "image": "star"
+        },
+        {
+            "izTypes": [
+                "headline-2",
+                "video"
+            ],
+            "headline": "FÜR EINEN ERSTEN EINDRUCK",
+            "video": {
+                "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4"
+            }
+        },
+        {
+            "izTypes": [
+                "headline-2",
+                "cascade-horizontal"
+            ],
+            "headline": "FÜNF ENTSCHEIDENDE VORTEILE",
+            "headliner": "5",
+            "cascades": [
+                {
+                    "izType": "text-entry",
+                    "headline": "ARBEIT MIT ERFAHRENEN SPEZIALISTEN",
+                    "content": "Als Full-Service Agentur arbeiten wir mit Spezialisten und mit mehreren zuverlässigen Geschäftspartnern zusammen. Dadurch hat sich ein großes Netzwerk aus Experten unterschiedlicher Bereiche aufgebaut. Entsprechend können Sie von einer Internetagentur ein Webdesign von höchster Qualität erwarten. Ein Freelancer arbeitet stattdessen nur mit den eigenen Ressourcen und kann Ihnen deshalb selten anspruchsvolle Leistungen anbieten."
+                },
+                {
+                    "izType": "text-entry",
+                    "headline": "BESSERE QUALITÄTSICHERUNG",
+                    "content": "In einer Werbeagentur sind viele Fachkräfte an der Erstellung maßgeschneiderter Leistungen und Produkte beteiligt. Daher wird die Qualität von Plakaten, Webinhalten oder einem Webdesign von mehreren Fachleuten kritisch bewertet und fortwährend verbessert. Darüber hinaus erfolgt stets eine abschließende Kontrolle durch die verantwortlichen Mitarbeiter der Agentur. Freiberufliche Dienstleister sind stattdessen allein für ihre Arbeit verantwortlich und können Ihnen keine mehrfache Absicherung bieten."
+                },
+                {
+                    "izType": "text-entry",
+                    "headline": "WIR SCHAFFEN LÖSUNGEN",
+                    "content": "Einer der größten Vorteile einer Medienagentur besteht darin, dass Sie Ihnen vielfältige Dienstleistungen und Werbeprodukte aus einer Hand bieten kann. Die meisten Freelancer haben sich auf einen konkreten Fachbereich spezialisiert. Dadurch stellen sie einen versierten Ansprechpartner für moderne Programmierung, kreatives Webdesign oder zielführende Unternehmenskommunikation dar. Ein werbewirksames Gesamtprodukt, das sämtliche Eigenschaften vereint, erhalten Sie nur bei einer erfahrenen Internetagentur. Aus diesem Grund stellt sie insbesondere bei komplexen Projekten die bessere Wahl dar. Darüber hinaus haben Sie ebenfalls die Möglichkeit, eine vollständige Kampagne mit digitalen sowie gedruckten Werbemitteln zu ordern."
+                },
+                {
+                    "izType": "text-entry",
+                    "headline": "WIR SIND ZUVERLÄSSIG",
+                    "content": "Viele Unternehmen unterschätzen vor den ersten Komplikationen, welche Probleme und Herausforderungen die Zusammenarbeit mit einem Freelancer mit sich bringen kann. Dabei ist die erfolgreiche Bearbeitung des Auftrags sehr stark von persönlichen Faktoren abhängig. Selbst ein kompetenter und verlässlicher Geschäftspartner kann jederzeit unvorhergesehen einen Unfall erleiden oder schwer erkranken. Dadurch kommt es nicht selten zu kostspieligen Verzögerungen beim Auftraggeber. Eine Werbeagentur mit mehreren Mitarbeitern kann hingegen wesentlich besser auf diese Situationen reagieren und trotz Krankheit und Ausfällen die pünktliche Fertigstellung des Auftrags sicherstellen."
+                },
+                {
+                    "izType": "text-entry",
+                    "headline": "WIR SIND PARTNER",
+                    "content": "Als Full-Service Agentur arbeiten wir mit Spezialisten und mit mehreren zuverlässigen Geschäftspartnern zusammen. Dadurch hat sich ein großes Netzwerk aus Experten unterschiedlicher Bereiche aufgebaut. Entsprechend können Sie von einer Internetagentur ein Webdesign von höchster Qualität erwarten. Ein Freelancer arbeitet stattdessen nur mit den eigenen Ressourcen und kann Ihnen deshalb selten anspruchsvolle Leistungen anbieten."
+                }
+            ]
+        }
+    ]
+}

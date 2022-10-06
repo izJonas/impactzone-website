@@ -64,8 +64,6 @@ const SetViewEngine = function () {
 
 }
 
-
-
 ClearCache();
 
 SetViewEngine()
@@ -100,6 +98,24 @@ const AfterMongoConnect = function (collectionToUse) {
             .then(results => {
                 console.log(results)
                 res.render('premiumFullService', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', site: premiumFullServiceData, sitesContent: results })
+            })
+            .catch(error => console.error(error))
+
+    })
+
+    app.get('/tiko', (req, res) => {
+
+        // Load json collection
+        let tikoOfficeData;
+        readJSONFile('./public/json/sites/tikoOffice.json', function (err, json) {
+            if (err) { throw err; }
+            tikoOfficeData = json
+        });
+
+        const cursor = db.collection('sites').find().toArray()
+            .then(results => {
+                console.log(results)
+                res.render('tikoOffice', { title: 'TIKO Office | T.I.K.O. OFFICE e.K. ', message: 'TIKO Office', site: tikoOfficeData, sitesContent: results })
             })
             .catch(error => console.error(error))
 
