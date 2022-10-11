@@ -1,6 +1,8 @@
 @use "sass:map";
 @use "sass:list";
 @use "../../source/scss/fonts/font";
+@use "../../source/scss/vars/var";
+@use "../../source/scss/mixins/mixin";
 
 // Body of HTML
 body {
