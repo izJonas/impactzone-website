@@ -8,12 +8,13 @@ nav#iz-nav-list {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     position: fixed;
-    height: #{var.$nav-height};
+    height: var.$nav-height;
     max-height: var.$nav-height;
     min-height: var.$nav-height;
     transition: var.$default-transition-slow;
     top: 0;
-    width: inherit;
+    left: 0;
+    right: 0;
     background-color: var.$background-color-navigation;
     z-index: 999;
     border-bottom: var.$nav-border-width solid #e1e1e182;
