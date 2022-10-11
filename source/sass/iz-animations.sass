@@ -1,8 +1,4 @@
-@use "sass:map";
-@use "sass:list";
-@use "vars/var";
-@use "mixins/mixin";
-
+@use "iz-modules" as *;
 // Animation Definition
 @keyframes iz-animation-pulse {
     from {
@@ -30,7 +26,6 @@
     from {
         margin: 0 auto 0 45px;
     }
-
     to {
         margin: 0 auto 0 -24px;
     }
@@ -350,7 +345,7 @@
         @for $i from 0 through $animationSteps {
             #{percentage($i * calc(1 / $animationSteps))} {
                 color: hsla(random(365), 60%, 60%, 1);
-                transition: var.$default-transition-fast;
+                transition: $default-transition-fast;
                 //text-shadow: 1px 1px 3px hsla(random(365), 60%, 60%, 1);
             }
         }
@@ -404,7 +399,7 @@ img.iz-animation-img-flow:hover {
                 fill: linear-gradient(to right, hsla($sum-hsla, 60%, 60%, 1), hsla($sum-hsla + 10, 60%, 60%, 1));
             }
 
-            $sum-hsla: $sum-hsla+10;
+            $sum-hsla: $sum-hsla + 10;
         }
     }
 

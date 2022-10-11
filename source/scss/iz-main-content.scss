@@ -1,3 +1,8 @@
+@use "sass:map";
+@use "sass:list";
+@use "vars/var";
+@use "mixins/mixin";
+
 // Site Main Content Section
 main#iz-content {
     display: flex;
@@ -7,7 +12,7 @@ main#iz-content {
     header.iz-content-banner {
         display: flex;
         flex-direction: column;
-        min-height: calc(200vh - $nav-height-total);
+        min-height: calc(200vh - var.$nav-height-total);
 
         &::after {
             content: " ";
@@ -155,7 +160,7 @@ main#iz-content {
         min-height: $entry-height;
         min-width: 100%;
         box-shadow: 0px 0px 10px 9px #00000088;
-        transition: $default-transition-fast;
+        transition: var.$default-transition-fast;
 
         &::after {
             content: " ";
@@ -217,7 +222,7 @@ main#iz-content {
             margin: auto;
             min-height: max-content;
             min-width: 100%;
-            transition: $default-transition-fast;
+            transition: var.$default-transition-fast;
             padding: 3em 0;
             gap: 2.5em;
 
@@ -236,7 +241,7 @@ main#iz-content {
             }
 
             &>* {
-                max-width: $content-entry-max-width;
+                max-width: var.$content-entry-max-width;
                 margin: auto;
                 scroll-behavior: smooth;
             }
@@ -298,8 +303,8 @@ main#iz-content {
                 text-decoration: none;
                 border-radius: 50px;
                 background: transparent;
-                background-image: #{map.get($button-gradients, "main-content")};
-                transition: #{map.get($button-transitions, "main-content")};
+                background-image: #{map.get(var.$button-gradients, "main-content")};
+                transition: #{map.get(var.$button-transitions, "main-content")};
                 color: white;
                 border: none;
                 padding: 10px 2em;
@@ -309,8 +314,8 @@ main#iz-content {
                 font-family: "Shippori Antique B1", Sans-serif;
 
                 &:hover {
-                    background-image: #{map.get($button-gradients, "main-content-hover")};
-                    transition: #{map.get($button-transitions, "main-content-hover")};
+                    background-image: #{map.get(var.$button-gradients, "main-content-hover")};
+                    transition: #{map.get(var.$button-transitions, "main-content-hover")};
                     color: black;
                 }
 
@@ -334,11 +339,11 @@ main#iz-content {
 
                         img.iz-card-image {
                             display: flex;
-                            min-width: $card-image-width;
-                            max-width: $card-image-width;
-                            width: $card-image-width;
-                            filter: $card-image-filter;
-                            transition: $card-image-transition;
+                            min-width: var.$card-image-width;
+                            max-width: var.$card-image-width;
+                            width: var.$card-image-width;
+                            filter: var.$card-image-filter;
+                            transition: var.$card-image-transition;
                             transform: translateY(0px);
                             margin: 0 auto 0 45px;
 
@@ -379,11 +384,11 @@ main#iz-content {
 
                             img.iz-square-image {
                                 display: flex;
-                                min-width: $card-image-width;
-                                max-width: $card-image-width;
-                                width: $card-image-width;
-                                filter: $card-image-filter;
-                                transition: $card-image-transition;
+                                min-width: var.$card-image-width;
+                                max-width: var.$card-image-width;
+                                width: var.$card-image-width;
+                                filter: var.$card-image-filter;
+                                transition: var.$card-image-transition;
                                 transform: translateY(0px);
 
                                 &:hover {

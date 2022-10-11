@@ -1,26 +1,23 @@
 @use "sass:map";
 @use "sass:list";
-@use "vars/var";
-@use "mixins/mixin";
-
+@use "iz-modules" as *;
 // Footer Section
 footer#iz-footer {
     display: flex;
     background-color: transparent;
     background-image: linear-gradient(130deg, #040404 0%, #1d1d1d 100%);
     padding: 0;
-    bottom: 0;
-    position: fixed;
-    width: 100vw;
-    box-shadow: 0px -2px 0.5px #000000aa;
-    max-height: 0;
-    transition: all 0.5s ease;
-
-    &.bottom-reached {
-        max-height: 125px;
+        bottom: 0;
+        position: fixed;
+        width: 100vw;
+        box-shadow: 0px -2px 0.5px #000000aa;
+        max-height: 0;
         transition: all 0.5s ease;
-    }
 
+        &.bottom-reached {
+            max-height: 125px;
+            transition: all 0.5s ease;
+        }
     // Logo of the footer
     img#iz-footer-logo {
         display: flex;
@@ -28,7 +25,6 @@ footer#iz-footer {
         width: 75px;
         height: auto;
     }
-
     // Company Information
     #iz-footer-company {
         display: flex;
@@ -52,7 +48,6 @@ footer#iz-footer {
             font-family: "Assistant", Sans-serif;
             line-height: 14px;
         }
-
         #iz-footer-company-content {
             display: flex;
             width: inherit;
@@ -66,7 +61,6 @@ footer#iz-footer {
             max-height: 41px;
             min-height: 41px;
         }
-
         #iz-footer-company-button-row {
             display: flex;
             gap: 0.5em;
@@ -83,9 +77,8 @@ footer#iz-footer {
             text-align: center;
             vertical-align: middle;
             height: 26px;
-            max-height: 26px;
-            min-height: 26px;
-
+                max-height: 26px;
+                min-height: 26px;
             a {
                 text-decoration: none;
                 display: flex;
@@ -94,8 +87,8 @@ footer#iz-footer {
                 line-height: 15px;
                 padding: 0;
                 background-color: transparent;
-                background-image: #{map.get(var.$button-gradients, "footer")};
-                transition: #{map.get(var.$button-transitions, "footer")};
+                background-image: #{map.get($button-gradients, "footer")};
+                transition: #{map.get($button-transitions, "footer")};
                 transform: scale(1);
                 color: white;
 
@@ -111,8 +104,8 @@ footer#iz-footer {
                 vertical-align: middle;
 
                 &:hover {
-                    background-image: #{map.get(var.$button-gradients, "footer-hover")};
-                    transition: #{map.get(var.$button-transitions, "footer-hover")};
+                    background-image: #{map.get($button-gradients, "footer-hover")};
+                    transition: #{map.get($button-transitions, "footer-hover")};
                     transform: scale(0.9);
                     color: black;
                 }
@@ -120,7 +113,6 @@ footer#iz-footer {
                 &#iz-footer-company-button-tel {
                     margin-left: auto;
                 }
-
                 &#iz-footer-company-button-mail {
                     margin-right: auto;
                 }
@@ -128,15 +120,14 @@ footer#iz-footer {
                 svg {
                     display: flex;
                     margin: auto 0.5em auto auto;
-                    width: var.$footer-button-row-icon-width;
-                    max-width: var.$footer-button-row-icon-width;
-                    min-width: var.$footer-button-row-icon-width;
+                    width: $footer-button-row-icon-width;
+                    max-width: $footer-button-row-icon-width;
+                    min-width: $footer-button-row-icon-width;
                     height: auto;
                 }
             }
         }
     }
-
     // External Links
     div#iz-footer-links-external {
         display: flex;
@@ -157,19 +148,14 @@ footer#iz-footer {
                 animation-direction: alternate;
             }
         }
-
         a {
-
-            @each $name,
-            $bg-color in var.$background-color-links {
+            @each $name, $bg-color in $background-color-links {
                 &#iz-footer-link-#{$name} {
                     background-color: $bg-color;
-
                     svg {
                         display: flex;
                         margin: auto;
-
-                        &>path {
+                        & > path {
                             fill: white;
                         }
                     }

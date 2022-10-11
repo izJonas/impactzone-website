@@ -1,6 +1,6 @@
-..\scss\iz-variables.scss
-..\scss\iz-mixins.scss
-..\scss\iz-loose-styles.scss
+..\scss\_iz-variables.scss
+..\scss\_iz-mixins.scss
+..\scss\_iz-loose-styles.scss
 ..\scss\iz-navigation.scss
 ..\scss\iz-main-content.scss
 ..\scss\iz-footer.scss
