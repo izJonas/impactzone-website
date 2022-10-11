@@ -8,7 +8,7 @@ nav#iz-nav-list {
     display: grid;
     grid-template-columns: 1fr 1.5fr 1fr;
     position: fixed;
-    height: var.$nav-height;
+    height: #{var.$nav-height};
     max-height: var.$nav-height;
     min-height: var.$nav-height;
     transition: var.$default-transition-slow;
