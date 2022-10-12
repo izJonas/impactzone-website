@@ -1,25 +1,27 @@
 @use "sass:map";
-@import "../../source/scss/iz-variables";
-@import "../../source/scss/iz-mixins";
-
-@import "../../source/scss/iz-loose-styles";
+@use "sass:list";
+@use "../../source/scss/fonts/font";
+@use "../../source/scss/vars/var";
+@use "../../source/scss/mixins/mixin";
 
 // Body of HTML
 body {
+    font-family: var.$base-font-family;
+
     // Main Wrapper
     #iz-wrapper {
 
-        @import "../../source/scss/iz-navigation";
+        @import "../../source/scss/navigation";
 
-        @import "../../source/scss/iz-main-content";
+        @import "../../source/scss/main-content";
 
-        @import "../../source/scss/iz-footer";
+        @import "../../source/scss/footer";
 
-        @import "../../source/scss/iz-components";
+        @import "../../source/scss/components";
 
     }
 
-    @import "../../source/scss/iz-parallax";
+    @import "../../source/scss/parallax";
 
-    @import "../../source/scss/iz-animations";
+    @import "../../source/scss/animations";
 }

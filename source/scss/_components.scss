@@ -1,3 +1,8 @@
+@use "sass:map";
+@use "sass:list";
+@use "vars/var";
+@use "mixins/mixin";
+
 div.iz-text-multi {
     display: flex;
     flex-direction: column;
@@ -93,9 +98,9 @@ div.iz-text-entry {
         border-radius: 50px;
 
         img.iz-card-image {
-                padding-left: 33px;
-                padding-top: 8px;
-            }
+            padding-left: 33px;
+            padding-top: 8px;
+        }
     }
 
 
