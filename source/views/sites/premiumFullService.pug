@@ -1,0 +1,25 @@
+extends ../layout.pug
+
+block content
+    if isMongo
+        - var navEntrySelected = sitesContent[0].name
+        - var banner = sitesContent.banner
+        - var mainSectionEntries = sitesContent[0].sections
+        - var izIndex = 0
+        - var isParallax = sitesContent[0].parallax
+    else
+        - const premiumFullService = site
+        - var navEntrySelected = premiumFullService.name
+        - var banner = premiumFullService.banner
+        - var mainSectionEntries = premiumFullService.sections
+        - var izIndex = 0
+        - var isParallax = premiumFullService.parallax
+    if banner
+        header.iz-content-banner
+            include ../components/banner.pug
+
+    each mainSection in mainSectionEntries
+        - var izIndexCurrent = izIndex++
+        - var izContentId = mainSection.id ? mainSection.id : "iz-content-entry-" + izIndexCurrent
+        - var izContentClass = mainSection.class ? " " + mainSection.class : " "
+        include ../generators/mainSectionGenerator.pug

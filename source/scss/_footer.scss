@@ -1,0 +1,180 @@
+@use "sass:map";
+@use "sass:list";
+@use "vars/var";
+@use "mixins/mixin";
+
+// Footer Section
+footer#iz-footer {
+    display: flex;
+    background-color: transparent;
+    background-image: linear-gradient(130deg, #040404 0%, #1d1d1d 100%);
+    padding: 0;
+    bottom: 0;
+    position: fixed;
+    width: 100vw;
+    box-shadow: 0px -2px 0.5px #000000aa;
+    max-height: 0;
+    transition: all 0.5s ease;
+
+    &.bottom-reached {
+        max-height: 125px;
+        transition: all 0.5s ease;
+    }
+
+    // Logo of the footer
+    img#iz-footer-logo {
+        display: flex;
+        margin: auto 2em auto auto;
+        width: 75px;
+        height: auto;
+    }
+
+    // Company Information
+    #iz-footer-company {
+        display: flex;
+        flex-direction: column;
+        margin: auto 1em;
+        padding: 10px;
+        min-width: 333px;
+        max-height: 125px;
+
+        #iz-footer-company-headline {
+            display: flex;
+            width: inherit;
+            margin: 0 auto;
+            padding: 0;
+            height: 38px;
+            max-height: 38px;
+            min-height: 38px;
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 700;
+            font-family: "Assistant", Sans-serif;
+            line-height: 14px;
+        }
+
+        #iz-footer-company-content {
+            display: flex;
+            width: inherit;
+            color: rgb(128, 128, 128);
+            outline: rgb(128, 128, 128);
+            font-size: 10px;
+            font-family: "Assistant", Sans-serif;
+            margin: 0 auto;
+            padding: 0;
+            height: 41px;
+            max-height: 41px;
+            min-height: 41px;
+        }
+
+        #iz-footer-company-button-row {
+            display: flex;
+            gap: 0.5em;
+            margin: 0;
+            padding: 0;
+            align-content: center;
+            align-items: center;
+            align-self: center;
+
+            justify-content: center;
+            justify-items: center;
+            justify-self: center;
+
+            text-align: center;
+            vertical-align: middle;
+            height: 26px;
+            max-height: 26px;
+            min-height: 26px;
+
+            a {
+                text-decoration: none;
+                display: flex;
+                border-radius: 50px;
+                font-size: 12px;
+                line-height: 15px;
+                padding: 0;
+                background-color: transparent;
+                background-image: #{map.get(var.$button-gradients, "footer")};
+                transition: #{map.get(var.$button-transitions, "footer")};
+                transform: scale(1);
+                color: white;
+
+                align-content: center;
+                align-items: center;
+                align-self: center;
+
+                justify-content: center;
+                justify-items: center;
+                justify-self: center;
+
+                text-align: center;
+                vertical-align: middle;
+
+                &:hover {
+                    background-image: #{map.get(var.$button-gradients, "footer-hover")};
+                    transition: #{map.get(var.$button-transitions, "footer-hover")};
+                    transform: scale(0.9);
+                    color: black;
+                }
+
+                &#iz-footer-company-button-tel {
+                    margin-left: auto;
+                }
+
+                &#iz-footer-company-button-mail {
+                    margin-right: auto;
+                }
+
+                svg {
+                    display: flex;
+                    margin: auto 0.5em auto auto;
+                    width: var.$footer-button-row-icon-width;
+                    max-width: var.$footer-button-row-icon-width;
+                    min-width: var.$footer-button-row-icon-width;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    // External Links
+    div#iz-footer-links-external {
+        display: flex;
+        margin: auto auto auto 2em;
+        gap: 5px;
+
+        a.iz-animation-pulse {
+            transition: all 0.2s ease;
+            transform: scale(1);
+            display: flex;
+            padding: 5px;
+            border-radius: 100%;
+
+            &:hover {
+                animation-duration: 0.5s;
+                animation-name: iz-animation-pulse;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+            }
+        }
+
+        a {
+
+            @each $name,
+            $bg-color in var.$background-color-links {
+                &#iz-footer-link-#{$name} {
+                    background-color: $bg-color;
+
+                    svg {
+                        display: flex;
+                        margin: auto;
+
+                        &>path {
+                            fill: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

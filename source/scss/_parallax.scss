@@ -1,0 +1,153 @@
+@use "sass:map";
+@use "sass:list";
+@use "vars/var";
+@use "mixins/mixin";
+
+// Parallax Classes
+.iz-parallax-image {
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 700;
+        font-size: 76px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+    }
+}
+
+.iz-parallax-content {
+    background: none repeat scroll 0 0 black;
+    color: #fff;
+
+    &.iz-parallax-content-transparent {
+        background: transparent;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #fff;
+    }
+}
+
+.iz-parallax-content-after {
+    height: 200px;
+    min-height: 200px;
+    background: black;
+    color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.iz-parallax-video {
+    height: 0px;
+    padding: 0;
+    margin: 0;
+    display: none;
+    opacity: 0;
+    transition: var.$default-transition-fast;
+
+    &.iz-banner-video {
+        height: 0px;
+        padding: 0;
+        margin: 0;
+        display: unset;
+        opacity: 1;
+        transition: var.$default-transition-fast;
+
+        video {
+            object-fit: cover;
+            min-width: 100vw;
+            width: 100vw;
+            min-height: 125vh;
+            position: fixed;
+            top: 25%;
+            left: 50%;
+            margin-top: calc(var.$nav-height-total - 50vh);
+            margin-left: -50vw;
+            z-index: -999;
+            transition: var.$default-transition-fast;
+        }
+
+        &.iz-parallax-video-invisible {
+            display: none;
+            opacity: 0;
+            transition: var.$default-transition-fast;
+
+            video {
+                transition: var.$default-transition-fast;
+                display: none;
+                opacity: 0;
+            }
+        }
+    }
+
+    &.iz-parallax-video-visible {
+        display: unset;
+        opacity: 1;
+        transition: var.$default-transition-fast;
+
+        video {
+            transition: var.$default-transition-fast;
+            display: unset;
+            opacity: 1;
+        }
+    }
+
+    &.iz-parallax-video-invisible {
+        display: none;
+        transition: var.$default-transition-fast;
+        opacity: 0;
+
+        video {
+            transition: var.$default-transition-fast;
+            display: none;
+            opacity: 0;
+        }
+    }
+
+    &.iz-parallax-video-z-top {
+        video {
+            z-index: -899;
+            transition: var.$default-transition-fast;
+        }
+    }
+
+    video {
+        object-fit: cover;
+        min-width: 100%;
+        width: 100vw;
+        min-height: 100%;
+        position: fixed;
+        z-index: -999;
+        transition: var.$default-transition-fast;
+        top: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #fff;
+        font-size: 76px;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

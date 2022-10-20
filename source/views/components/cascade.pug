@@ -1,0 +1,12 @@
+//- Cascade Element
+div(class=izType)
+    if cascades
+        each cascade in cascades
+            if cascade.izType == "text-entry"
+                - var headliner = "3"
+                - var headline = cascade.headline
+                - var content = cascade.content
+                include text-entry.pug
+            else if cascade.izType == "text-simple"
+                - var content = cascade.content
+                include text-simple.pug

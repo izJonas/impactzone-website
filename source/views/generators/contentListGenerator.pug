@@ -1,0 +1,18 @@
+- var headliner = mainSection.headliner
+if izType == "list-of-cards"
+    - var listEntries = mainSection.cards
+    section.iz-card-list
+        each card in listEntries
+            include ../components/card.pug
+else if izType == "list-of-squares"
+    - var listEntries = mainSection.squares
+    section.iz-square-list
+        each square in listEntries
+            include ../components/square.pug
+else if izType ==  "list-of-refs"
+    - var listEntries = mainSection.references
+    section.iz-ref-list
+        each reference in listEntries
+            include ../components/reference.pug
+else
+    p No content found...

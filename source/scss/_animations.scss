@@ -1,0 +1,417 @@
+@use "sass:map";
+@use "sass:list";
+@use "vars/var";
+@use "mixins/mixin";
+
+// Animation Definition
+@keyframes iz-animation-pulse {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes iz-animation-pulsation {
+    from {
+        transform: scale(1);
+        color: #FFFFFF8F;
+    }
+
+    to {
+        transform: scale(1.15);
+        color: #d4cf889c;
+    }
+}
+
+@keyframes iz-animation-card-icon-walk {
+    from {
+        margin: 0 auto 0 45px;
+    }
+
+    to {
+        margin: 0 auto 0 -24px;
+    }
+}
+
+@keyframes iz-animation-card-icon-bounce {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes iz-animation-card-icon-walk-pumper {
+    0% {
+        margin: 0 auto 0 calc(50% - 33px);
+        transform: translateY(0px);
+        box-shadow: -18px 0px 10px -10px #f1dda000;
+    }
+
+    10% {
+        margin: 0 auto 0 calc(45% - 33px);
+        transform: translateY(-4px);
+        box-shadow: -18px 0px 10px -10px #f1dda000;
+    }
+
+    20% {
+        margin: 0 auto 0 calc(40% - 33px);
+        transform: translateY(-8px);
+        box-shadow: -18px 0px 10px -10px #f1dda000;
+    }
+
+    30% {
+        margin: 0 auto 0 calc(35% - 33px);
+        transform: translateY(-4px);
+        box-shadow: -18px 0px 10px -10px #f1dda000;
+    }
+
+    40% {
+        margin: 0 auto 0 calc(30% - 30px);
+        transform: translateY(0px);
+        box-shadow: -18px 0px 10px -10px #f1dda000;
+    }
+
+    50% {
+        margin: 0 auto 0 calc(25% - 25px);
+        transform: translateY(-4px);
+        box-shadow: -18px 0px 10px -10px #f1dda000;
+    }
+
+    60% {
+        margin: 0 auto 0 calc(20% - 20px);
+        transform: translateY(-8px);
+        box-shadow: -18px 0px 10px -10px #f1dda000;
+    }
+
+    70% {
+        margin: 0 auto 0 calc(15% - 15px);
+        transform: translateY(-4px);
+        box-shadow: -18px -1px 10px -11px #f5c63944;
+        filter: saturate(1.05) brightness(1.03);
+    }
+
+    80% {
+        margin: 0 auto 0 calc(10% - 10px);
+        transform: translateY(0px);
+        box-shadow: -18px -2px 10px -12px #f5c63988;
+        filter: saturate(1.1) brightness(1.06);
+    }
+
+    90% {
+        margin: 0 auto 0 calc(5% - 5px);
+        transform: translateY(-4px);
+        box-shadow: -18px -3px 10px -13px #f5c639AA;
+        filter: saturate(1.15) brightness(1.09);
+    }
+
+    100% {
+        margin: 0 auto 0 2.5em;
+        transform: translateY(-8px);
+        box-shadow: -18px 0px 10px 10px #f5c639;
+        filter: saturate(1.25) brightness(1.1);
+    }
+}
+
+@keyframes iz-animation-card-side-pumper {
+    0% {
+        box-shadow: -18px 0px 10px -10px #f5c639FF;
+    }
+
+    10% {
+        box-shadow: -13.5px 0px 7.5px -7.5px #f5c639AA;
+    }
+
+    20% {
+        box-shadow: -9px 0px 5px -5px #f5c63988;
+    }
+
+    30% {
+        box-shadow: -4.5px 0px 2.5px -2.5px #f5c63944;
+    }
+
+    40% {
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+    }
+
+    50% {
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+    }
+
+    60% {
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+    }
+
+    70% {
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+    }
+
+    80% {
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+    }
+
+    90% {
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+    }
+
+    100% {
+        box-shadow: 0px 0px 0px 0px #f1dda000;
+    }
+}
+
+@keyframes iz-animation-stutter-transparency {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+// Animation Definition
+@keyframes iz-animation-wavering-shadow {
+    0% {
+        filter: drop-shadow(-5px -4px 6px gold);
+        background: darkslategrey;
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    20% {
+        filter: drop-shadow(-1px -9px 12px rgb(255, 180, 18));
+        background: #278181;
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+
+    40% {
+        filter: drop-shadow(2px -6px 9px rgb(231, 72, 9));
+        background: #0c3f3f;
+        opacity: 0.85;
+        transform: scale(0.95);
+    }
+
+    60% {
+        filter: drop-shadow(4px -2px 4px rgb(238, 100, 21));
+        background: #117c61;
+        opacity: 0.95;
+        transform: scale(1.05);
+    }
+
+    80% {
+        filter: drop-shadow(0px -5px 5px rgb(255, 0, 13));
+        background: #104a64;
+        opacity: 0.75;
+        transform: scale(0.9);
+    }
+
+    100% {
+        filter: drop-shadow(-5px -4px 6px gold);
+        background: darkslategrey;
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes iz-animation-boing {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+/* AWAA => ( A Wild Animation Appeared ) */
+@keyframes iz-awaa-nav-logo-slendering {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-15vw);
+    }
+}
+
+@keyframes iz-awaa-nav-logo-glowing {
+    from {
+        filter: drop-shadoww(0px 0px 0px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+
+    to {
+        filter: drop-shadow(2px 2px 4px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+}
+
+@keyframes iz-awaa-nav-logo-electrocute {
+    from {
+        filter: drop-shadow(0px 0px 0px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+
+    to {
+        filter: drop-shadow(2px 2px 4px radial-gradient(at center right, #902522 0%, #FF003F 100%));
+    }
+}
+
+@keyframes iz-awaa-nav-logo-shock {
+    from {
+        margin-top: 5px;
+        margin-right: 5px;
+        filter: drop-shadow(-5px -5px 3px #902522);
+        animation-timing-function: linear;
+    }
+
+    20% {
+        margin-top: -5px;
+        margin-right: -5px;
+        filter: drop-shadow(5px 5px 5px #902522);
+        animation-timing-function: linear;
+    }
+
+    40% {
+        margin-top: 5px;
+        margin-right: -5px;
+        filter: drop-shadow(-5px 5px 3px #902522);
+        animation-timing-function: linear;
+    }
+
+    60% {
+        margin-top: 5px;
+        margin-right: 5px;
+        filter: drop-shadow(5px 5px 5px #902522);
+        animation-timing-function: linear;
+    }
+
+    80% {
+        margin-top: -5px;
+        margin-right: 5px;
+        filter: drop-shadow(5px -5px 5px #902522);
+        animation-timing-function: linear;
+    }
+
+    to {
+        margin-top: 0;
+        margin-right: 0;
+        filter: drop-shadow(0px 0px 0px #902522);
+        animation-timing-function: linear;
+    }
+}
+
+/*
+* Animation module with all animation code
+*/
+.iz-animation-text-flow,
+.iz-animation-text-flow:hover {
+    /*
+    * Animation variables
+    */
+    $animationSteps: 20;
+    $animationDuration: 50;
+    $animationElement: span;
+    $animationElementsCount: 100;
+    $delayBetweenLetters: 0.2;
+
+    /*
+    * Elements settings
+    */
+    #{$animationElement} {
+        animation-name: iz-animation-text-flow-keys;
+        animation-duration: #{$animationDuration}s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-fill-mode: forwards;
+        transition: all 0.2s ease;
+        text-shadow: 2px 2px 0.5px white !important;
+        -webkit-text-stroke: 1.25px black;
+        text-stroke: 1.25px black;
+        font-weight: 550 !important;
+
+        &:hover {
+            text-shadow: 3px 3px 1px gold !important;
+            transition: all 0.2s ease;
+            -webkit-text-stroke: 1px white;
+            text-stroke: 1px white;
+        }
+
+        span {}
+    }
+
+    /*
+    * Keyframe loop
+    */
+    @keyframes iz-animation-text-flow-keys {
+        @for $i from 0 through $animationSteps {
+            #{percentage($i * calc(1 / $animationSteps))} {
+                color: hsla(random(365), 60%, 60%, 1);
+                transition: var.$default-transition-fast;
+                //text-shadow: 1px 1px 3px hsla(random(365), 60%, 60%, 1);
+            }
+        }
+    }
+
+    /*
+    * Element animation delay loop
+    */
+    $totalDelayTime: $animationElementsCount * $delayBetweenLetters;
+
+    @for $i from 1 through $animationElementsCount {
+        #{$animationElement}:nth-of-type(#{$i}) {
+            animation-delay: #{($i * $delayBetweenLetters) - $totalDelayTime}s;
+        }
+    }
+}
+
+/*
+* Animation module with all animation code
+*/
+img.iz-animation-img-flow,
+img.iz-animation-img-flow:hover {
+    /*
+    * Animation variables
+    */
+    $animationStepsImage: 36;
+    $animationDurationImage: 50;
+    $animationElementsCountImage: 1;
+
+    /*
+    * Elements settings
+    */
+    animation-name: iz-animation-img-flow-keys;
+    animation-duration: #{$animationDurationImage}s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+
+    /*
+    * Keyframe loop
+    */
+    $sum-hsla: 0;
+
+    @keyframes iz-animation-img-flow-keys {
+        @for $i from 0 through $animationStepsImage {
+            #{percentage($i * calc(1 / $animationStepsImage))} {
+                fill: hsla($sum-hsla, 60%, 60%, 1);
+                fill: -webkit-linear-gradient(to right,
+                        hsla($sum-hsla, 60%, 60%, 1),
+                        hsla($sum-hsla + 10, 60%, 60%, 1));
+                fill: linear-gradient(to right, hsla($sum-hsla, 60%, 60%, 1), hsla($sum-hsla + 10, 60%, 60%, 1));
+            }
+
+            $sum-hsla: $sum-hsla+10;
+        }
+    }
+
+    /*
+    * Element animation delay loop
+    */
+    $totalDelayTimeImage: $animationElementsCountImage;
+
+    animation-delay: #{$totalDelayTimeImage}s;
+}

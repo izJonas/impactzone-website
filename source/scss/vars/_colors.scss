@@ -1,0 +1,169 @@
+@use "base"as *;
+
+$button-color-gradients: ( // FOOTER BUTTONS
+    "iz-footer": ("selector": "div#iz-footer-button-row > a",
+        "border-radius": 50px,
+        "background-image": ("linear-gradient": ("degree": 130,
+                "from": ("color": rgb(244, 220, 140),
+                    "transparency": 0%,
+                ),
+                "to": ("color": rgb(202, 178, 114),
+                    "transparency": 100%,
+                ),
+            ),
+        ),
+        "color": white,
+        "background-color": transparent,
+        "transition": all 0.3s ease,
+        "transform": scale(1),
+        // FOOTER BUTTONS HOVER
+        "hover": ("background-image": ("linear-gradient": ("degree": 290,
+                    "from": ("color": rgb(223, 195, 147),
+                        "transparency": 0%,
+                    ),
+                    "to": ("color": rgb(241, 221, 160),
+                        "transparency": 100%,
+                    ),
+                ),
+            ),
+            "color": #424242,
+            "background-color": transparent,
+            "transition": all 0.3s ease,
+            "transform": scale(0.9),
+        ),
+    ),
+    // MAIN CONTENT DEFAULT HREF BUTTONS
+    "iz-content": ("selector": "button.iz-button-href",
+        "border-radius": 50px,
+        "background-image": ("linear-gradient": ("degree": 290,
+                "from": ("color": rgb(223, 195, 147),
+                    "transparency": 0%,
+                ),
+                "to": ("color": rgb(241, 221, 160),
+                    "transparency": 100%,
+                ),
+            ),
+        ),
+        "color": #714129,
+        "background-color": transparent,
+        "transition": all 0.3s ease,
+        // MAIN CONTENT DEFAULT HREF BUTTONS HOVER
+        "hover": ("background-image": ("linear-gradient": ("degree": 290,
+                    "from": ("color": rgb(223, 195, 147),
+                        "transparency": "0%",
+                    ),
+                    "to": ("color": rgb(241, 221, 160),
+                        "transparency": "100%",
+                    ),
+                ),
+            ),
+            "color": #424242,
+            "background-color": transparent,
+            "transition": all 0.3s ease,
+        ),
+    ));
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+
+    @return $map;
+}
+
+@mixin map-print($map, $key) {
+    $map-ref: map-get($map, $key, true);
+
+    @if $map-ref {
+        #{$key}: #{$map-ref};
+    }
+}
+
+@mixin map-print-gradient($background-image-map) {
+    $linear-gradient-map-ref: map-get($background-image-map, "linear-gradient", true);
+    $degree-ref: map-get($linear-gradient-map-ref, "degree", true);
+    $from-ref: map-get($linear-gradient-map-ref, "from", true);
+    $to-ref: map-get($linear-gradient-map-ref, "to", true);
+
+    @if $degree-ref and $from-ref and $to-ref {
+        @if map-get-bool($from-ref, "color") and map-get-bool($from-ref, "transparency") and map-get-bool($to-ref, "color") and map-get-bool($o-ref, "transparency") {
+            background-image: linear-gradient(#{$degree-ref}deg,
+                #{map-get($from-ref, "color")} #{map-get($from-ref, "transparency")},
+                #{map-get($to-ref, "color")} #{map-get($to-ref, "transparency")});
+        }
+    }
+}
+
+@function map-get($map, $key, $return-only-on-content: false) {
+    $map-ref: map-get($map, $key);
+
+    @if $return-only-on-content {
+        @if $map-ref {
+            @return $map-ref;
+        }
+
+        @return null;
+    }
+
+    @return $map-ref;
+}
+
+@function map-get-bool($map, $key) {
+    $map-ref: map-get($map, $key);
+
+    @if $map-ref {
+        @return true;
+    }
+
+    @return false;
+}
+
+@mixin parse-button-gradients() {
+
+    @each $wrapper-id,
+    $button-style in $button-color-gradients {
+        ##{$wrapper-id} {
+            $button-selector-ref: map-get($button-style, "selector", true);
+
+            @if $button-selector-ref {
+                #{$button-selector-ref} {
+                    @include map-print($button-style, "background-color");
+                    @include map-print($button-style, "border-radius");
+                    @include map-print($button-style, "color");
+                    @include map-print($button-style, "transition");
+                    @include map-print($button-style, "transform");
+
+                    $background-image-ref: map-get($button-style, "background-image", true);
+
+                    @if $background-image-ref {
+                        @include map-print-gradient($background-image-ref);
+                    }
+
+                    $hover-map-ref: map-get($button-style, "hover", true);
+
+                    @if $hover-map-ref {
+                        @include map-print($hover-map-ref, "background-color");
+                        @include map-print($hover-map-ref, "border-radius");
+                        @include map-print($hover-map-ref, "color");
+                        @include map-print($hover-map-ref, "transition");
+                        @include map-print($hover-map-ref, "transform");
+                        $background-image-hover-ref: map-get($hover-map-ref, "background-image", true);
+
+                        @if $background-image-hover-ref {
+                            @include map-print-gradient($background-image-ref);
+                        }
+                    }
+                }
+            }
+
+            svg {
+                display: flex;
+                margin: auto;
+
+                &>path {
+                    fill: white;
+                }
+            }
+        }
+    }
+}

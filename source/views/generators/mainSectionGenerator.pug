@@ -1,0 +1,36 @@
+//- Generates the vertically ordered, height: 100vh html sections for a content site
+- var izTypes = mainSection.izTypes
+- var hasBackgroundVideo = false
+- var backgroundVideo = mainSection.background ? mainSection.background.video ? mainSection.background.video : false : false
+- var hasBackgroundImage = false
+- var backgroundImage = mainSection.background ? mainSection.background.image ? mainSection.background.image : false : false
+- var isTesseract = false
+- var parallaxClassesVideo =  ""
+- var parallaxClassesContent =  ""
+- var parallaxClassesImage =  ""
+- var parallaxOnscrollFunction = ""
+if isParallax
+    - var parallaxClassesVideo = "iz-parallax-video iz-parallax-index-" + izIndexCurrent + " iz-parallax-video-index-" + izIndexCurrent
+    - var parallaxClassesContent =  "iz-parallax-content iz-parallax-index-" + izIndexCurrent + izContentClass
+    - var parallaxClassesImage =  "iz-parallax-image iz-parallax-index-" + izIndexCurrent
+    - var parallaxOnscrollFunction = "SetPrallaxVideoVisible(this)"
+if backgroundVideo && isParallax
+    - var hasBackgroundVideo = true
+    - var parallaxClassesContent = "iz-parallax-content iz-parallax-content-transparent " + izContentClass
+section.iz-content-entry(id=izContentId class=parallaxClassesContent izParallaxIndex=izIndexCurrent)
+    .iz-content-entry-wrapper
+        if izTypes
+            each izType in izTypes
+                include izTypeGenerator.pug
+                //-p= JSON.stringify(mainSection.background.video)
+        else
+            p= JSON.stringify(mainSection)
+    if hasBackgroundVideo
+        div(class=parallaxClassesVideo izParallaxIndex=izIndexCurrent)
+            video(id=backgroundVideo.id autoplay=backgroundVideo.autoplay loop=backgroundVideo.loop muted=backgroundVideo.muted)
+                source(src=backgroundVideo.src type="video/mp4")
+    if hasBackgroundImage
+        div(class=parallaxClassesImage izParallaxIndex=izIndexCurrent)
+            img(src=backgroundImage.src, alt=backgroundImage.alt)
+    if hasBackgroundVideo && isParallax
+        div(class="iz-parallax-content-after") Invisible
