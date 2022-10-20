@@ -1,0 +1,75 @@
+$scroll-bar-width: 25px;
+$nav-height: 78px;
+$nav-border-width: 1px;
+$nav-height-total: $nav-height;
+$content-entry-max-width: 1200px;
+$color-link-facebook: #3b5998;
+$background-color-links: ("facebook": #3b5998,
+    "instagram": #262626,
+    "youtube": #cd201f,
+);
+
+$named-gradients: ("sand2blue": (#3e5151,
+        -webkit-linear-gradient(to right, #decba4, #3e5151),
+        linear-gradient(to right, #decba4, #3e5151),
+    ),
+    "black2transparent": (#3e5151,
+        -webkit-linear-gradient(to right, #000000ff, #00000000),
+        linear-gradient(to right, #000000ff, #00000000),
+    ),
+    "mirage": (#16222aff,
+        -webkit-linear-gradient(to right, #3a6073ff, #16222aff),
+        linear-gradient(to right, #3a6073ff, #16222aff),
+    ),
+    "mirage-transparent": (#16222a,
+        -webkit-linear-gradient(to bottom, #3a6073ff, #16222aee),
+        linear-gradient(to bottom, #3a6073ff, #16222aee),
+    ),
+    "coal": (#eb5757,
+        -webkit-linear-gradient(to right, #000000, #eb5757),
+        linear-gradient(to right, #000000, #eb5757),
+    ),
+);
+
+$bg-gradients: ("footer": linear-gradient(130deg, #040404 0%, #1d1d1d 100%),
+);
+
+$button-gradients: ("footer": linear-gradient(130deg, #f4dc8c 0%, #cab272 100%),
+    "footer-hover": linear-gradient(180deg, #cab272 0%, #f4dc8c 100%),
+    "main-content": linear-gradient(290deg, #dfc393 0%, #f1dda0 100%),
+    "main-content-hover": linear-gradient(90deg, #f1dda0 0%, #dfc393 100%),
+);
+
+$button-transitions: ("footer": all 0.2s ease,
+    "footer-hover": all 0.2s ease,
+    "main-content": all 0.3s ease,
+    "main-content-hover": all 0.3s ease,
+);
+
+$fill-color-links: #fff;
+$footer-button-row-icon-width: 15px;
+
+$card-image-width: 66px;
+$card-image-filter: blur(0.5px);
+$card-image-filter: brightness(200%) contrast(134%) saturate(0%) blur(0px) hue-rotate(0deg);
+$card-image-transition: all 0.5s ease;
+
+$base-font-family: "Assistant",
+Sans-serif;
+
+$background-color-navigation: #040404;
+
+$default-transition-fast: all 0.5s ease;
+$default-transition-medium: all 0.75s ease;
+$default-transition-slow: all 1s ease;
+
+$navigation-text: ("color": #7a7c7f,
+    "hover": #f1dda0,
+    "transition": $default-transition-fast,
+);
+
+$navigation-sublist: ("background-color": #fff,
+    "color": #d2d2d2,
+    "hover": #f1dda0,
+    "transition": $default-transition-slow,
+);

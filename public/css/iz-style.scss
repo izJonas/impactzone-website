@@ -1,64 +1,27 @@
-@use 'sass:map';
-@import './scss/iz-variables';
-@import './scss/iz-mixins';
-
-html {
-    background-color: #040404;
-}
+@use "sass:map";
+@use "sass:list";
+@use "../../source/scss/fonts/font";
+@use "../../source/scss/vars/var";
+@use "../../source/scss/mixins/mixin";
 
 // Body of HTML
 body {
-    display: flex;
-    padding: 0;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    font-family: $base-font-family;
-    font-weight: 400;
-    font-size: 15px;
-
-    * {
-        box-sizing: content-box;
-    }
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
+    font-family: var.$base-font-family;
 
     // Main Wrapper
     #iz-wrapper {
-        display: flex;
-        width: inherit;
-        overflow: auto;
-        flex-direction: column;
-        margin-top: $nav-height-total;
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-weight: 800;
-        }
+        @import "../../source/scss/navigation";
 
-        @import './scss/iz-navigation';
+        @import "../../source/scss/main-content";
 
-        @import './scss/iz-main-content';
+        @import "../../source/scss/footer";
 
-        @import './scss/iz-footer';
+        @import "../../source/scss/components";
 
-        @import './scss/iz-components';
-
-        @include gradient-classes("mirage" "mirage-transparent" "black2transparent" "sand2blue" "coal");
     }
 
+    @import "../../source/scss/parallax";
 
-    @import './scss/iz-parallax';
-
-    @import './scss/iz-animations';
+    @import "../../source/scss/animations";
 }

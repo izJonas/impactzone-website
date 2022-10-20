@@ -6,30 +6,64 @@
     "parallax": true,
     "banner": {
         "izType": "banner",
-        "image": "/img/png//IZ-Signet-Gold-01.png",
+        "image": "/img/png/IZ-Signet-Gold-01.png",
         "headline": "IMPACTZONE – DIE ALLES-AGENTUR",
         "content": "INDIVIDUELLE GESAMTLÖSUNGEN & CROSS-MEDIALE UNTERNEHMENSBETREUUNG.",
         "video": "/media/impactzone-Premium-Full-Service-Intro.mp4",
         "id": "iz-banner-background-video",
-        "class": "iz-banner-video iz-parallax-video"
+        "class": "iz-banner-video iz-parallax-video",
+        "href": "#idee-zu-erfolg"
     },
     "sections": [
         {
             "id": "idee-zu-erfolg",
-            "class": "iz-gradient-mirage-transparent iz-animation-text-flow ",
+            "class": "",
             "izTypes": [
                 "headline-1",
-                "text-multi"
+                "cascade-horizontal",
+                "video-tesseract"
             ],
+            "background": {
+                "image": {
+                    "src": "/img/jpg/impactzone-Animations-und-Praesentationsdesign-scaled.jpg",
+                    "alt": "impactzone"
+                }
+            },
             "headline": "VON DER IDEE BIS ZUM ONLINE-ERFOLG",
-            "text": [
-                "Mit fortschreitender Digitalisierung unserer Welt und mehr und mehr technischen Möglichkeiten wird der internationale Wettbewerb und das Erschließen der digitalen Welten für uns alle von Tag zu Tag wichtiger. Die Anforderungen an digitale Produkte sind im stetigen Wandel und die Masse an existierendem digitalen Content wächst.",
-                "Um sich aus der Masse hervorzuheben und mit all diesen Entwicklungen Schritt zu halten, gibt es uns. Durch das Zusammenführen der verschiedensten digitalen Fähigkeiten durch <b>erfahrene Spezialisten</b> als Full-Service Agentur, wollen wir Ihnen die Möglichkeit bieten auch komplexere mediale Zusammenhänge & Herausforderungen als Chance für sich zu nutzen.",
-                "<b>Für jede Anforderung gibt es eine passgenaue Lösung.</b> Unser Ziel ist es, Sie dieser Lösung durch eine gesamtheitliche Betrachtung von Situation und Herausforderung, in gemeinsamer Projektarbeit näher zu bringen. Die Möglichkeiten digitale Medien zu kombinieren sind immens. Rufen Sie uns gerne einfach an, wir finden für Sie die passenden Experten oder erstellen Ihre Unterlagen direkt inhouse."
+            "cascades": [
+                {
+                    "izType": "text-simple",
+                    "content": "Mit fortschreitender Digitalisierung unserer Welt und immer mehr technischen Möglichkeiten, wird der internationale Wettbewerb und das Erschließen der digitalen Welten für uns alle von Tag zu Tag wichtiger. Die Anforderungen an digitale Produkte sind im stetigen Wandel und die Masse an existierendem digitalen Content wächst."
+                },
+                {
+                    "izType": "text-simple",
+                    "content": "Um sich aus der Masse hervorzuheben und mit all diesen Entwicklungen Schritt zu halten, gibt es uns. Durch das Zusammenführen der verschiedensten digitalen Fähigkeiten durch <strong>erfahrene Spezialisten als Full-Service Agentur</strong>, wollen wir Ihnen die Möglichkeit bieten auch komplexere mediale Zusammenhänge &amp; Herausforderungen als Chance für sich zu nutzen."
+                },
+                {
+                    "izType": "text-simple",
+                    "content": "<strong>F&uuml;r jede Anforderung gibt es eine passgenaue L&ouml;sung.&nbsp;</strong>Unser Ziel ist es, Sie dieser Lösung durch eine gesamtheitliche Betrachtung von Situation und Herausforderung, in gemeinsamer Projektarbeit näher zu bringen. Die Möglichkeiten digitale Medien zu kombinieren sind immens. Rufen Sie uns gerne einfach an, wir finden für Sie die passenden Experten oder erstellen Ihre Unterlagen direkt inhouse."
+                }
+            ],
+            "tesseracts": [
+                {
+                    "izType": "video",
+                    "video": {
+                        "src": "/media/impactzone-Intro-Premium-Title.mp4",
+                        "id": "iz-intro-video-premium-title"
+                    }
+                },
+                {
+                    "izType": "video",
+                    "video": {
+                        "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
+                        "id": "iz-intro-video-animation-und-3d"
+                    }
+                }
             ]
         },
         {
             "id": "pfs-unsere-agenturleistungen",
+            "class": "iz-animation-active ",
             "izTypes": [
                 "headline-1",
                 "list-of-cards",
@@ -37,59 +71,61 @@
             ],
             "headline": "UNSERE AGENTURLEISTUNGEN",
             "headliner": "2",
-            "backgroundVideo": {
-                "id": "pfs-unsere-agenturleistungen-background",
-                "src": "/media/02_Planetpagebackground_v01_1.mp4",
-                "autoplay": "autoplay",
-                "muted": "muted",
-                "loop": "loop"
+            "background": {
+                "video": {
+                    "id": "pfs-unsere-agenturleistungen-background",
+                    "src": "/media/pexels-rostislav-uzunov-6151238.mp4",
+                    "autoplay": "autoplay",
+                    "muted": "muted",
+                    "loop": "loop"
+                }
             },
             "cards": [
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_wirkung.svg",
+                    "image": "/img/svg/02_icon_wirkung.svg",
                     "headline": "BRAND- & CORPORATE-SERVICE",
                     "content": "Durch gezieltes impact-Design, Wirkungsanalysen und durch konzeptionelle Aufbereitung die gewünschte Wirkung erzielen. Bringen Sie Ihr Thema auf den Punkt und ermöglichen Sie Ihrem Zuhörer den &quotAHA-Effekt&quot;."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_design.svg",
+                    "image": "/img/svg/02_icon_design.svg",
                     "headline": "PRÄSENTATIONS-SERVICE",
                     "content": "Keynote Artists | Neuerstellung | Veredelung | Konzepterstellung | Face-Lift | Betreuung Animationen | Komplett navigierbar | Druck-optimiert | Corporate Design konform"
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_video.svg",
+                    "image": "/img/svg/02_icon_video.svg",
                     "headline": "ANIMATIONS-SERVICE",
                     "content": "Trailer- und Unternehmensvideos | Videobearbeitung | Filmschnitt | Storyboarding | 3D-Animationen | Vektor-Animationen | Spezialeffekte | Animierte Hintergründe | Hollywood-Animationen für Powerpoint"
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_homepage.svg",
+                    "image": "/img/svg/02_icon_homepage.svg",
                     "headline": "ONLINE-SERVICE",
                     "content": "Kompletterstellung von Konzept über das Design bis hin zur technischen Umsetzung Ihrer Wünsche & Ideen | Präsentative Landingpages | Moderne Online-Shops | Search Engine Optimization (SEO) | u.v.m."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_druck.svg",
+                    "image": "/img/svg/02_icon_druck.svg",
                     "headline": "PRINT-SERVICE",
                     "content": "Natürlich designen wir auch gerne Ihre Print-Produkte: Unternehmensdokumente | Rechnungen | Visitenkarten | Flyer | Vertriebsunterlagen | Plakate | Banner | Werbung"
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_infographic.svg",
+                    "image": "/img/svg/02_icon_infographic.svg",
                     "headline": "KONZEPT & ANALYSE-SERVICE",
                     "content": "Wir helfen beim Veranschaulichen komplexer Zusammenhänge."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_text.svg",
+                    "image": "/img/svg/02_icon_text.svg",
                     "headline": "CONTENT & IMPACT-SERVICE",
                     "content": "Grobe Gedankengänge? Fehlende Formulierungen? Kein Problem. Wir entwickeln Ihre Texte weiter oder finden neue Ansätze und Wege für Ihre Kommunikation."
                 },
                 {
                     "izType": "card",
-                    "image": "/img/02_icon_story.svg",
+                    "image": "/img/svg/02_icon_story.svg",
                     "headline": "KONZEPT-SERVICE",
                     "content": "Bringen Sie mehr Spannung in die Sache: Langatmige Themen kurzweilig präsentiert."
                 }
@@ -107,53 +143,55 @@
             ],
             "headline": "MIT KOMBINATIONEN MEHRFACH PROFITIEREN.",
             "headliner": "2",
-            "backgroundVideo": {
-                "id": "kombinieren-background",
-                "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
-                "autoplay": "autoplay",
-                "muted": "muted",
-                "loop": "loop"
+            "background": {
+                "video": {
+                    "id": "kombinieren-background",
+                    "src": "/media/impactzone-Animations-und-3D-Beispiele_1.mp4",
+                    "autoplay": "autoplay",
+                    "muted": "muted",
+                    "loop": "loop"
+                }
             },
             "content": "UNSERE DIENSTLEISTUNGEN KÖNNEN SIE FREI KOMBINIEREN. FÜR BESONDERS INNOVATIVE PROJEKTERGEBNISSE",
             "squares": [
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_sprechblasen.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_ausrufezeichen.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_visitenkarte.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_statistikmonitor.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_weggabelung.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
                     "izType": "square",
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_telefonhoerer.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
@@ -172,13 +210,13 @@
                 "Wir freuen uns auch auf erfolgreiche Projekte mit Ihnen zusammen. Rufen Sie einfach an."
             ],
             "references": [
-                "/img/Warner_white-983x1024.png",
-                "/img/Walt_Disney_white-1024x597.png",
-                "/img/Buckau-Wolf-Logo@4x_white.png",
-                "/img/VigorHydrogen-AG-Logo.png",
-                "/img/VigorHydrogen-AG-Logo.png",
-                "/img/Pergola-Living-Logo.png",
-                "/img/SSI_Schaefer_white-1024x91.png"
+                "/img/png/Warner_white-983x1024.png",
+                "/img/png/Walt_Disney_white-1024x597.png",
+                "/img/png/Buckau-Wolf-Logo@4x_white.png",
+                "/img/png/VigorHydrogen-AG-Logo.png",
+                "/img/png/VigorHydrogen-AG-Logo.png",
+                "/img/png/Pergola-Living-Logo.png",
+                "/img/png/SSI_Schaefer_white-1024x91.png"
             ]
         },
         {
@@ -188,45 +226,39 @@
             "headliner": "4",
             "squares": [
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_schachbrett.svg",
                     "headline": "STRATEGIE & PLAN",
                     "content": "GEZIELT DURCH IHR PROJEKT",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_koordinaten.svg",
                     "headline": "KURZE ABSPRACHEWEGE",
                     "content": "FÜR EINE MAXIMALE ENTLASTUNG FÜR SIE.",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_herzmonitor.svg",
                     "headline": "BRANCHENKENNTNIS",
                     "content": "LANGJÄHRIGE ZUSAMMNARBEIT",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_blubber.svg",
                     "headline": "PFLEGE & BETREUUNG",
                     "content": "UMFASSENDE KONZEPTIONS- UND REALISATIONSKOMPETENZ FÜR",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_briefumschlag.svg",
                     "headline": "MARKETINGPARTNER",
                     "content": "IHRE EXTERNE MARKETINGABTEILUNG",
                     "arrow": "Mehr erfahren"
                 },
                 {
-                    "svg": "/",
+                    "svg": "/img/svg/01_icon_herz.svg",
                     "headline": "MEDIENÜBERGREIFENDE MASSNAHMEN",
                     "content": "LANGJÄHRIGE ZUSAMMENARBEIT",
-                    "arrow": "Mehr erfahren"
-                },
-                {
-                    "svg": "/",
-                    "headline": "KOMPETENTTEAMS",
-                    "content": "FESTE BETREUER FÜR IHRE BELANGE",
                     "arrow": "Mehr erfahren"
                 }
             ]

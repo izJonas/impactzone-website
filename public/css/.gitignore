@@ -2,3 +2,4 @@
 *.map
 **/*.css
 **/*.map
+!iz-style.css

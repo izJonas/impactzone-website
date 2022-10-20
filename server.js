@@ -8,6 +8,19 @@ const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const app = express();
 const fs = require('fs');
+const minify = require('express-minify');
+app.use(minify({
+    cache: __dirname + '/cache',
+    uglifyJsModule: null,
+    errorHandler: null,
+    jsMatch: /javascript/,
+    cssMatch: /css/,
+    jsonMatch: /json/,
+    sassMatch: /css/,
+    lessMatch: /less/,
+    stylusMatch: /stylus/,
+    coffeeScriptMatch: /coffeescript/,
+}));
 
 function readJSONFile(filename, callback) {
     fs.readFile(filename, function (err, data) {
@@ -33,10 +46,10 @@ const SetViewEngine = function () {
     // Set the pug view engine
     //app.set('views', './views')
     app.set('views', [
-        path.join(__dirname, '/views'),
-        path.join(__dirname, '/views/sites'),
-        path.join(__dirname, '/views/components'),
-        path.join(__dirname, '/views/generators')
+        path.join(__dirname, '/source/views'),
+        path.join(__dirname, '/source/views/sites'),
+        path.join(__dirname, '/source/views/components'),
+        path.join(__dirname, '/source/views/generators')
     ])
 
     app.set('view engine', 'pug')
@@ -48,7 +61,12 @@ const SetViewEngine = function () {
     app.use('/assets', [
         express.static(__dirname + '/node_modules/jquery/dist/')
     ])
+
 }
+
+
+
+ClearCache();
 
 SetViewEngine()
 
@@ -95,4 +113,19 @@ const AfterMongoConnect = function (collectionToUse) {
             })
             .catch(error => console.error(error))
     })
+}
+function ClearCache() {
+    const directory = 'cache';
+
+    fs.readdir(directory, (err, files) => {
+        if (err)
+            throw err;
+
+        for (const file of files) {
+            fs.unlink(path.join(directory, file), err => {
+                if (err)
+                    throw err;
+            });
+        }
+    });
 }
