@@ -1,0 +1,54 @@
+{
+    "_id": {
+        "$oid": "63111abce9d62a13447ab37b"
+    },
+    "name": "referenzen",
+    "parallax": true,
+    "banner": {
+        "izType": "banner",
+        "image": "/img/png/IZ-Signet-Gold-01.png",
+        "headline": "IMPACTZONE – DIE ALLES-AGENTUR",
+        "content": "REFERENZEN",
+        "video": "/media/impactzone-Premium-Full-Service-Intro.mp4",
+        "id": "iz-banner-background-video",
+        "class": "iz-banner-video iz-parallax-video",
+        "href": "#referenzen"
+    },
+    "sections": [
+        {
+            "id": "idee-zu-erfolg",
+            "class": "",
+            "izTypes": [
+                "headline-1"
+            ],
+            "background": {
+                "image": {
+                    "src": "/img/jpg/001-1.jpg",
+                    "alt": "impactzone"
+                }
+            },
+            "headline": "REFERENZEN"
+        },
+        {
+            "id": "base",
+            "class": "base",
+            "izTypes": [
+                "list-of-cards"
+            ],
+            "background": {
+                "image": {
+                    "src": "/img/jpg/001-1.jpg",
+                    "alt": "impactzone"
+                }
+            },
+            "cards": [
+                {
+                    "izType": "card",
+                    "image": "/img/svg/02_icon_wirkung.svg",
+                    "headline": "BRAND- & CORPORATE-SERVICE",
+                    "content": "Durch gezieltes impact-Design, Wirkungsanalysen und durch konzeptionelle Aufbereitung die gewünschte Wirkung erzielen. Bringen Sie Ihr Thema auf den Punkt und ermöglichen Sie Ihrem Zuhörer den &quotAHA-Effekt&quot;."
+                }
+            ]
+        }
+    ]
+}

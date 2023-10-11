@@ -40,7 +40,8 @@ let db
 let siteCollection
 
 //const connectionString = 'mongodb+srv://icrate-admin:test@cluster0.sjlt1ts.mongodb.net/?retryWrites=true&w=majority'
-const connectionString = 'mongodb+srv://iz-admin:g837upv5LPUpkmA@impactzonecluster.z5yncht.mongodb.net/?retryWrites=true&w=majority';
+//const connectionString = 'mongodb+srv://iz-admin:g837upv5LPUpkmA@impactzonecluster.z5yncht.mongodb.net/?retryWrites=true&w=majority';
+const connectionString = 'mongodb+srv://icrate-admin:test@cluster0.sjlt1ts.mongodb.net/?retryWrites=true&w=majority';
 
 const SetViewEngine = function () {
     // Set the pug view engine
@@ -100,6 +101,24 @@ const AfterMongoConnect = function (collectionToUse) {
             .then(results => {
                 console.log(results)
                 res.render('premiumFullService', { title: 'impactzone -Badass Design- by overpowered people!', message: 'impactzone Design', site: premiumFullServiceData, sitesContent: results })
+            })
+            .catch(error => console.error(error))
+
+    })
+
+    app.get('/referenzen', (req, res) => {
+
+        // Load json collectionb
+        let referenzenData;
+        readJSONFile('./public/json/sites/referenzen.json', function (err, json) {
+            if (err) { throw err; }
+            referenzenData = json
+        });
+
+        const cursor = db.collection('sites').find().toArray()
+            .then(results => {
+                console.log(results)
+                res.render('referenzen', { title: 'impactzone - Refz', message: 'impactzone Design', site: referenzenData, sitesContent: results })
             })
             .catch(error => console.error(error))
 
