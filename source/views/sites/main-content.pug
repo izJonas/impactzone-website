@@ -2,18 +2,18 @@ extends ../layout.pug
 
 block content
     if isMongo
-        - var navEntrySelected = sitesContent[2].name
+        - var navEntrySelected = site.name
         - var banner = sitesContent.banner
-        - var mainSectionEntries = sitesContent[2].sections
+        - var mainSectionEntries = site.sections
         - var izIndex = 0
-        - var isParallax = sitesContent[2].parallax
+        - var isParallax = site.parallax
     else
-        - const referenzen = site
-        - var navEntrySelected = referenzen.name
-        - var banner = referenzen.banner
-        - var mainSectionEntries = referenzen.sections
+        - const mainContent = site
+        - var navEntrySelected = mainContent.name
+        - var banner = mainContent.banner
+        - var mainSectionEntries = mainContent.sections
         - var izIndex = 0
-        - var isParallax = referenzen.parallax
+        - var isParallax = mainContent.parallax
     if banner
         header.iz-content-banner
             include ../components/banner.pug
